@@ -31,2741 +31,6 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ "./dist/mc-ui/fesm2015/mc-ui-angular.js":
-/*!**********************************************!*\
-  !*** ./dist/mc-ui/fesm2015/mc-ui-angular.js ***!
-  \**********************************************/
-/*! exports provided: ButtonComponent, DrawerComponent, FieldComponent, FormComponent, GridBodyComponent, GridComponent, GridHeaderComponent, IconComponent, InputComponent, ListBasicComponent, ListComponent, ListItemComponent, LoaderComponent, MCUIModule, MCUIService, MaskComponent, MessageBarComponent, PopupComponent, ScrollComponent, TextareaComponent, ɵa, ɵb, ɵc, ɵd */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonComponent", function() { return ButtonComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return DrawerComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FieldComponent", function() { return FieldComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormComponent", function() { return FormComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridBodyComponent", function() { return GridBodyComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridComponent", function() { return GridComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridHeaderComponent", function() { return GridHeaderComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IconComponent", function() { return IconComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputComponent", function() { return InputComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListBasicComponent", function() { return ListBasicComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListComponent", function() { return ListComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListItemComponent", function() { return ListItemComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoaderComponent", function() { return LoaderComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MCUIModule", function() { return MCUIModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MCUIService", function() { return MCUIService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaskComponent", function() { return MaskComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageBarComponent", function() { return MessageBarComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopupComponent", function() { return PopupComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollComponent", function() { return ScrollComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextareaComponent", function() { return TextareaComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return FieldBaseComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return BaseComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return ScrollAsyncComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return PopupListComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-
-
-
-
-
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/util/http-util.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class HttpUtil {
-    /**
-     * @param {?} _http
-     */
-    constructor(_http) {
-        this._http = _http;
-    }
-    /**
-     * @param {?} type
-     * @param {?} url
-     * @param {?} params
-     * @param {?} options
-     * @return {?}
-     */
-    http(type, url, params, options) {
-        /** @type {?} */
-        let http;
-        options = options || {};
-        options.headers = this.createHeaders();
-        switch (type) {
-            case 'get':
-                http = this._http.get(url, options);
-                break;
-            case 'post':
-                http = this._http.post(url, params, options);
-                break;
-            case 'put':
-                http = this._http.put(url, params, options);
-                break;
-            case 'delete':
-                options.body = params;
-                http = this._http.delete(url, options);
-                break;
-        }
-        return http;
-    }
-    /**
-     * @return {?}
-     */
-    createHeaders() {
-        /** @type {?} */
-        const csrftoken = this.getCookie('csrftoken');
-        /** @type {?} */
-        const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
-            'Content-Type': 'application/json',
-            'X-CSRFToken': csrftoken
-        });
-        return headers;
-    }
-    /**
-     * @param {?} key
-     * @return {?}
-     */
-    getCookie(key) {
-        return this.getQueryStringValue(document.cookie, key);
-    }
-    /**
-     * @param {?} queryString
-     * @return {?}
-     */
-    getQueryStringKeyValues(queryString) {
-        /** @type {?} */
-        const values = queryString.split(';');
-        /** @type {?} */
-        let keyValues = {};
-        if (queryString) {
-            keyValues = values.reduce((/**
-             * @param {?} o
-             * @param {?} d
-             * @return {?}
-             */
-            (o, d) => {
-                /** @type {?} */
-                const vals = d.split('=');
-                if (vals.length > 1) {
-                    o[vals[0].trim()] = vals[1];
-                }
-                return o;
-            }), {});
-        }
-        return keyValues;
-    }
-    /**
-     * @param {?} str
-     * @param {?=} removeDomain
-     * @return {?}
-     */
-    getUrlParams(str, removeDomain = true) {
-        /** @type {?} */
-        const arr = str.split(';');
-        /** @type {?} */
-        let url = arr.shift();
-        if (removeDomain) {
-            url = url.indexOf('#') > -1 ? url.split('#')[1] : url;
-        }
-        /** @type {?} */
-        const keyValues = this.getQueryStringKeyValues(str);
-        return {
-            url,
-            params: keyValues
-        };
-    }
-    /**
-     * @param {?} queryString
-     * @param {?} key
-     * @return {?}
-     */
-    getQueryStringValue(queryString, key) {
-        /** @type {?} */
-        const values = this.getQueryStringKeyValues(queryString);
-        return values[key] || '';
-    }
-}
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/util/dom-util.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class DomUtil {
-    // selector: class name(.class-name) or tag name (mc-componentname)
-    /**
-     * @param {?} dom
-     * @param {?} selector
-     * @param {?=} depth
-     * @return {?}
-     */
-    findParent(dom, selector, depth = 10) {
-        /** @type {?} */
-        let cls = '';
-        /** @type {?} */
-        let resultDom;
-        if (!dom || !dom.nodeName) {
-            return null;
-        }
-        if (selector[0] === '.') {
-            cls = selector.split('.')[1];
-        }
-        while (depth--) {
-            if (!dom || !dom.classList || dom.nodeName === 'BODY') {
-                resultDom = null;
-                break;
-            }
-            if (cls) {
-                if (dom.classList.contains(cls)) {
-                    resultDom = dom;
-                    break;
-                }
-            }
-            else {
-                if (dom.nodeName.toLowerCase() === selector.toLowerCase()) {
-                    resultDom = dom;
-                    break;
-                }
-            }
-            dom = dom.parentNode;
-        }
-        return resultDom;
-    }
-    /**
-     * @return {?}
-     */
-    getWindowSize() {
-        /** @type {?} */
-        const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        /** @type {?} */
-        const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        return { width, height };
-    }
-    /**
-     * @param {?} dom
-     * @return {?}
-     */
-    getSize(dom) {
-        /** @type {?} */
-        let size = dom.getBoundingClientRect();
-        /** @type {?} */
-        const style = dom.style;
-        if (style.display === 'none') {
-            style.visibility = 'hidden';
-            style.display = '';
-            size = dom.getBoundingClientRect();
-            style.visibility = '';
-            style.display = 'none';
-        }
-        else if (style.height === '0' || style.height === '0px') {
-            style.visibility = 'hidden';
-            /** @type {?} */
-            const position = style.position || '';
-            style.position = 'absolute';
-            style.height = '';
-            size = dom.getBoundingClientRect();
-            style.visibility = '';
-            style.height = '0px';
-            style.position = position;
-        }
-        return size;
-    }
-    /**
-     * @param {?} dom
-     * @return {?}
-     */
-    removeDom(dom) {
-        if (dom && dom.parentElement) {
-            dom.parentElement.removeChild(dom);
-        }
-        dom = null;
-    }
-    /**
-     * @param {?} url
-     * @param {?=} target
-     * @param {?=} fileName
-     * @return {?}
-     */
-    openUrl(url, target = '', fileName = '') {
-        /** @type {?} */
-        let a = document.createElement('a');
-        a.href = url;
-        if (fileName)
-            a.download = fileName;
-        if (target)
-            a.target = target;
-        document.body.append(a);
-        a.click();
-        a.remove();
-        a = null;
-    }
-    /**
-     * @param {?} fileName
-     * @param {?} content
-     * @param {?=} mimeType
-     * @param {?=} charset
-     * @return {?}
-     */
-    exportFile(fileName, content, mimeType = 'text/csv', charset = 'utf-8') {
-        /** @type {?} */
-        const blob = new Blob([content], {
-            type: `type:${mimeType};charset=${charset};`
-        });
-        if (navigator.msSaveBlob) {
-            navigator.msSaveBlob(blob, fileName);
-        }
-        else {
-            this.openUrl(URL.createObjectURL(blob), '', fileName);
-        }
-    }
-}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/util/data-util.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class DataUtil {
-    /**
-     * @param {?} items
-     * @param {?} keyword
-     * @param {?=} field
-     * @return {?}
-     */
-    search(items, keyword, field = 'name') {
-        if (keyword) {
-            /** @type {?} */
-            const keywords = keyword.toLowerCase().trim().split(' ');
-            items = items.filter((/**
-             * @param {?} item
-             * @return {?}
-             */
-            item => {
-                /** @type {?} */
-                const text = ('' + item[field]).toLowerCase();
-                return keywords.find((/**
-                 * @param {?} k
-                 * @return {?}
-                 */
-                k => text.indexOf(k) > -1));
-            }));
-        }
-        return items;
-    }
-}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/util/util.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-// You can add utilities like validator, date, data, visualization, etc...
-class Util {
-    /**
-     * @param {?} hc
-     */
-    constructor(hc) {
-        this.hc = hc;
-        this.http = new HttpUtil(this.hc);
-        this.dom = new DomUtil();
-        this.data = new DataUtil();
-    }
-    /**
-     * @param {?} val
-     * @return {?}
-     */
-    isEmpty(val) {
-        return val === null || val === '' || val === undefined;
-    }
-    /**
-     * @return {?}
-     */
-    getWindowSize() {
-        return {
-            width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-            height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
-        };
-    }
-    /**
-     * @param {?} callback
-     * @param {?} wait
-     * @param {?=} scope
-     * @return {?}
-     */
-    debounce(callback, wait, scope = this) {
-        /** @type {?} */
-        let timeout;
-        return (/**
-         * @param {...?} args
-         * @return {?}
-         */
-        (...args) => {
-            clearTimeout(timeout);
-            timeout = setTimeout((/**
-             * @return {?}
-             */
-            () => callback.apply(scope, args)), wait);
-        });
-    }
-    /**
-     * @param {?} callback
-     * @param {?} wait
-     * @param {?=} scope
-     * @return {?}
-     */
-    throttle(callback, wait, scope = this) {
-        /** @type {?} */
-        let timeout;
-        return (/**
-         * @param {...?} args
-         * @return {?}
-         */
-        (...args) => {
-            if (!timeout) {
-                timeout = setTimeout((/**
-                 * @return {?}
-                 */
-                () => {
-                    callback.apply(scope, args);
-                    clearTimeout(timeout);
-                }), wait);
-            }
-        });
-    }
-    /**
-     * @return {?}
-     */
-    getRootUrl() {
-        /** @type {?} */
-        const location = window.location;
-        return location.protocol + '//' + location.hostname + ':' + location.port + '/';
-    }
-    /**
-     * @param {?} childPath
-     * @return {?}
-     */
-    getFullUrl(childPath) {
-        /** @type {?} */
-        const root = this.getRootUrl();
-        if (childPath.charAt(0) === '/') {
-            childPath = childPath.substr(1);
-        }
-        return root + childPath;
-    }
-    /**
-     * @param {?} o
-     * @return {?}
-     */
-    clone(o) {
-        // skip the date object
-        if (!o || typeof o !== 'object' || (o instanceof Date && !isNaN(o.valueOf()))) {
-            return o;
-        }
-        else if (Array.isArray(o)) {
-            return o.map((/**
-             * @param {?} item
-             * @return {?}
-             */
-            item => this.clone(item)));
-        }
-        else {
-            return Object.keys(o).reduce((/**
-             * @param {?} obj
-             * @param {?} key
-             * @return {?}
-             */
-            (obj, key) => {
-                obj[key] = this.clone(o[key]);
-                return obj;
-            }), {});
-        }
-    }
-}
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/mc-ui.service.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * @record
- */
-function Message() { }
-if (false) {}
-/**
- * App Level shared services e.g) Dynamic Components or EventEmitters for sending message between UI Page Componensts, window resize etc.
- */
-class MCUIService {
-    /**
-     * @param {?} _resolver
-     * @param {?} injector
-     * @param {?} appRef
-     * @param {?} hc
-     */
-    constructor(_resolver, injector, appRef, hc) {
-        this._resolver = _resolver;
-        this.injector = injector;
-        this.appRef = appRef;
-        this.hc = hc;
-        this.message = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.windowResize = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.bodyPress = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.util = new Util(this.hc);
-        this.getBody().addEventListener('click', this.onClickBody.bind(this));
-        window.addEventListener('resize', this.onResizeWindow.bind(this));
-    }
-    /**
-     * @param {?} message
-     * @return {?}
-     */
-    sendMessage(message) {
-        this.message.emit(message);
-    }
-    /**
-     * @param {?} cmpType
-     * @param {?=} parentEl
-     * @return {?}
-     */
-    addComponent(cmpType, parentEl = document.body) {
-        // https://malcoded.com/posts/angular-dynamic-components/
-        /** @type {?} */
-        const factory = this._resolver.resolveComponentFactory(cmpType);
-        /** @type {?} */
-        const cmp = factory.create(this.injector);
-        this.appRef.attachView(cmp.hostView);
-        parentEl.appendChild(cmp.location.nativeElement);
-        return cmp;
-    }
-    /**
-     * @param {?} cmp
-     * @return {?}
-     */
-    removeComponentEl(cmp) {
-        this.appRef.detachView(cmp.hostView);
-        cmp.destroy();
-    }
-    /**
-     * @return {?}
-     */
-    getBody() {
-        return document.body;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onClickBody(e) {
-        this.bodyPress.emit(e);
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onResizeWindow(e) {
-        this.windowResize.emit(e);
-    }
-}
-MCUIService.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"] }
-];
-/** @nocollapse */
-MCUIService.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"] },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"] },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"] },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
-];
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/base.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Base Class for All UI Components
- */
-// state for rendering
-class BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        this.er = er;
-        this.service = service;
-        this._subscriptions = [];
-        this.rendered = false;
-        this.action = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.el = this.er.nativeElement;
-        this.util = this.service.util;
-        this.initState();
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set subscriptions(value) {
-        if (value) {
-            this._subscriptions.push(value);
-        }
-    }
-    /**
-     * @return {?}
-     */
-    initState() {
-        // default state etc
-    }
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        this.initCmp();
-        // theme should be the last class for priority
-        this.applyThemeClass();
-    }
-    /**
-     * @return {?}
-     */
-    ngAfterViewInit() {
-        this.afterInitCmp();
-        setTimeout((/**
-         * @return {?}
-         */
-        () => {
-            this.afterRenderCmp();
-            this.rendered = true;
-            this.action.emit({ target: this, action: 'rendered' });
-        }));
-    }
-    /**
-     * @return {?}
-     */
-    ngOnDestroy() {
-        this.unsubscribeAll();
-        this.destroyCmp();
-        this.el = null;
-    }
-    /**
-     * @return {?}
-     */
-    applyThemeClass() {
-        if (this.theme) {
-            /** @type {?} */
-            const themes = !Array.isArray(this.theme) ? [this.theme] : this.theme;
-            /** @type {?} */
-            const compName = this.el.tagName.toLowerCase().split('mc-')[1];
-            this.el.classList.add(...themes.map((/**
-             * @param {?} d
-             * @return {?}
-             */
-            d => compName + '-' + d)));
-        }
-    }
-    /**
-     * @return {?}
-     */
-    initCmp() {
-        // empty
-    }
-    /**
-     * @return {?}
-     */
-    afterInitCmp() { }
-    /**
-     * @return {?}
-     */
-    afterRenderCmp() {
-    }
-    // update a specific state
-    /**
-     * @param {?} state
-     * @return {?}
-     */
-    setState(state) {
-        /** @type {?} */
-        const currState = this.util.clone(this.state);
-        Object.keys(state).forEach((/**
-         * @param {?} key
-         * @return {?}
-         */
-        key => currState[key] = state[key]));
-        this.state = currState;
-    }
-    /**
-     * @return {?}
-     */
-    unsubscribeAll() {
-        this._subscriptions.forEach((/**
-         * @param {?} s
-         * @return {?}
-         */
-        s => s.unsubscribe()));
-    }
-    /**
-     * @return {?}
-     */
-    destroyCmp() {
-        // to remove dom elements reference etc.
-    }
-}
-BaseComponent.propDecorators = {
-    theme: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    subscriptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    action: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/form/field/field-base.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class FieldBaseComponent extends BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this._value = '';
-        this.readonly = false;
-        this.label = '';
-        this.type = 'text';
-        this.valid = true;
-        this.rows = 2;
-        this.placeholder = '';
-        this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set value(value) {
-        if (JSON.stringify(this._value) !== JSON.stringify(value)) {
-            /** @type {?} */
-            const oldValue = this._value;
-            this._value = value;
-            this.valueChange.emit({
-                target: this,
-                oldValue,
-                value: this._value
-            });
-        }
-    }
-    /**
-     * @return {?}
-     */
-    get value() {
-        return this._value;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onValueChange(e) {
-        if (JSON.stringify(e.value) !== JSON.stringify(this.value)) {
-            /** @type {?} */
-            const oldValue = this.value;
-            this.value = e.value;
-            this.valueChange.emit({ target: this, event: e, value: this.value, oldValue: oldValue });
-        }
-    }
-}
-FieldBaseComponent.propDecorators = {
-    readonly: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.readonly',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    label: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    validators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    errorMessage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    valid: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    rows: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    valueChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/form/field/input/input.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class InputComponent extends FieldBaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onKeyUp(e) {
-        // recommend strong typing, weak -> e.event.target
-        /** @type {?} */
-        const value = e.target.value;
-        if (value !== this.value) {
-            /** @type {?} */
-            const oldValue = this.value;
-            this.value = value;
-            this.valueChange.emit({ target: this, event: e, value: this.value, oldValue });
-        }
-    }
-}
-InputComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-input',
-                template: "<input class=\"input--input\" [type]=\"type\" [readonly]=\"readonly\" [name]=\"name\" autocomplete=\"off\" [placeholder]=\"placeholder\" [value]=\"value\" (keyup)=\"onKeyUp($event)\">\n",
-                styles: [":host{display:block;position:relative}:host .input--input{display:inline-block;width:100%;padding:.65rem .75rem;line-height:1.25;color:#000;background-color:#fff;background-image:none;background-clip:padding-box;border:1px solid #000;border-radius:3px;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}:host.readonly{display:inline-block}:host.readonly .input--input{cursor:default;pointer-events:none;border:0;width:auto;outline:0}"]
-            }] }
-];
-/** @nocollapse */
-InputComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/form/field/textarea/textarea.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class TextareaComponent extends FieldBaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onKeyUp(e) {
-        // recommend strong typing, weak -> e.event.target
-        /** @type {?} */
-        const value = e.target.value;
-        if (value !== this.value) {
-            /** @type {?} */
-            const oldValue = this.value;
-            this.value = value;
-            this.valueChange.emit({
-                target: this,
-                event: e,
-                value: this.value,
-                oldValue
-            });
-        }
-    }
-}
-TextareaComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-textarea',
-                template: "<textarea class=\"textarea--input\" [readonly]=\"readonly\" [name]=\"name\" [rows]=\"rows\" autocomplete=\"off\" [placeholder]=\"placeholder\" [value]=\"value\" (keyup)=\"onKeyUp($event)\"></textarea>\n",
-                styles: [":host{display:block;position:relative}:host .textarea--input{resize:none;display:inline-block;width:100%}:host.readonly .textarea--input{border:0;outline:0}"]
-            }] }
-];
-/** @nocollapse */
-TextareaComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/form/field/field.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class FieldComponent extends FieldBaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-    }
-}
-FieldComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-field',
-                template: "<label *ngIf=\"label\" class=\"field--label\" [for]=\"name\">{{label}}</label>\n<div class=\"field--field\" [ngSwitch]=\"type\">\n  <mc-textarea *ngSwitchCase=\"'textarea'\" [readonly]=\"readonly\" [name]=\"name\" [value]=\"value\" [rows]=\"rows\"\n    [theme]=\"theme\" [placeholder]=\"placeholder\" (valueChange)=\"onValueChange($event)\" class=\"textarea__field\">\n  </mc-textarea>\n  <mc-input *ngSwitchDefault [readonly]=\"readonly\" [name]=\"name\" [value]=\"value\" [placeholder]=\"placeholder\"\n    (valueChange)=\"onValueChange($event)\" [theme]=\"theme\"></mc-input>\n</div>\n<div class=\"field--error\"></div>\n",
-                styles: [":host{display:block;position:relative}"]
-            }] }
-];
-/** @nocollapse */
-FieldComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-FieldComponent.propDecorators = {
-    fieldInputCmp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: [InputComponent, { static: false },] }],
-    fieldTextareaCmp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: [TextareaComponent, { static: false },] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/form/form.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class FormComponent extends BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this.inputCmps = [];
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set readonly(value) {
-        this._readonly = value;
-        this.applyReadonly();
-    }
-    /**
-     * @return {?}
-     */
-    get readonly() {
-        return this._readonly;
-    }
-    /**
-     * @return {?}
-     */
-    afterInitCmp() {
-        this.updateFieldsInfo();
-        this.contentInputCmps.changes.subscribe((/**
-         * @return {?}
-         */
-        () => {
-            setTimeout((/**
-             * @return {?}
-             */
-            () => this.updateFieldsInfo()));
-        }));
-    }
-    /**
-     * @return {?}
-     */
-    updateFieldsInfo() {
-        this.values = {};
-        this.inputCmps = [];
-        // gathering fields
-        if (this.contentInputCmps) {
-            this.contentInputCmps.forEach((/**
-             * @param {?} cmp
-             * @return {?}
-             */
-            cmp => this.inputCmps.push(cmp)));
-        }
-        this.applyReadonly();
-    }
-    /**
-     * @return {?}
-     */
-    applyReadonly() {
-        setTimeout((/**
-         * @return {?}
-         */
-        () => this.inputCmps.forEach((/**
-         * @param {?} cmp
-         * @return {?}
-         */
-        cmp => cmp.readonly = this._readonly))));
-    }
-    /**
-     * @return {?}
-     */
-    getValues() {
-        /** @type {?} */
-        const isEmpty = this.util.isEmpty;
-        this.values = this.inputCmps.reduce((/**
-         * @param {?} values
-         * @param {?} cmp
-         * @return {?}
-         */
-        (values, cmp) => {
-            values[cmp.name] = isEmpty(cmp.value) ? '' : cmp.value;
-            return values;
-        }), {});
-        return this.values;
-    }
-}
-FormComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-form',
-                template: "<form class=\"form--form\">\n  <ng-content></ng-content>\n</form>\n",
-                styles: [":host{display:block;position:relative}"]
-            }] }
-];
-/** @nocollapse */
-FormComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-FormComponent.propDecorators = {
-    readonly: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    contentInputCmps: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ContentChildren"], args: [FieldComponent,] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/scroll/scroll.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * @record
- */
-function State() { }
-if (false) {}
-class ScrollComponent extends BaseComponent {
-    /**
-     * @param {?} _el
-     * @param {?} _service
-     */
-    constructor(_el, _service) {
-        super(_el, _service);
-        this._el = _el;
-        this._service = _service;
-        this.scrollTop = 0;
-        this.oldScrollTop = -1;
-        this.page1Index = -2;
-        this.page2Index = -1;
-        this._rowCount = 0;
-        this.ticking = false;
-        this.page1Tpl = null;
-        this.page2Tpl = null;
-        this.rowHeight = 45;
-        this.isLoading = false;
-        this.updatePage = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set rowCount(value) {
-        if (!this.util.isEmpty(value)) {
-            this._rowCount = value;
-            // row count can be updated after rendering ui
-            if (this.rendered) {
-                this.updateState();
-            }
-        }
-    }
-    /**
-     * @return {?}
-     */
-    get rowCount() {
-        return this._rowCount;
-    }
-    /**
-     * @return {?}
-     */
-    afterRenderCmp() {
-        // update size
-        this.updateState();
-    }
-    /**
-     * @return {?}
-     */
-    initState() {
-        this.state = {
-            contentHeight: 0,
-            page1Top: 0,
-            page2Top: -1,
-            page1StartIndex: -1,
-            page1EndIndex: -1,
-            page2StartIndex: -1,
-            page2EndIndex: -1
-        };
-    }
-    /**
-     * @return {?}
-     */
-    updateState() {
-        /** @type {?} */
-        const scrollTop = this.scrollTop;
-        /** @type {?} */
-        const isDown = this.oldScrollTop < scrollTop;
-        /** @type {?} */
-        const rowHeight = this.rowHeight;
-        /** @type {?} */
-        const rowCount = this.rowCount;
-        /** @type {?} */
-        const containerHeight = this.el.clientHeight;
-        /** @type {?} */
-        let page1Index = this.page1Index;
-        /** @type {?} */
-        let page2Index = this.page2Index;
-        /** @type {?} */
-        const pageRowCount = Math.round((containerHeight / rowHeight) * 1.5);
-        /** @type {?} */
-        const pageHeight = pageRowCount * rowHeight;
-        /** @type {?} */
-        const contentHeight = rowCount === 0 ? rowHeight : rowHeight * rowCount;
-        /** @type {?} */
-        const pageLastIndex = Math.floor(contentHeight / pageHeight);
-        /** @type {?} */
-        const nextPageIndex = isDown ? Math.ceil(scrollTop / pageHeight) : Math.floor(scrollTop / pageHeight);
-        // console.log(nextPageIndex, pageLastIndex, page1Index, page2Index);
-        if (nextPageIndex <= pageLastIndex && page1Index !== nextPageIndex && page2Index !== nextPageIndex) {
-            // It may not have two pages at all. keep the full logic for readability.
-            if (page1Index === -2) {
-                // init
-                page1Index = 0;
-                page2Index = 1;
-            }
-            else if (page1Index < page2Index) {
-                // asc and down, move page1 to the bottom of page2 and load the next page
-                // asc and up, move page2 to the top of page1 and load the next page into page2
-                page1Index = isDown ? nextPageIndex : nextPageIndex + 1;
-                page2Index = page1Index - 1;
-            }
-            else {
-                // desc and down / up, reverse upper logic.
-                page1Index = isDown ? nextPageIndex - 1 : nextPageIndex;
-                page2Index = page1Index + 1;
-            }
-            /** @type {?} */
-            const page1StartIndex = page1Index * pageRowCount;
-            /** @type {?} */
-            const page2StartIndex = page2Index * pageRowCount;
-            /** @type {?} */
-            const page1EndIndex = page1StartIndex + pageRowCount - 1;
-            /** @type {?} */
-            const page2EndIndex = page2StartIndex + pageRowCount - 1;
-            /** @type {?} */
-            const page1Top = page1StartIndex * rowHeight;
-            /** @type {?} */
-            const page2Top = page2StartIndex * rowHeight;
-            this.page1Index = page1Index;
-            this.page2Index = page2Index;
-            // It may not have two pages.
-            /** @type {?} */
-            const state = {
-                contentHeight,
-                page1Top,
-                page2Top,
-                page1StartIndex,
-                page1EndIndex,
-                page2StartIndex,
-                page2EndIndex
-            };
-            this.state = state;
-            // console.log(state, page1Index, page2Index);
-            this.updatePage.emit({
-                target: this,
-                page1StartIndex,
-                page1EndIndex,
-                page2StartIndex,
-                page2EndIndex,
-                page1Index,
-                page2Index,
-                pageLastIndex,
-                page1IsFirst: page1Index === 0,
-                page2IsFirst: page2Index === 0,
-                page1IsLast: page1Index === pageLastIndex,
-                page2IsLast: page2Index === pageLastIndex
-            });
-        }
-        this.oldScrollTop = scrollTop;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onScroll(e) {
-        this.scrollTop = e.target.scrollTop;
-        if (!this.ticking) {
-            requestAnimationFrame((/**
-             * @return {?}
-             */
-            () => {
-                // for direction: up / down
-                this.updateState();
-                this.ticking = false;
-            }));
-            this.ticking = true;
-        }
-    }
-}
-ScrollComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-scroll',
-                template: "<div class=\"scroll\" (scroll)=\"onScroll($event)\">\n  <div class=\"scroll--content\" [style.height.px]=\"state.contentHeight\">\n    <div class=\"scroll--content--page1\" [style.top.px]=\"state.page1Top\">\n      <ng-container *ngTemplateOutlet=\"page1Tpl\"></ng-container>\n    </div>\n    <div class=\"scroll--content--page2\" [style.top.px]=\"state.page2Top\">\n      <ng-container *ngTemplateOutlet=\"page2Tpl\"></ng-container>\n    </div>\n  </div>\n</div>\n<mc-loader [style.display]=\"isLoading ? '' : 'none'\" [theme]=\"['ring', 'small']\"></mc-loader>\n",
-                styles: [":host{display:block;position:relative;height:100%}:host .scroll{overflow-y:auto;height:100%}:host .scroll--content--page1,:host .scroll--content--page2{position:absolute;width:100%;left:0}"]
-            }] }
-];
-/** @nocollapse */
-ScrollComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-ScrollComponent.propDecorators = {
-    page1Tpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    page2Tpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    rowHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    isLoading: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    rowCount: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    updatePage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/scroll/scroll-async.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class ScrollAsyncComponent extends BaseComponent {
-    /**
-     * @param {?} _el
-     * @param {?} _service
-     */
-    constructor(_el, _service) {
-        super(_el, _service);
-        this._el = _el;
-        this._service = _service;
-        this.neededDataIndex = -1;
-        this.neededPageIndex = 1;
-        this.page1Indexes = {
-            start: 0,
-            end: 0
-        };
-        this.page2Indexes = {
-            start: 0,
-            end: 0
-        };
-        this.isLoading = false;
-        this.page1IsFirst = false;
-        this.page2IsFirst = false;
-        this.page1IsLast = false;
-        this.page2IsLast = false;
-        this.idField = 'id';
-        this.rowHeight = 45;
-        // there is no data, then it triggers "needData" event.
-        this.needData = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set data(value) {
-        if (value) {
-            /** @type {?} */
-            let data;
-            if (Array.isArray(value)) {
-                data = {
-                    action: 'initialize',
-                    rows: value,
-                    start: 0,
-                    rowCount: value.length
-                };
-            }
-            else {
-                data = value;
-            }
-            if (!data.columns) {
-                data.columns = data.rows[0] ? Object.keys(data.rows[0]).map((/**
-                 * @param {?} key
-                 * @return {?}
-                 */
-                key => {
-                    return {
-                        field: key
-                    };
-                })) : null;
-            }
-            this._data = data;
-            this.rowCount = this._data.rowCount;
-        }
-    }
-    /**
-     * @return {?}
-     */
-    get data() {
-        return this._data;
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set additionalData(value) {
-        if (value) {
-            const { action, rows, start, rowCount } = value;
-            /** @type {?} */
-            const currRows = this.data.rows.concat();
-            if (action === 'append') {
-                rows.forEach((/**
-                 * @param {?} d
-                 * @param {?} i
-                 * @return {?}
-                 */
-                (d, i) => currRows[i + start] = d));
-                this.data.rows = rows;
-            }
-            else if (action === 'insert') {
-                currRows.splice(start, 0, ...rows);
-                this.data.rows = currRows;
-            }
-            this.rowCount = rowCount;
-            this.updateData(this.neededPageIndex === 1 ? this.page1Indexes : this.page2Indexes, this.neededPageIndex);
-            this.isLoading = false;
-        }
-    }
-    /**
-     * @param {?} indexes
-     * @param {?} pageIndex
-     * @return {?}
-     */
-    updateData(indexes, pageIndex) {
-        /** @type {?} */
-        const start = indexes.start;
-        /** @type {?} */
-        const end = indexes.end;
-        if (!this.data.rows[start]) {
-            this.neededPageIndex = pageIndex;
-            // skip the same request.
-            if (this.neededDataIndex !== start) {
-                this.isLoading = true;
-                this.neededDataIndex = start;
-                this.needData.emit({
-                    index: this.neededDataIndex,
-                    action: 'append'
-                }); // when tree, it needs to insert data
-            }
-        }
-        else {
-            /** @type {?} */
-            const data = this.data.rows.slice(start, end + 1);
-            if (pageIndex === 1) {
-                this.page1Data = data;
-            }
-            else {
-                this.page2Data = data;
-            }
-        }
-    }
-    /**
-     * @return {?}
-     */
-    getItems() {
-        return this.data.rows;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onUpdatePage(e) {
-        if (this.page1Indexes.start !== e.page1StartIndex || this.page1Indexes.end !== e.page1EndIndex) {
-            this.page1Indexes.start = e.page1StartIndex;
-            this.page1Indexes.end = e.page1EndIndex;
-            this.updateData(this.page1Indexes, 1);
-        }
-        if (this.page2Indexes.start !== e.page2StartIndex || this.page2Indexes.end !== e.page2EndIndex) {
-            this.page2Indexes.start = e.page2StartIndex;
-            this.page2Indexes.end = e.page2EndIndex;
-            this.updateData(this.page2Indexes, 2);
-        }
-        this.page1IsLast = e.page1IsLast;
-        this.page2IsLast = e.page2IsLast;
-        this.page1IsFirst = e.page1IsFirst;
-        this.page2IsFirst = e.page2IsFirst;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onAction(e) {
-        this.action.emit(e);
-    }
-}
-ScrollAsyncComponent.propDecorators = {
-    idField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    rowHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    additionalData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    needData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/list/list-basic.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class ListBasicComponent extends BaseComponent {
-    /**
-     * @param {?} _el
-     * @param {?} _service
-     */
-    constructor(_el, _service) {
-        super(_el, _service);
-        this._el = _el;
-        this._service = _service;
-        // checking the selected item ids
-        this.selectedItemsMap = new Map();
-        this.rowHeight = 45; // horizontal ? 100% : rowHeight;
-        // horizontal ? 100% : rowHeight;
-        this.multiSelect = false;
-        this.delete = false;
-        // for ListItem
-        this.itemTpl = null;
-        this.idField = 'id';
-        this.nameField = 'name';
-        this.isLastPage = false;
-        this.isFirstPage = false;
-        this.isScrollPage = false;
-        this.horizontal = false;
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set selectedItems(value) {
-        if (value) {
-            this.selectedItemsMap = new Map();
-            value.forEach((/**
-             * @param {?} d
-             * @return {?}
-             */
-            d => this.selectedItemsMap.set('' + d[this.idField], d)));
-        }
-    }
-    /**
-     * @return {?}
-     */
-    get selectedItems() {
-        return this.getSelectedItems();
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set data(value) {
-        // convert string array to list data format
-        if (value) {
-            if (!Array.isArray(value)) {
-                value = [value];
-            }
-            if (typeof value[0] === 'string') {
-                value = value.map((/**
-                 * @param {?} d
-                 * @param {?} idx
-                 * @return {?}
-                 */
-                (d, idx) => {
-                    return { id: idx, name: d };
-                }));
-            }
-        }
-        this._data = value;
-    }
-    /**
-     * @return {?}
-     */
-    get data() {
-        return this._data;
-    }
-    /**
-     * @return {?}
-     */
-    afterRenderCmp() {
-        // if it has the selected item.
-        /** @type {?} */
-        const selectedItems = this.getSelectedItems();
-        if (selectedItems.length) {
-            this.emitAction('select-item', selectedItems[0]);
-        }
-    }
-    /**
-     * @param {?} index
-     * @param {?} item
-     * @return {?}
-     */
-    key(index, item) {
-        return item[this.idField];
-    }
-    /**
-     * @return {?}
-     */
-    getSelectedItems() {
-        /** @type {?} */
-        const items = [];
-        this.selectedItemsMap.forEach((/**
-         * @param {?} value
-         * @return {?}
-         */
-        value => items.push(value)));
-        return items;
-    }
-    /**
-     * @param {?} item
-     * @return {?}
-     */
-    selectItem(item) {
-        // TODO: check the list is rerendered.
-        this.selectedItemsMap.set(item[this.idField] + '', item);
-    }
-    /**
-     * @param {?} item
-     * @return {?}
-     */
-    unselectItem(item) {
-        // TODO: check the list is rerendered.
-        this.selectedItemsMap.delete(item[this.idField] + '');
-    }
-    /**
-     * @param {?} actionType
-     * @param {?} selectedItem
-     * @param {?=} event
-     * @return {?}
-     */
-    emitAction(actionType, selectedItem, event = null) {
-        this.action.emit({ target: this, action: actionType, event: event, selectedItem: selectedItem, selectedItems: this.getSelectedItems() });
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onListItemAction(e) {
-        switch (e.action) {
-            case 'unselect-item':
-            case 'select-item':
-                if (e.action === 'select-item') {
-                    this.selectItem(e.data);
-                }
-                else {
-                    this.unselectItem(e.data);
-                }
-                this.emitAction(e.action, e.data, e.event);
-                break;
-        }
-    }
-}
-ListBasicComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-list-basic',
-                template: "<mc-list-item *ngFor=\"let item of data; trackBy: key\" [style.height]=\"horizontal ? '100%' : rowHeight + 'px'\" [style.lineHeight]=\"horizontal ? '' : (rowHeight - 2) + 'px'\"\n  [tpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\" [data]=\"item\" [hasCheckBox]=\"multiSelect\"\n  [hasDeleteButton]=\"delete\" [selected]=\"selectedItemsMap.has('' + item[idField])\" [class.horizontal]=\"horizontal\" [class.is-scroll-page-item]=\"isScrollPage\"\n  [class.is-first-page-item]=\"isFirstPage\" [class.is-last-page-item]=\"isLastPage\" (action)=\"onListItemAction($event)\">\n  </mc-list-item>",
-                styles: [":host{display:block;position:relative;height:100%;width:100%;overflow:auto;border:1px solid #ebe8e3;border-radius:3px}:host.horizontal{border:0;border-radius:0;display:inline-block;width:auto}:host.is-scroll-page{border:0}"]
-            }] }
-];
-/** @nocollapse */
-ListBasicComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-ListBasicComponent.propDecorators = {
-    rowHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    multiSelect: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    selectedItems: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    delete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    itemTpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    idField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    nameField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    isLastPage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    isFirstPage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    isScrollPage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.is-scroll-page',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    horizontal: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.horizontal',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/list/list.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class ListComponent extends ScrollAsyncComponent {
-    /**
-     * @param {?} _el
-     * @param {?} _service
-     */
-    constructor(_el, _service) {
-        super(_el, _service);
-        this._el = _el;
-        this._service = _service;
-        this.multiSelect = false;
-        this.delete = false;
-    }
-    /**
-     * @param {?} item
-     * @return {?}
-     */
-    unselectItem(item) {
-        this.listBasic1Cmp.unselectItem(item);
-        this.listBasic2Cmp.unselectItem(item);
-    }
-}
-ListComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-list',
-                template: "<mc-scroll [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" (updatePage)=\"onUpdatePage($event)\">\n  <ng-template #page1Tpl>\n    <mc-list-basic #listBasic1Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page1IsFirst\"\n      [isLastPage]=\"page1IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-list-basic #listBasic2Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page2IsFirst\" [isLastPage]=\"page2IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n</mc-scroll>\n",
-                styles: [":host{display:block;position:relative;height:100%;border:1px solid #ebe8e3;border-radius:3px}"]
-            }] }
-];
-/** @nocollapse */
-ListComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-ListComponent.propDecorators = {
-    listBasic1Cmp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['listBasic1Cmp', { static: false },] }],
-    listBasic2Cmp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['listBasic2Cmp', { static: false },] }],
-    itemTpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    nameField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    multiSelect: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    delete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    selectedItems: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/button/button.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class ButtonComponent extends BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this.type = 'button';
-        this.press = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onClick(e) {
-        this.press.emit({
-            target: this,
-            event: e,
-            el: e.target,
-            type: this.type
-        });
-    }
-}
-ButtonComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-button',
-                template: "<button class=\"button--button\" [type]=\"type\" (click)=\"onClick($event)\">\n  <ng-content></ng-content>\n</button>\n",
-                styles: [":host{display:inline-block;position:relative}:host .button--button{display:inline-block;padding:0;line-height:34px;background:#fff;-webkit-appearance:none;border-radius:3px;outline:0;cursor:pointer;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid transparent;font-size:.875rem}"]
-            }] }
-];
-/** @nocollapse */
-ButtonComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-ButtonComponent.propDecorators = {
-    type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    press: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/icon/icon.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class IconComponent extends BaseComponent {
-    /**
-     * @param {?} _el
-     * @param {?} _service
-     */
-    constructor(_el, _service) {
-        super(_el, _service);
-        this._el = _el;
-        this._service = _service;
-    }
-}
-IconComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-icon',
-                template: '',
-                styles: ["@font-face{font-family:icons;src:url(../../assets/fonts/icon.eot);src:url(../../assets/fonts/icon.eot?#iefix) format(\"embedded-opentype\"),url(../../assets/fonts/icon.woff) format(\"woff\"),url(../../assets/fonts/icon.ttf) format(\"truetype\"),url(../../assets/fonts/icon.svg#icons) format(\"svg\");font-weight:400;font-style:normal}:host{display:inline-block;font-size:20px;color:silver;position:relative;cursor:pointer}:host:before{font-family:icons!important;font-style:normal!important;font-weight:400!important;font-variant:normal!important;text-transform:none!important;speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;position:relative}:host.icon-close:before{content:\"!\"}:host.icon-menu:before{content:'\"'}:host.icon-school:before{content:\"#\"}:host.icon-star-outline:before{content:\"$\"}:host.icon-label-outline:before{content:\"%\"}:host.icon-search:before{content:\"&\"}:host.icon-help-outline:before{content:\"'\"}"]
-            }] }
-];
-/** @nocollapse */
-IconComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/list/list-item.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class ListItemComponent extends BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this.data = {};
-        this.idField = 'id';
-        this.nameField = 'name';
-        this.hasCheckBox = false;
-        this.hasDeleteButton = false;
-        this.selected = false;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onPress(e) {
-        if (!this.hasCheckBox) {
-            this.selected = true;
-            this.emitSelectAction(e);
-        }
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    emitSelectAction(e) {
-        this.action.emit({ target: this, action: this.selected ? 'select-item' : 'unselect-item', event: e, selected: this.selected, data: this.data });
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onChangeCheckbox(e) {
-        this.selected = e.target.checked;
-        this.emitSelectAction(e);
-    }
-}
-ListItemComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-list-item',
-                template: "<div *ngIf=\"hasCheckBox\" class=\"list-item--header\"><input type=\"checkbox\" [attr.data-id]=\"data[idField]\" data-action=\"check-checkbox\" checked=\"selected\" (change)=\"onChangeCheckbox($event)\"></div>\n<div class=\"list-item--body\">\n  <ng-container *ngTemplateOutlet=\"tpl; context: {$implicit: data}\"></ng-container>{{tpl ? '' : data[nameField]}}\n</div>\n<div *ngIf=\"hasDeleteButton\" class=\"list-item--footer\">\n  <mc-icon theme=\"trash\"></mc-icon>\n  <div class=\"list-item--yes-no\">\n    <div class=\"list-item--yes-no--yes\" data-action=\"do-delete\"><span class=\"list-item--yes-no--yes--text\">Delete</span>\n    </div>\n    <div class=\"list-item--yes-no--no\" data-action=\"cancel-delete\"><span\n        class=\"list-item--yes-no--no--text\">Cancel</span></div>\n  </div>\n</div>\n",
-                styles: [":host{display:inline-block;position:relative;cursor:pointer;padding:0 20px;width:100%;border-top:1px solid transparent;border-bottom:1px solid #ebe8e3}:host:last-child{border-bottom-color:transparent}:host.horizontal{float:left;width:auto;border-color:transparent}:host.horizontal.selected{border-bottom:2px solid #333}:host.is-scroll-page-item:last-child{border-bottom-color:#ebe8e3}:host.is-scroll-page-item.is-last-page-item:last-child{border-bottom-color:transparent}"]
-            }] }
-];
-/** @nocollapse */
-ListItemComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-ListItemComponent.propDecorators = {
-    tpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    idField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    nameField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    hasCheckBox: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    hasDeleteButton: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    selected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.selected',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    onPress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"], args: ['click', ['$event'],] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/loader/loader.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class LoaderComponent extends BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this.theme = 'ring';
-        this.loader = 'ring';
-    }
-    /**
-     * @return {?}
-     */
-    initCmp() {
-        this.loader = Array.isArray(this.theme) ? this.theme[0] : this.theme;
-    }
-}
-LoaderComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-loader',
-                template: "<ng-container [ngSwitch]=\"loader\">\n  <div *ngSwitchCase=\"'ring'\" class=\"loader\">\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n  </div>\n  <div *ngSwitchCase=\"'spin'\" class=\"loader\">\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n  </div>\n</ng-container>\n",
-                styles: [":host{position:absolute;left:0;top:0;display:-ms-grid;display:grid;place-items:center center;height:100%;width:100%;z-index:9}:host.loader-ring .loader{display:inline-block;position:relative;width:64px;height:64px}:host.loader-ring .loader div{box-sizing:border-box;display:block;position:absolute;width:51px;height:51px;margin:6px;border:6px solid #dfc;border-radius:50%;-webkit-animation:1.2s cubic-bezier(.5,0,.5,1) infinite loader-ring;animation:1.2s cubic-bezier(.5,0,.5,1) infinite loader-ring;border-color:#dfc transparent transparent}:host.loader-ring .loader div:nth-child(1){-webkit-animation-delay:-.45s;animation-delay:-.45s}:host.loader-ring .loader div:nth-child(2){-webkit-animation-delay:-.3s;animation-delay:-.3s}:host.loader-ring .loader div:nth-child(3){-webkit-animation-delay:-.15s;animation-delay:-.15s}:host.loader-spin .loader{color:#dfc;display:inline-block;position:relative;width:64px;height:64px}:host.loader-spin .loader div{transform-origin:32px 32px;-webkit-animation:1.2s linear infinite loader-spin;animation:1.2s linear infinite loader-spin}:host.loader-spin .loader div:after{content:\" \";display:block;position:absolute;top:3px;left:29px;width:5px;height:14px;border-radius:20%;background:#fff}:host.loader-spin .loader div:nth-child(1){transform:rotate(0);-webkit-animation-delay:-1.1s;animation-delay:-1.1s}:host.loader-spin .loader div:nth-child(2){transform:rotate(30deg);-webkit-animation-delay:-1s;animation-delay:-1s}:host.loader-spin .loader div:nth-child(3){transform:rotate(60deg);-webkit-animation-delay:-.9s;animation-delay:-.9s}:host.loader-spin .loader div:nth-child(4){transform:rotate(90deg);-webkit-animation-delay:-.8s;animation-delay:-.8s}:host.loader-spin .loader div:nth-child(5){transform:rotate(120deg);-webkit-animation-delay:-.7s;animation-delay:-.7s}:host.loader-spin .loader div:nth-child(6){transform:rotate(150deg);-webkit-animation-delay:-.6s;animation-delay:-.6s}:host.loader-spin .loader div:nth-child(7){transform:rotate(180deg);-webkit-animation-delay:-.5s;animation-delay:-.5s}:host.loader-spin .loader div:nth-child(8){transform:rotate(210deg);-webkit-animation-delay:-.4s;animation-delay:-.4s}:host.loader-spin .loader div:nth-child(9){transform:rotate(240deg);-webkit-animation-delay:-.3s;animation-delay:-.3s}:host.loader-spin .loader div:nth-child(10){transform:rotate(270deg);-webkit-animation-delay:-.2s;animation-delay:-.2s}:host.loader-spin .loader div:nth-child(11){transform:rotate(300deg);-webkit-animation-delay:-.1s;animation-delay:-.1s}:host.loader-spin .loader div:nth-child(12){transform:rotate(330deg);-webkit-animation-delay:0s;animation-delay:0s}:host.loader-small{height:64px;top:auto;bottom:0}@-webkit-keyframes loader-ring{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes loader-ring{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@-webkit-keyframes loader-spin{0%{opacity:1}100%{opacity:0}}@keyframes loader-spin{0%{opacity:1}100%{opacity:0}}"]
-            }] }
-];
-/** @nocollapse */
-LoaderComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/drawer/drawer.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class DrawerComponent extends BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this._visible = false;
-        this.from = 'top';
-        this.tpl = null;
-        this.mask = true;
-        this.hided = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set visible(value) {
-        this._visible = value;
-        if (value) {
-            this.show();
-        }
-        else {
-            this.hide();
-        }
-    }
-    /**
-     * @return {?}
-     */
-    get visible() {
-        return this._visible;
-    }
-    // after rendering, measure the size and hide and show.
-    /**
-     * @return {?}
-     */
-    show() {
-        this.el.style.visibility = 'hidden';
-        this.el.style.display = '';
-        // after the targetEl is changed.
-        setTimeout((/**
-         * @return {?}
-         */
-        () => {
-            /** @type {?} */
-            const drawerEl = this.drawerEr.nativeElement;
-            /** @type {?} */
-            const width = drawerEl.clientWidth;
-            /** @type {?} */
-            const height = drawerEl.clientHeight;
-            /** @type {?} */
-            let translateY = null;
-            /** @type {?} */
-            let translateX = null;
-            /** @type {?} */
-            let top = 'unset';
-            /** @type {?} */
-            let right = 'unset';
-            /** @type {?} */
-            let bottom = 'unset';
-            /** @type {?} */
-            let left = 'unset';
-            switch (this.from) {
-                case 'top':
-                    translateY = `-${height}px`;
-                    top = '0';
-                    break;
-                case 'bottom':
-                    translateY = `${height}px`;
-                    bottom = '0';
-                    break;
-                case 'left':
-                    translateX = `-${width}px`;
-                    left = '0';
-                    break;
-                case 'right':
-                    translateX = `${width}px`;
-                    right = '0';
-                    break;
-            }
-            /** @type {?} */
-            const style = drawerEl.style;
-            style.transform = translateY === null ? `translateX(${translateX})` : `translateY(${translateY})`;
-            style.opacity = '0';
-            style.left = left;
-            style.right = right;
-            style.bottom = bottom;
-            style.top = top;
-            if (translateY) {
-                style.width = '100%';
-            }
-            else {
-                style.height = '100%';
-            }
-            this.el.style.visibility = '';
-            // animation
-            setTimeout((/**
-             * @return {?}
-             */
-            () => {
-                drawerEl.classList.add('drawer-anim');
-                style.transform = translateY === null ? `translateX(0)` : `translateY(0)`;
-                style.opacity = '1';
-                setTimeout((/**
-                 * @return {?}
-                 */
-                () => drawerEl.classList.remove('drawer-anim')), 300);
-            }), 100);
-        }));
-    }
-    /**
-     * @return {?}
-     */
-    hide() {
-        this.el.style.display = 'none';
-        this.hided.emit({ target: this });
-    }
-    /**
-     * @return {?}
-     */
-    onClickMask() {
-        this.visible = false;
-    }
-}
-DrawerComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-drawer',
-                template: "<mc-mask [visible]=\"true\" [transparent]=\"!mask\" (click)=\"onClickMask()\"></mc-mask>\n<div #drawerEr class=\"drawer\"><ng-container *ngTemplateOutlet=\"tpl\"></ng-container></div>",
-                styles: [":host{display:block;position:absolute;top:0;left:0;height:100%;width:100%;overflow:hidden}:host .drawer{display:inline-block;position:absolute;opacity:0;background-color:#fff;box-shadow:0 2px 5px 0 rgba(0,0,0,.26)}:host .drawer-anim{transition:transform .3s,opacity .3s ease-in-out}"]
-            }] }
-];
-/** @nocollapse */
-DrawerComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-DrawerComponent.propDecorators = {
-    from: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    tpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    mask: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    visible: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    hided: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    drawerEr: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['drawerEr', { static: false },] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/message-bar/message-bar.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class MessageBarComponent extends BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this.message = '';
-        this.hide = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onPressCloseButton(e) {
-        this.hide.emit(e);
-    }
-}
-MessageBarComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-message-bar',
-                template: "<div class=\"message-bar--close\">\n  <mc-button theme=\"icon\" (press)=\"onPressCloseButton($event)\">\n    <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n  </mc-button>\n</div>\n<div class=\"message-bar--message\">\n  {{message}}\n</div>\n",
-                styles: [":host{display:block;position:relative;height:100%}:host .message-bar--close{position:absolute;right:0;top:0;padding:15px 20px}:host .message-bar--message{padding:15px 20px}:host .message-bar-error{color:red;background-color:#fff}"]
-            }] }
-];
-/** @nocollapse */
-MessageBarComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-MessageBarComponent.propDecorators = {
-    message: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    hide: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/grid/grid-header.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class GridHeaderComponent extends BaseComponent {
-    /**
-     * @param {?} _el
-     * @param {?} _service
-     */
-    constructor(_el, _service) {
-        super(_el, _service);
-        this._el = _el;
-        this._service = _service;
-        this.rowHeight = 30;
-    }
-    /**
-     * @return {?}
-     */
-    initCmp() {
-        if (!this.data) {
-            // generate header data
-            // TODO: update column width for colspan
-            this.data = [this.columns.map((/**
-                 * @param {?} column
-                 * @return {?}
-                 */
-                column => { return { id: column.field, name: column.name || column.field, tpl: column.headerTpl, width: column.width }; }))];
-        }
-    }
-}
-GridHeaderComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-grid-header',
-                template: "<table class=\"grid-header\">\n    <tr class=\"grid-header--row\" *ngFor=\"let cells of data;\" [style.height.px]=\"rowHeight\" >\n        <th class=\"grid-header--row--cell\" *ngFor=\"let cell of cells;\" [attr.data-id]=\"cell.id\" data-action=\"select-cell\" [colSpan]=\"cell.colspan || 1\" [rowSpan]=\"cell.rowspan || 1\">\n            <div class=\"grid-header--row--cell--content\" [style.lineHeight.px]=\"rowHeight - 2\" [style.height.px]=\"rowHeight - 2\" [style.width.px]=\"cell.width\" [title]=\"cell.name\"><ng-container *ngTemplateOutlet=\"cell.tpl; context: {$implicit: cell}\"></ng-container>{{cell.tpl ? '' : cell.name}}</div>\n        </th>\n    </tr>\n</table>\n",
-                styles: [":host{display:block;position:relative;height:auto;overflow-x:visible;border-top:1px solid transparent;border-bottom:1px solid #ebe8e3}:host .grid-header{border-collapse:collapse;border-spacing:0}:host .grid-header--row--cell{padding:0;cursor:pointer}:host .grid-header--row--cell--content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;padding:0 10px}"]
-            }] }
-];
-/** @nocollapse */
-GridHeaderComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-GridHeaderComponent.propDecorators = {
-    columns: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    rowHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/grid/grid-body.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class GridBodyComponent extends BaseComponent {
-    /**
-     * @param {?} _el
-     * @param {?} _service
-     */
-    constructor(_el, _service) {
-        super(_el, _service);
-        this._el = _el;
-        this._service = _service;
-        this.columnsChangeApplied = false;
-        this.lastWidth = 0;
-        this.rowHeight = 45;
-        this.idField = 'id';
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set columns(value) {
-        this._columns = value;
-        if (value) {
-            this.columnsChangeApplied = false;
-        }
-    }
-    /**
-     * @return {?}
-     */
-    get columns() {
-        return this._columns;
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set data(value) {
-        this._data = value;
-        if (value && !this.columnsChangeApplied) {
-            this.columnsChangeApplied = true;
-            // check size after body rendered
-            setTimeout((/**
-             * @return {?}
-             */
-            () => this.checkSize()));
-        }
-    }
-    /**
-     * @return {?}
-     */
-    get data() {
-        return this._data;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onPress(e) {
-        /** @type {?} */
-        const el = this.util.dom.findParent(e.target, '.grid-body--row--cell');
-        if (el) {
-            /** @type {?} */
-            const dataset = el.dataset;
-            switch (dataset.action) {
-                case 'select-cell':
-                    this.action.emit({ event: e, el, action: dataset.action, target: this, id: dataset.id, rowIndex: +dataset.rowindex, cellIndex: +dataset.cellindex, field: dataset.field });
-                    break;
-            }
-        }
-    }
-    /**
-     * @return {?}
-     */
-    afterRenderCmp() {
-        this.checkSize();
-    }
-    /**
-     * @return {?}
-     */
-    checkSize() {
-        // emit width for prevent x scroll
-        /** @type {?} */
-        const width = this.el.querySelector('.grid-body').clientWidth;
-        if (width && this.lastWidth !== width) {
-            this.lastWidth = width;
-            this.action.emit({ action: 'update-width', target: this, width });
-        }
-    }
-}
-GridBodyComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-grid-body',
-                template: "<table class=\"grid-body\">\n    <tr *ngFor=\"let row of data; index as r\" class=\"grid-body--row\" [style.height.px]=\"rowHeight\" >\n        <td *ngFor=\"let column of columns; index as c;\" class=\"grid-body--row--cell\" [attr.data-field]=\"column.field\" [attr.data-id]=\"row[idField]\" [attr.data-rowIndex]=\"r\" [attr.data-cellIndex]=\"c\" data-action=\"select-cell\">\n            <div class=\"grid-body--row--cell--content\" [style.lineHeight.px]=\"rowHeight - 2\" [style.height.px]=\"rowHeight - 2\" [style.width.px]=\"column.width\" [title]=\"row[column.field]\"><ng-container *ngTemplateOutlet=\"column.tpl; context: {$implicit: row}\"></ng-container>{{column.tpl ? '' : row[column.field]}}</div>\n        </td>\n    </tr>\n</table>\n",
-                styles: [":host{display:block;position:relative;height:100%;border:1px solid #ebe8e3;border-radius:3px}:host .grid-body{border-collapse:collapse;border-spacing:0}:host .grid-body--row{border-top:1px solid transparent;border-bottom:1px solid #ebe8e3}:host .grid-body--row--cell{padding:0;cursor:pointer}:host .grid-body--row--cell--content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;padding:0 10px}:host.is-scroll-page{border:0}:host.is-scroll-page.is-last-page .grid-body--row:last-child{border-bottom-color:transparent}"]
-            }] }
-];
-/** @nocollapse */
-GridBodyComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-GridBodyComponent.propDecorators = {
-    rowHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    columns: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    idField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    onPress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"], args: ['click', ['$event'],] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/mask/mask.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class MaskComponent extends BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this.visible = false;
-        this.transparent = false;
-    }
-}
-MaskComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-mask',
-                template: "",
-                styles: [":host{position:absolute;width:100%;height:100%;background-color:rgba(0,0,0,.8);display:none}:host.visible{display:block}:host.transparent{background-color:transparent}"]
-            }] }
-];
-/** @nocollapse */
-MaskComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-MaskComponent.propDecorators = {
-    visible: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.visible',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    transparent: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.transparent',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/grid/grid.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class GridComponent extends ScrollAsyncComponent {
-    /**
-     * @param {?} _el
-     * @param {?} _service
-     */
-    constructor(_el, _service) {
-        super(_el, _service);
-        this._el = _el;
-        this._service = _service;
-        this.bodyWidth = '100%';
-    }
-    /**
-     * @return {?}
-     */
-    initCmp() {
-        // update column width
-        if (this.data.columns && !this.data.columns[0].width) {
-            /** @type {?} */
-            const containerWidth = this.el.clientWidth;
-            /** @type {?} */
-            let colWidth = containerWidth / this.data.columns.length;
-            colWidth = colWidth < 100 ? 100 : colWidth;
-            this.data.columns.forEach((/**
-             * @param {?} column
-             * @return {?}
-             */
-            column => column.width = colWidth));
-        }
-    }
-    /**
-     * @return {?}
-     */
-    afterRenderCmp() {
-        /** @type {?} */
-        const headerEl = this.el.querySelector('mc-grid-header');
-        this.bodyHeight = this.el.clientHeight - headerEl.clientHeight;
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onAction(e) {
-        switch (e.action) {
-            case 'update-width':
-                this.bodyWidth = e.width + 'px';
-                break;
-        }
-        this.action.emit(e);
-    }
-}
-GridComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-grid',
-                template: "<mc-grid-header [columns]=\"data.columns\" [data]=\"headerData\" [rowHeight]=\"rowHeight\" [style.width]=\"bodyWidth\">\n</mc-grid-header>\n<mc-scroll [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" (updatePage)=\"onUpdatePage($event)\" [style.height.px]=\"bodyHeight\" [style.width]=\"bodyWidth\">\n  <ng-template #page1Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page1IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page2IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\"\n      [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n</mc-scroll>\n",
-                styles: [":host{display:block;position:relative;height:100%;overflow-x:auto;border:1px solid #ebe8e3;border-radius:3px}"]
-            }] }
-];
-/** @nocollapse */
-GridComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-GridComponent.propDecorators = {
-    headerData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/popup/popup.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class PopupComponent extends BaseComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this._visible = false;
-        this._hasIndicator = false;
-        // for body press event, it is triggered after clicking the target. We need to ignore the body event when visible = true;
-        this.bodyEventLock = false;
-        this.indicatorHeight = 10;
-        this.checkTargetLocation = false;
-        // top left is the base state.
-        this.startFrom = 'center';
-        this.offsetX = 0;
-        this.offsetY = 0;
-        this.tpl = null;
-        this.hided = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.center = false;
-        this.subscriptions = service.bodyPress.subscribe(this.onPressBody.bind(this));
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set targetEl(value) {
-        this._targetEl = value;
-        if (value) {
-            this.lastTargetElCoord = value.getBoundingClientRect();
-        }
-        this.show();
-    }
-    /**
-     * @return {?}
-     */
-    get targetEl() {
-        return this._targetEl;
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set visible(value) {
-        this._visible = value;
-        if (value && this.targetEl) {
-            this.show();
-        }
-        else {
-            this.hide();
-        }
-    }
-    /**
-     * @return {?}
-     */
-    get visible() {
-        return this._visible;
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set hasIndicator(value) {
-        if (value) {
-            this.el.classList.add('popup-indicator');
-        }
-        else {
-            this.el.classList.remove('popup-indicator');
-        }
-        this._hasIndicator = value;
-    }
-    /**
-     * @return {?}
-     */
-    get hasIndicator() {
-        return this._hasIndicator;
-    }
-    /**
-     * @return {?}
-     */
-    show() {
-        if (!this.visible) {
-            return;
-        }
-        this.holdBodyEvent();
-        if (this.center) {
-            this.el.style.display = '';
-            return;
-        }
-        // renew check.
-        this.uncheckTargetLocation();
-        this.checkTargetElLocation();
-        this.el.style.visibility = 'hidden';
-        this.el.style.display = '';
-        // after the targetEl is changed.
-        setTimeout((/**
-         * @return {?}
-         */
-        () => {
-            /** @type {?} */
-            const targetSize = this.lastTargetElCoord;
-            // when the popup overflow the window size, we need to move into the window.
-            /** @type {?} */
-            const indicatorHeight = this.hasIndicator ? this.indicatorHeight : 0;
-            /** @type {?} */
-            const popupSize = this.el.getBoundingClientRect();
-            /** @type {?} */
-            const windowSize = this.util.dom.getWindowSize();
-            // indicator location
-            /** @type {?} */
-            const isLeft = targetSize.left + (this.startFrom === 'center' ? targetSize.width / 2 : 0) + popupSize.width + this.offsetX <= windowSize.width;
-            /** @type {?} */
-            const isTop = targetSize.top + targetSize.height + popupSize.height + this.offsetY + indicatorHeight <= windowSize.height;
-            /** @type {?} */
-            const left = isLeft ? targetSize.left + (this.startFrom === 'center' ? targetSize.width / 2 : 0) + this.offsetX : targetSize.left - popupSize.width + (this.startFrom === 'center' ? targetSize.width / 2 : targetSize.width) - this.offsetX;
-            /** @type {?} */
-            const top = isTop ? targetSize.top + targetSize.height + this.offsetY + indicatorHeight : targetSize.top - popupSize.height - this.offsetY - indicatorHeight;
-            this.el.style.left = left + 'px';
-            this.el.style.top = top + 'px';
-            // remove the prev indicator and add the new indicator
-            /** @type {?} */
-            let classNames = this.el.className.split(' ');
-            classNames = classNames.filter((/**
-             * @param {?} d
-             * @return {?}
-             */
-            d => d.indexOf('popup-indicator-') === -1));
-            classNames.push('popup-indicator-' + (isTop ? 'top' : 'bottom') + '-' + (isLeft ? 'left' : 'right'));
-            this.el.className = classNames.join(' ');
-            this.el.style.visibility = '';
-        }));
-    }
-    /**
-     * @return {?}
-     */
-    hide() {
-        this.uncheckTargetLocation();
-        this.el.style.display = 'none';
-        this.hided.emit({ target: this });
-    }
-    // the body click event is triggered after clicking the target and it closes the popup, so need to prevent it.
-    /**
-     * @return {?}
-     */
-    holdBodyEvent() {
-        this.bodyEventLock = true;
-        setTimeout((/**
-         * @return {?}
-         */
-        () => this.bodyEventLock = false));
-    }
-    /**
-     * @return {?}
-     */
-    checkTargetElLocation() {
-        if (this.targetEl && this.checkTargetLocation) {
-            this.checkTargetElLocationIntervalId = setInterval((/**
-             * @return {?}
-             */
-            () => {
-                /** @type {?} */
-                const info = this.targetEl.getBoundingClientRect();
-                /** @type {?} */
-                const lastInfo = this.lastTargetElCoord;
-                if (lastInfo) {
-                    if (info.top !== lastInfo.top || info.left !== lastInfo.left) {
-                        this.visible = false;
-                    }
-                }
-                else {
-                    this.lastTargetElCoord = info;
-                }
-            }), 500);
-        }
-    }
-    /**
-     * @return {?}
-     */
-    uncheckTargetLocation() {
-        if (this.checkTargetElLocationIntervalId) {
-            clearInterval(this.checkTargetElLocationIntervalId);
-            delete this.checkTargetElLocationIntervalId;
-        }
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onPressBody(e) {
-        if (!this.bodyEventLock && !this.el.contains(e.target)) {
-            this.visible = false;
-        }
-    }
-    /**
-     * @return {?}
-     */
-    destroyCmp() {
-        this.uncheckTargetLocation();
-    }
-}
-PopupComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-popup',
-                template: "<ng-container *ngTemplateOutlet=\"tpl\"></ng-container>\n",
-                styles: [":host{position:absolute;display:inline-block;background-color:#fff}:host.center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}:host.popup-basic{border:1px solid silver;padding:20px}:host.popup-indicator:before{content:\"\";width:17px;height:4px;position:absolute;background:#fff;z-index:2}:host.popup-indicator:after{content:\"\";width:16px;height:12px;position:absolute;z-index:1;background-color:#fff}:host.popup-indicator-top-right:before{transform:rotate(-35deg);top:-6px;right:-1px;border-radius:0 4px 0 0;border-top:1px solid #12102e;border-right:1px solid #12102e}:host.popup-indicator-top-right:after{top:-9px;right:-1px;border-radius:0 4px 0 0;border-right:1px solid #12102e}:host.popup-indicator-top-left:before{transform:scale(-1,1) rotate(-35deg);left:-1px;top:-6px;border-radius:0 4px 0 0;border-top:1px solid #12102e;border-right:1px solid #12102e}:host.popup-indicator-top-left:after{transform:scale(-1,1);top:-9px;left:-1px;border-radius:0 4px 0 0;border-right:1px solid #12102e}:host.popup-indicator-bottom-right:before{transform:scale(-1,1) rotate(-35deg);right:-1px;bottom:-6px;border-radius:0 0 0 4px;border-bottom:1px solid #12102e;border-left:1px solid #12102e}:host.popup-indicator-bottom-right:after{transform:scale(-1,1);right:-1px;bottom:-9px;border-radius:0 0 0 4px;border-left:1px solid #12102e}:host.popup-indicator-bottom-left:before{transform:rotate(-35deg);bottom:-6px;left:-1px;border-radius:0 0 0 4px;border-bottom:1px solid #12102e;border-left:1px solid #12102e}:host.popup-indicator-bottom-left:after{bottom:-9px;left:-1px;border-radius:0 0 0 4px;border-left:1px solid #12102e}:host.popup-audit{width:250px;padding:15px;border:1px solid #12102e}"]
-            }] }
-];
-/** @nocollapse */
-PopupComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-PopupComponent.propDecorators = {
-    checkTargetLocation: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    startFrom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    offsetX: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    offsetY: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    tpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    targetEl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    visible: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    hasIndicator: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    hided: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    center: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.center',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/component/popup/popup-list.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class PopupListComponent extends PopupComponent {
-    /**
-     * @param {?} er
-     * @param {?} service
-     */
-    constructor(er, service) {
-        super(er, service);
-        this.er = er;
-        this.service = service;
-        this.listHeight = 300;
-        this.popupSelectedItems = [];
-        this.multiSelect = false;
-        // popup
-        this.height = 350;
-        this.startFrom = 'start';
-        this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.needData = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.filterDebounce = this.util.debounce(this.filter, 300, this);
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set selectedItems(value) {
-        if (value) {
-            // input only
-            this.popupSelectedItems = value.concat();
-        }
-    }
-    /**
-     * @return {?}
-     */
-    get selectedItems() {
-        return this._selectedItems;
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set data(value) {
-        // input only
-        this._data = value;
-        // update list for calculating scroll height after updating header height.
-        setTimeout((/**
-         * @return {?}
-         */
-        () => this.listData = value));
-    }
-    /**
-     * @return {?}
-     */
-    get data() {
-        return this._data;
-    }
-    /**
-     * @return {?}
-     */
-    show() {
-        super.show();
-    }
-    /**
-     * @param {?} keyword
-     * @return {?}
-     */
-    filter(keyword) {
-        if (keyword !== this.keyword) {
-            this.needData.emit({
-                target: this,
-                keyword
-            });
-        }
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onValueChange(e) {
-        this.filterDebounce(e.value);
-    }
-    /**
-     * @param {?} item
-     * @return {?}
-     */
-    onClicUnselectButton(item) {
-        this.listCmp.unselectItem(item);
-    }
-    /**
-     * @param {?} e
-     * @return {?}
-     */
-    onListAction(e) {
-        switch (e.action) {
-            case 'unselect-item':
-            case 'select-item':
-                // update popup selected item
-                if (e.action === 'select-item') {
-                    this.popupSelectedItems.push(e.item);
-                }
-                else {
-                    this.popupSelectedItems = this.popupSelectedItems.filter((/**
-                     * @param {?} d
-                     * @return {?}
-                     */
-                    d => d[this.idField] + '' !== e.item[this.idField] + ''));
-                }
-                e.target = this;
-                this.action.emit(e);
-                break;
-        }
-    }
-}
-PopupListComponent.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'mc-popup-list',
-                template: "<div class=\"popup-list--header\">\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\" [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input (valueChange)=\"onValueChange($event)\"></mc-input>\n  </div>\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClicUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n</div>\n<mc-list #listCmp [data]=\"listData\" [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n  [rowHeight]=\"rowHeight\" [multiSelect]=\"multiSelect\" [selectedItems]=\"selectedItems\"\n  [additionalData]=\"additionalData\" (action)=\"onListAction($event)\" [style.height.px]=\"listHeight\">\n</mc-list>\n",
-                styles: [":host{position:absolute;display:inline-block;background-color:#fff}:host.center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}:host.popup-basic{border:1px solid silver;padding:20px}:host.popup-indicator:before{content:\"\";width:17px;height:4px;position:absolute;background:#fff;z-index:2}:host.popup-indicator:after{content:\"\";width:16px;height:12px;position:absolute;z-index:1;background-color:#fff}:host.popup-indicator-top-right:before{transform:rotate(-35deg);top:-6px;right:-1px;border-radius:0 4px 0 0;border-top:1px solid #12102e;border-right:1px solid #12102e}:host.popup-indicator-top-right:after{top:-9px;right:-1px;border-radius:0 4px 0 0;border-right:1px solid #12102e}:host.popup-indicator-top-left:before{transform:scale(-1,1) rotate(-35deg);left:-1px;top:-6px;border-radius:0 4px 0 0;border-top:1px solid #12102e;border-right:1px solid #12102e}:host.popup-indicator-top-left:after{transform:scale(-1,1);top:-9px;left:-1px;border-radius:0 4px 0 0;border-right:1px solid #12102e}:host.popup-indicator-bottom-right:before{transform:scale(-1,1) rotate(-35deg);right:-1px;bottom:-6px;border-radius:0 0 0 4px;border-bottom:1px solid #12102e;border-left:1px solid #12102e}:host.popup-indicator-bottom-right:after{transform:scale(-1,1);right:-1px;bottom:-9px;border-radius:0 0 0 4px;border-left:1px solid #12102e}:host.popup-indicator-bottom-left:before{transform:rotate(-35deg);bottom:-6px;left:-1px;border-radius:0 0 0 4px;border-bottom:1px solid #12102e;border-left:1px solid #12102e}:host.popup-indicator-bottom-left:after{bottom:-9px;left:-1px;border-radius:0 0 0 4px;border-left:1px solid #12102e}:host.popup-audit{width:250px;padding:15px;border:1px solid #12102e}", ":host{display:block;position:absolute;width:100%;height:100%}"]
-            }] }
-];
-/** @nocollapse */
-PopupListComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-    { type: MCUIService }
-];
-PopupListComponent.propDecorators = {
-    listCmp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['listCmp', { static: false },] }],
-    itemTpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    idField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    nameField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    rowHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    multiSelect: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    selectedItems: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    additionalData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    height: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    startFrom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    valueChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
-    needData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
-};
-if (false) {}
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/mc-ui.module.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class MCUIModule {
-}
-MCUIModule.decorators = [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
-                imports: [
-                    _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                    _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"],
-                    _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"]
-                ],
-                declarations: [
-                    FieldComponent,
-                    TextareaComponent,
-                    InputComponent,
-                    FormComponent,
-                    ScrollComponent,
-                    ListBasicComponent,
-                    ListComponent,
-                    ButtonComponent,
-                    IconComponent,
-                    ListItemComponent,
-                    LoaderComponent,
-                    DrawerComponent,
-                    MessageBarComponent,
-                    GridHeaderComponent,
-                    GridBodyComponent,
-                    GridComponent,
-                    MaskComponent,
-                    PopupComponent,
-                    PopupListComponent
-                ],
-                entryComponents: [
-                    PopupComponent,
-                    PopupListComponent,
-                    DrawerComponent
-                ],
-                exports: [
-                    _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                    _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"],
-                    FieldComponent,
-                    TextareaComponent,
-                    InputComponent,
-                    FormComponent,
-                    ScrollComponent,
-                    ListBasicComponent,
-                    ListComponent,
-                    ButtonComponent,
-                    IconComponent,
-                    ListItemComponent,
-                    LoaderComponent,
-                    DrawerComponent,
-                    MessageBarComponent,
-                    GridHeaderComponent,
-                    GridBodyComponent,
-                    GridComponent,
-                    MaskComponent,
-                    PopupComponent,
-                    PopupListComponent
-                ],
-                providers: [MCUIService]
-            },] }
-];
-
-/**
- * @fileoverview added by tsickle
- * Generated from: public-api.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * Generated from: mc-ui-angular.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-
-//# sourceMappingURL=mc-ui-angular.js.map
-
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/button/button.component.html":
 /*!*************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/button/button.component.html ***!
@@ -2789,6 +54,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<mc-mask [visible]=\"true\" [transparent]=\"!mask\" (click)=\"onClickMask()\"></mc-mask>\n<div #drawerEr class=\"drawer\"><ng-container *ngTemplateOutlet=\"tpl\"></ng-container></div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.html":
+/*!****************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.html ***!
+  \****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"dropdown--summary\">\n  {{summary}}\n</div>\n<div class=\"dropdown--icon\">\n  <mc-icon theme=\"down\"></mc-icon>\n</div>\n");
 
 /***/ }),
 
@@ -2883,6 +161,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/icon/icon.component.html":
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/icon/icon.component.html ***!
+  \*********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/list/list-basic.component.html":
 /*!***************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/list/list-basic.component.html ***!
@@ -2918,7 +209,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mc-scroll [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" (updatePage)=\"onUpdatePage($event)\">\n  <ng-template #page1Tpl>\n    <mc-list-basic #listBasic1Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page1IsFirst\"\n      [isLastPage]=\"page1IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-list-basic #listBasic2Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page2IsFirst\" [isLastPage]=\"page2IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n</mc-scroll>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mc-scroll #scrollCmp [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" (updatePage)=\"onUpdatePage($event)\">\n  <ng-template #page1Tpl>\n    <mc-list-basic #listBasic1Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page1IsFirst\"\n      [isLastPage]=\"page1IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-list-basic #listBasic2Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page2IsFirst\" [isLastPage]=\"page2IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n</mc-scroll>\n");
 
 /***/ }),
 
@@ -2970,7 +261,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"popup-list--header\">\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\" [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input (valueChange)=\"onValueChange($event)\"></mc-input>\n  </div>\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClicUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n</div>\n<mc-list #listCmp [data]=\"listData\" [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n  [rowHeight]=\"rowHeight\" [multiSelect]=\"multiSelect\" [selectedItems]=\"selectedItems\"\n  [additionalData]=\"additionalData\" (action)=\"onListAction($event)\" [style.height.px]=\"listHeight\">\n</mc-list>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"indicatorLocation[0] === 't'\" class=\"popup-list--header\">\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\"\n    [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input #inputCmp1 class=\"popup-list--header--input--input\" [value]=\"lastSelectedName\"\n      (valueChange)=\"onValueChange($event)\"></mc-input>\n    <div class=\"popup-list--header--input--icon\">\n      <mc-icon theme=\"down\"></mc-icon>\n    </div>\n  </div>\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClickUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"popup-list--body\" [style.height.px]=\"listHeight\" [class.popup-list--body-t]=\"indicatorLocation[0] !== 't' && listHeight !== adjustedListHeight\" (click)=\"onClickListBody();\">\n  <mc-list #listCmp [data]=\"listData\" [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n    [rowHeight]=\"rowHeight\" [multiSelect]=\"multiSelect\" [selectedItems]=\"listSelectedItems\"\n    [additionalData]=\"additionalData\" (needData)=\"onListNeedData($event)\" (action)=\"onListAction($event)\"\n    [style.height.px]=\"adjustedListHeight\">\n  </mc-list>\n</div>\n<div *ngIf=\"indicatorLocation[0] !== 't'\" class=\"popup-list--header\">\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClickUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\"\n    [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input #inputCmp2 class=\"popup-list--header--input--input\" [value]=\"lastSelectedName\"\n      (valueChange)=\"onValueChange($event)\"></mc-input>\n    <div class=\"popup-list--header--input--icon\">\n      <mc-icon theme=\"down\"></mc-icon>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -3035,7 +326,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"example--header\">\n  <h4>Component Examples</h4>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>list with Infinity Scroll</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-list [data]=\"data\" [itemTpl]=\"itemTpl\">\n      <ng-template #itemTpl let-data>\n        {{data.index}}: {{data.name}}\n      </ng-template>\n    </mc-list>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Grid with Infinity Scroll | Popup | Drawer</h6>\n    <p>- Popup example: Click a cell </p>\n    <p>- Drawer example: Click the friends column cell </p>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-grid [data]=\"data\" (action)=\"onGridAction($event)\"></mc-grid>\n    <ng-template #popupTpl>\n      <h6>{{gridCell.name}} {{gridCell.field}} {{gridCell.field === 'tags' ? '' : gridCell.value}}</h6>\n      <ng-container *ngIf=\"gridCell.field === 'tags'\">\n        <mc-list-basic [data]=\"gridCell.value\" style=\"height:100px;margin-top: 20px;\"></mc-list-basic>\n      </ng-container>\n    </ng-template>\n    <ng-template #drawerTpl>\n      <div style=\"padding: 20px;padding-top: 75px;width: 240px;\">\n        <h6>{{gridCell.name}} {{gridCell.field}}</h6>\n        <mc-list-basic [data]=\"gridCell.value\" style=\"margin-top: 20px;\"></mc-list-basic>\n      </div>\n    </ng-template>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"example--header\">\n  <h4>Component Examples</h4>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>list with Infinity Scroll</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-list [data]=\"listData\" [itemTpl]=\"itemTpl\">\n      <ng-template #itemTpl let-data>\n        {{data.index}}: {{data.name}}\n      </ng-template>\n    </mc-list>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Grid with Infinity Scroll | Popup | Drawer</h6>\n    <p>- Popup example: Click a cell </p>\n    <p>- Drawer example: Click the friends column cell </p>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-grid [data]=\"gridData\" (action)=\"onGridAction($event)\"></mc-grid>\n    <ng-template #popupTpl>\n      <h6>{{gridCell.name}} {{gridCell.field}} {{gridCell.field === 'tags' ? '' : gridCell.value}}</h6>\n      <ng-container *ngIf=\"gridCell.field === 'tags'\">\n        <mc-list-basic [data]=\"gridCell.value\" style=\"height:100px;margin-top: 20px;\"></mc-list-basic>\n      </ng-container>\n    </ng-template>\n    <ng-template #drawerTpl>\n      <div style=\"padding: 20px;padding-top: 75px;width: 240px;\">\n        <h6>{{gridCell.name}} {{gridCell.field}}</h6>\n        <mc-list-basic [data]=\"gridCell.value\" style=\"margin-top: 20px;\"></mc-list-basic>\n      </div>\n    </ng-template>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Dropdown</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"500\">\n    <mc-dropdown [data]=\"dropdownData\" (needData)=\"onDropdownNeedData($event)\"></mc-dropdown>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -3610,6 +901,172 @@ DrawerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.scss":
+/*!**************************************************************************************!*\
+  !*** ./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.scss ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  border: 1px solid #e2e6ea;\n  cursor: pointer;\n  line-height: 43px;\n  padding: 0 20px;\n  border-radius: 3px;\n}\n:host .dropdown {\n  padding-right: 20px;\n}\n:host .dropdown--icon {\n  position: absolute;\n  right: 10px;\n  top: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2Zvcm0vZmllbGQvZHJvcGRvd24vZHJvcGRvd24uY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9mb3JtL2ZpZWxkL2Ryb3Bkb3duL2Ryb3Bkb3duLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsY0FBQTtFQUNBLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0FDQUY7QURDRTtFQUNFLG1CQUFBO0FDQ0o7QURDSTtFQUNFLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLE1BQUE7QUNDTiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9mb3JtL2ZpZWxkL2Ryb3Bkb3duL2Ryb3Bkb3duLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uLy4uLy4uL2Nzcy92YXJzXCI7XG46aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBib3JkZXI6IDFweCBzb2xpZCAkYy1ib3JkZXI7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgbGluZS1oZWlnaHQ6IDQzcHg7XG4gIHBhZGRpbmc6IDAgMjBweDtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICAuZHJvcGRvd24ge1xuICAgIHBhZGRpbmctcmlnaHQ6IDIwcHg7XG4gICAgJi0tc3VtbWFyeSB7fVxuICAgICYtLWljb24ge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgcmlnaHQ6IDEwcHg7XG4gICAgICB0b3A6IDA7XG4gICAgfVxuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBib3JkZXI6IDFweCBzb2xpZCAjZTJlNmVhO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGxpbmUtaGVpZ2h0OiA0M3B4O1xuICBwYWRkaW5nOiAwIDIwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbn1cbjpob3N0IC5kcm9wZG93biB7XG4gIHBhZGRpbmctcmlnaHQ6IDIwcHg7XG59XG46aG9zdCAuZHJvcGRvd24tLWljb24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiAxMHB4O1xuICB0b3A6IDA7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.ts":
+/*!************************************************************************************!*\
+  !*** ./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: DropdownComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DropdownComponent", function() { return DropdownComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _field_base_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../field-base.component */ "./projects/mc-ui/src/lib/component/form/field/field-base.component.ts");
+/* harmony import */ var _mc_ui_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../mc-ui.service */ "./projects/mc-ui/src/lib/mc-ui.service.ts");
+/* harmony import */ var _popup_popup_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../popup/popup-list.component */ "./projects/mc-ui/src/lib/component/popup/popup-list.component.ts");
+
+
+
+
+
+
+let DropdownComponent = class DropdownComponent extends _field_base_component__WEBPACK_IMPORTED_MODULE_2__["FieldBaseComponent"] {
+    constructor(er, service) {
+        super(er, service);
+        this.er = er;
+        this.service = service;
+        this._selectedItems = [];
+        this.emptyText = 'Select...';
+        this.idField = 'id';
+        this.nameField = 'name';
+        this.rowHeight = 45;
+        this.multiSelect = false;
+        this.needData = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        // ***************************************
+        this.summary = this.emptyText;
+    }
+    set data(value) {
+        if (value) {
+            this._data = value;
+            this.updatePopupListData(value);
+        }
+    }
+    get data() {
+        return this._data;
+    }
+    set selectedItems(value) {
+        if (value) {
+            this._selectedItems = value;
+            this.updateSummary(value);
+        }
+    }
+    get selectedItems() {
+        return this._selectedItems;
+    }
+    onPress(e) {
+        this.showPopupList();
+    }
+    updateSummary(value) {
+        this.summary = value.length ? value.map(val => val[this.nameField]).join(', ') : this.emptyText;
+    }
+    updatePopupListData(data) {
+        if (data && this.popupListCmp) {
+            this.popupListCmp.instance.data = data;
+        }
+    }
+    showPopupList() {
+        let instance = this.popupListCmp ? this.popupListCmp.instance : null;
+        if (!this.popupListCmp) {
+            // add to root
+            this.popupListCmp = this.service.addComponent(_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_4__["PopupListComponent"]);
+            instance = this.popupListCmp.instance;
+            instance.data = this.data;
+            instance.checkTargetLocation = true;
+            instance.itemTpl = this.itemTpl;
+            instance.idField = this.idField;
+            instance.nameField = this.nameField;
+            instance.rowHeight = this.rowHeight;
+            instance.multiSelect = this.multiSelect;
+            instance.selectedItems = this.selectedItems.concat();
+            instance.additionalData = this.additionalData;
+            instance.targetEl = this.el;
+            this.subscriptions = instance.needData.subscribe(e => {
+                e.target = this;
+                this.needData.emit(e);
+            });
+            this.subscriptions = instance.action.subscribe(e => {
+                e.target = this;
+                switch (e.action) {
+                    case 'unselect-item':
+                    case 'select-item':
+                        this.selectedItems = e.selectedItems;
+                        break;
+                }
+                this.action.emit(e);
+            });
+        }
+        instance.visible = !instance.visible;
+    }
+    destroyCmp() {
+        if (this.popupListCmp) {
+            this.service.removeComponent(this.popupListCmp);
+        }
+    }
+};
+DropdownComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
+    { type: _mc_ui_service__WEBPACK_IMPORTED_MODULE_3__["MCUIService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DropdownComponent.prototype, "emptyText", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DropdownComponent.prototype, "itemTpl", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DropdownComponent.prototype, "idField", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DropdownComponent.prototype, "nameField", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DropdownComponent.prototype, "rowHeight", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DropdownComponent.prototype, "multiSelect", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DropdownComponent.prototype, "data", null);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DropdownComponent.prototype, "selectedItems", null);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DropdownComponent.prototype, "additionalData", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], DropdownComponent.prototype, "needData", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('click', ['$event'])
+], DropdownComponent.prototype, "onPress", null);
+DropdownComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'mc-dropdown',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./dropdown.component.html */ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./dropdown.component.scss */ "./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.scss")).default]
+    })
+], DropdownComponent);
+
+
+
+/***/ }),
+
 /***/ "./projects/mc-ui/src/lib/component/form/field/field-base.component.ts":
 /*!*****************************************************************************!*\
   !*** ./projects/mc-ui/src/lib/component/form/field/field-base.component.ts ***!
@@ -3632,6 +1089,7 @@ class FieldBaseComponent extends _base_component__WEBPACK_IMPORTED_MODULE_2__["B
         this.er = er;
         this.service = service;
         this._value = '';
+        this.valueChangedBy = '';
         this.readonly = false;
         this.label = '';
         this.type = 'text';
@@ -3646,6 +1104,7 @@ class FieldBaseComponent extends _base_component__WEBPACK_IMPORTED_MODULE_2__["B
             this._value = value;
             this.valueChange.emit({
                 target: this,
+                by: this.valueChangedBy,
                 oldValue,
                 value: this._value
             });
@@ -3654,11 +1113,12 @@ class FieldBaseComponent extends _base_component__WEBPACK_IMPORTED_MODULE_2__["B
     get value() {
         return this._value;
     }
+    focus() { }
     onValueChange(e) {
         if (JSON.stringify(e.value) !== JSON.stringify(this.value)) {
             const oldValue = this.value;
             this.value = e.value;
-            this.valueChange.emit({ target: this, event: e, value: this.value, oldValue: oldValue });
+            this.valueChange.emit({ target: this, event: e, value: this.value, oldValue });
         }
     }
 }
@@ -3773,7 +1233,7 @@ FieldComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n}\n:host .input--input {\n  display: inline-block;\n  width: 100%;\n  padding: 0.65rem 0.75rem;\n  line-height: 1.25;\n  color: #000;\n  background-color: #fff;\n  background-image: none;\n  background-clip: padding-box;\n  border: 1px solid #000;\n  border-radius: 3px;\n  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;\n}\n:host.readonly {\n  display: inline-block;\n}\n:host.readonly .input--input {\n  cursor: default;\n  pointer-events: none;\n  border: 0;\n  width: auto;\n  outline: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2Zvcm0vZmllbGQvaW5wdXQvaW5wdXQuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9mb3JtL2ZpZWxkL2lucHV0L2lucHV0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0FDQ0Y7QURBRTtFQUNFLHFCQUFBO0VBQ0EsV0FBQTtFQUNBLHdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxXQUFBO0VBQ0Esc0JBQUE7RUFDQSxzQkFBQTtFQUNBLDRCQUFBO0VBQ0Esc0JBQUE7RUFDQSxrQkFBQTtFQUNBLHdFQUFBO0FDRUo7QURDRTtFQUNFLHFCQUFBO0FDQ0o7QURBSTtFQUNFLGVBQUE7RUFDQSxvQkFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EsYUFBQTtBQ0VOIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2Zvcm0vZmllbGQvaW5wdXQvaW5wdXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIC5pbnB1dC0taW5wdXQge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICB3aWR0aDogMTAwJTtcbiAgICBwYWRkaW5nOiAwLjY1cmVtIDAuNzVyZW07XG4gICAgbGluZS1oZWlnaHQ6IDEuMjU7XG4gICAgY29sb3I6ICMwMDA7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiBub25lO1xuICAgIGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzAwMDtcbiAgICBib3JkZXItcmFkaXVzOiAzcHg7XG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIGVhc2UtaW4tb3V0IDAuMTVzLCBib3gtc2hhZG93IGVhc2UtaW4tb3V0IDAuMTVzO1xuICB9XG5cbiAgJi5yZWFkb25seSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIC5pbnB1dC0taW5wdXQge1xuICAgICAgY3Vyc29yOiBkZWZhdWx0O1xuICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gICAgICBib3JkZXI6IDA7XG4gICAgICB3aWR0aDogYXV0bztcbiAgICAgIG91dGxpbmU6IG5vbmU7XG4gICAgfVxuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG46aG9zdCAuaW5wdXQtLWlucHV0IHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMC42NXJlbSAwLjc1cmVtO1xuICBsaW5lLWhlaWdodDogMS4yNTtcbiAgY29sb3I6ICMwMDA7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gIGJhY2tncm91bmQtaW1hZ2U6IG5vbmU7XG4gIGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG4gIGJvcmRlcjogMXB4IHNvbGlkICMwMDA7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIGVhc2UtaW4tb3V0IDAuMTVzLCBib3gtc2hhZG93IGVhc2UtaW4tb3V0IDAuMTVzO1xufVxuOmhvc3QucmVhZG9ubHkge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59XG46aG9zdC5yZWFkb25seSAuaW5wdXQtLWlucHV0IHtcbiAgY3Vyc29yOiBkZWZhdWx0O1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgYm9yZGVyOiAwO1xuICB3aWR0aDogYXV0bztcbiAgb3V0bGluZTogbm9uZTtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n}\n:host .input--input {\n  display: inline-block;\n  width: 100%;\n  padding: 0 20px;\n  line-height: 43px;\n  color: #23272b;\n  background-color: #fff;\n  border: 1px solid #e2e6ea;\n  border-radius: 3px;\n}\n:host.readonly {\n  display: inline-block;\n}\n:host.readonly .input--input {\n  cursor: default;\n  pointer-events: none;\n  border: 0;\n  width: auto;\n  outline: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2Zvcm0vZmllbGQvaW5wdXQvaW5wdXQuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9mb3JtL2ZpZWxkL2lucHV0L2lucHV0LmNvbXBvbmVudC5zY3NzIiwiL1VzZXJzL21jL21jLXVpLWFuZ3VsYXIvcHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jc3MvX3ZhcnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtBQ0FGO0FEQ0U7RUFDRSxxQkFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxjRWFVO0VGWlYsc0JBQUE7RUFDQSx5QkFBQTtFQUNBLGtCQUFBO0FDQ0o7QURFRTtFQUNFLHFCQUFBO0FDQUo7QURDSTtFQUNFLGVBQUE7RUFDQSxvQkFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EsYUFBQTtBQ0NOIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2Zvcm0vZmllbGQvaW5wdXQvaW5wdXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgLmlucHV0LS1pbnB1dCB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHBhZGRpbmc6IDAgMjBweDtcbiAgICBsaW5lLWhlaWdodDogNDNweDsgLy8gc2luY2UgdGhlIGZpZWxkIGhlaWdodCBpcyA0NXB4IHdpdGggYm9yZGVyLlxuICAgIGNvbG9yOiAkYy10ZXh0O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgYm9yZGVyOiAxcHggc29saWQgJGMtYm9yZGVyO1xuICAgIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgfVxuXG4gICYucmVhZG9ubHkge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAuaW5wdXQtLWlucHV0IHtcbiAgICAgIGN1cnNvcjogZGVmYXVsdDtcbiAgICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICAgICAgYm9yZGVyOiAwO1xuICAgICAgd2lkdGg6IGF1dG87XG4gICAgICBvdXRsaW5lOiBub25lO1xuICAgIH1cbiAgfVxufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuOmhvc3QgLmlucHV0LS1pbnB1dCB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDAgMjBweDtcbiAgbGluZS1oZWlnaHQ6IDQzcHg7XG4gIGNvbG9yOiAjMjMyNzJiO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICBib3JkZXI6IDFweCBzb2xpZCAjZTJlNmVhO1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG46aG9zdC5yZWFkb25seSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbn1cbjpob3N0LnJlYWRvbmx5IC5pbnB1dC0taW5wdXQge1xuICBjdXJzb3I6IGRlZmF1bHQ7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICBib3JkZXI6IDA7XG4gIHdpZHRoOiBhdXRvO1xuICBvdXRsaW5lOiBub25lO1xufSIsIi8vIFByaW1hcnkgY29sb3JzXG4kYy1vcmFuZ2UtYjogI2YzNjcwNTtcbiRjLW9yYW5nZTogI2Y4ODMwMDtcbiRjLW9yYW5nZS1sOiAjZmZiMzAyO1xuXG4kYy1ibHVlOiAjMDg2NkM2O1xuJGMtYmx1ZS1iOiAjMDc1M2ExO1xuXG4kYy1jeWFuLWI6ICMzOWFhYWQ7XG4kYy1jeWFuOiAjNmJjM2JkO1xuJGMtY3lhbi1sOiAjZTNmNmY4O1xuXG4kYy1ncmVlbjogIzIzQkYwODtcbiRjLWdyZWVuLWI6ICMxYzlhMDY7XG5cbiRjLXJlZDojREMzNTQ1O1xuJGMtcmVkLWI6I2M4MjMzMztcblxuJGMteWVsbG93OiAjZWVmNjZkO1xuXG4vLyBHcmF5XG4kYy1ibGFjazogIzAwMDtcbiRjLWdyYXktYmJiYjogIzIzMjcyYjtcbiRjLWdyYXktYmJiOiAjMzQzYTQwO1xuJGMtZ3JheS1iYjogIzcyN2I4NDtcbiRjLWdyYXktYjogIzg2OGU5NjtcbiRjLWdyYXk6ICNlMmU2ZWE7XG4kYy1ncmF5LWw6ICNmOGY5ZmE7XG4kYy13aGl0ZTogI2ZmZjtcblxuJGMtdGV4dDogJGMtZ3JheS1iYmJiO1xuJGMtYm9yZGVyOiAkYy1ncmF5O1xuJGMtYmc6ICRjLWdyYXktbDtcblxuJGMtc3VjY2VzczogJGMtZ3JlZW47XG4kYy13YXJuaW5nOiAkYy1vcmFuZ2U7XG4kYy1lcnJvcjogJGMtcmVkO1xuIl19 */");
 
 /***/ }),
 
@@ -3801,14 +1261,18 @@ let InputComponent = class InputComponent extends _field_base_component__WEBPACK
         this.er = er;
         this.service = service;
     }
+    focus(select = true) {
+        this.inputEl = this.inputEl || this.el.querySelector('.input--input');
+        this.inputEl.focus();
+        if (select) {
+            this.inputEl.select();
+        }
+    }
     onKeyUp(e) {
         // recommend strong typing, weak -> e.event.target
-        const value = e.target.value;
-        if (value !== this.value) {
-            const oldValue = this.value;
-            this.value = value;
-            this.valueChange.emit({ target: this, event: e, value: this.value, oldValue });
-        }
+        this.valueChangedBy = 'keyboard';
+        this.value = e.target.value;
+        this.valueChangedBy = '';
     }
 };
 InputComponent.ctorParameters = () => [
@@ -4000,7 +1464,7 @@ FormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  border: 1px solid #ebe8e3;\n  border-radius: 3px;\n}\n:host .grid-body {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n:host .grid-body--row {\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #ebe8e3;\n}\n:host .grid-body--row--cell {\n  padding: 0;\n  cursor: pointer;\n}\n:host .grid-body--row--cell--content {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  padding: 0 10px;\n}\n:host.is-scroll-page {\n  border: 0;\n}\n:host.is-scroll-page.is-last-page .grid-body--row:last-child {\n  border-bottom-color: transparent;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1ib2R5LmNvbXBvbmVudC5zY3NzIiwicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvZ3JpZC9ncmlkLWJvZHkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtBQ0FGO0FEQ0U7RUFDRSx5QkFBQTtFQUNBLGlCQUFBO0FDQ0o7QURBSTtFQUNFLGlDQUFBO0VBQ0EsZ0NBQUE7QUNFTjtBRERNO0VBQ0UsVUFBQTtFQUNBLGVBQUE7QUNHUjtBREZRO0VBQ0UsdUJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQ0lWO0FERUU7RUFDRSxTQUFBO0FDQUo7QURJVTtFQUNFLGdDQUFBO0FDRloiLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvZ3JpZC9ncmlkLWJvZHkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi8uLi8uLi9jc3MvdmFyc1wiO1xuOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJvcmRlcjogMXB4IHNvbGlkICRjLWJvcmRlcjtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICAuZ3JpZC1ib2R5IHtcbiAgICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xuICAgIGJvcmRlci1zcGFjaW5nOiAwO1xuICAgICYtLXJvdyB7XG4gICAgICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgJGMtYm9yZGVyO1xuICAgICAgJi0tY2VsbCB7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgJi0tY29udGVudCB7XG4gICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTBweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxuXG4gICYuaXMtc2Nyb2xsLXBhZ2Uge1xuICAgIGJvcmRlcjogMDtcbiAgICAmLmlzLWxhc3QtcGFnZSB7XG4gICAgICAuZ3JpZC1ib2R5IHtcbiAgICAgICAgJi0tcm93IHtcbiAgICAgICAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2ViZThlMztcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuOmhvc3QgLmdyaWQtYm9keSB7XG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gIGJvcmRlci1zcGFjaW5nOiAwO1xufVxuOmhvc3QgLmdyaWQtYm9keS0tcm93IHtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2ViZThlMztcbn1cbjpob3N0IC5ncmlkLWJvZHktLXJvdy0tY2VsbCB7XG4gIHBhZGRpbmc6IDA7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbjpob3N0IC5ncmlkLWJvZHktLXJvdy0tY2VsbC0tY29udGVudCB7XG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwYWRkaW5nOiAwIDEwcHg7XG59XG46aG9zdC5pcy1zY3JvbGwtcGFnZSB7XG4gIGJvcmRlcjogMDtcbn1cbjpob3N0LmlzLXNjcm9sbC1wYWdlLmlzLWxhc3QtcGFnZSAuZ3JpZC1ib2R5LS1yb3c6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  border: 1px solid #e2e6ea;\n  border-radius: 3px;\n}\n:host .grid-body {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n:host .grid-body--row {\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #e2e6ea;\n}\n:host .grid-body--row--cell {\n  padding: 0;\n  cursor: pointer;\n}\n:host .grid-body--row--cell--content {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  padding: 0 10px;\n}\n:host.is-scroll-page {\n  border: 0;\n}\n:host.is-scroll-page.is-last-page .grid-body--row:last-child {\n  border-bottom-color: transparent;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1ib2R5LmNvbXBvbmVudC5zY3NzIiwicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvZ3JpZC9ncmlkLWJvZHkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtBQ0FGO0FEQ0U7RUFDRSx5QkFBQTtFQUNBLGlCQUFBO0FDQ0o7QURBSTtFQUNFLGlDQUFBO0VBQ0EsZ0NBQUE7QUNFTjtBRERNO0VBQ0UsVUFBQTtFQUNBLGVBQUE7QUNHUjtBREZRO0VBQ0UsdUJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQ0lWO0FERUU7RUFDRSxTQUFBO0FDQUo7QURJVTtFQUNFLGdDQUFBO0FDRloiLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvZ3JpZC9ncmlkLWJvZHkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi8uLi8uLi9jc3MvdmFyc1wiO1xuOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJvcmRlcjogMXB4IHNvbGlkICRjLWJvcmRlcjtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICAuZ3JpZC1ib2R5IHtcbiAgICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xuICAgIGJvcmRlci1zcGFjaW5nOiAwO1xuICAgICYtLXJvdyB7XG4gICAgICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgJGMtYm9yZGVyO1xuICAgICAgJi0tY2VsbCB7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgJi0tY29udGVudCB7XG4gICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTBweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxuXG4gICYuaXMtc2Nyb2xsLXBhZ2Uge1xuICAgIGJvcmRlcjogMDtcbiAgICAmLmlzLWxhc3QtcGFnZSB7XG4gICAgICAuZ3JpZC1ib2R5IHtcbiAgICAgICAgJi0tcm93IHtcbiAgICAgICAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2UyZTZlYTtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuOmhvc3QgLmdyaWQtYm9keSB7XG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gIGJvcmRlci1zcGFjaW5nOiAwO1xufVxuOmhvc3QgLmdyaWQtYm9keS0tcm93IHtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2UyZTZlYTtcbn1cbjpob3N0IC5ncmlkLWJvZHktLXJvdy0tY2VsbCB7XG4gIHBhZGRpbmc6IDA7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbjpob3N0IC5ncmlkLWJvZHktLXJvdy0tY2VsbC0tY29udGVudCB7XG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwYWRkaW5nOiAwIDEwcHg7XG59XG46aG9zdC5pcy1zY3JvbGwtcGFnZSB7XG4gIGJvcmRlcjogMDtcbn1cbjpob3N0LmlzLXNjcm9sbC1wYWdlLmlzLWxhc3QtcGFnZSAuZ3JpZC1ib2R5LS1yb3c6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -4115,7 +1579,7 @@ GridBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: auto;\n  overflow-x: visible;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #ebe8e3;\n}\n:host .grid-header {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n:host .grid-header--row--cell {\n  padding: 0;\n  cursor: pointer;\n}\n:host .grid-header--row--cell--content {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  padding: 0 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9ncmlkL2dyaWQtaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsaUNBQUE7RUFDQSxnQ0FBQTtBQ0FGO0FEQ0U7RUFDRSx5QkFBQTtFQUNBLGlCQUFBO0FDQ0o7QURDTTtFQUNFLFVBQUE7RUFDQSxlQUFBO0FDQ1I7QURBUTtFQUNFLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7QUNFViIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9ncmlkL2dyaWQtaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uL2Nzcy92YXJzXCI7XG46aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogYXV0bztcbiAgb3ZlcmZsb3cteDogdmlzaWJsZTtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgJGMtYm9yZGVyO1xuICAuZ3JpZC1oZWFkZXIge1xuICAgIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gICAgYm9yZGVyLXNwYWNpbmc6IDA7XG4gICAgJi0tcm93IHtcbiAgICAgICYtLWNlbGwge1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgICYtLWNvbnRlbnQge1xuICAgICAgICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICAgICAgICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgICBwYWRkaW5nOiAwIDEwcHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBvdmVyZmxvdy14OiB2aXNpYmxlO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWJlOGUzO1xufVxuOmhvc3QgLmdyaWQtaGVhZGVyIHtcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgYm9yZGVyLXNwYWNpbmc6IDA7XG59XG46aG9zdCAuZ3JpZC1oZWFkZXItLXJvdy0tY2VsbCB7XG4gIHBhZGRpbmc6IDA7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbjpob3N0IC5ncmlkLWhlYWRlci0tcm93LS1jZWxsLS1jb250ZW50IHtcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBhZGRpbmc6IDAgMTBweDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: auto;\n  overflow-x: visible;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #e2e6ea;\n}\n:host .grid-header {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n:host .grid-header--row--cell {\n  padding: 0;\n  cursor: pointer;\n}\n:host .grid-header--row--cell--content {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  padding: 0 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9ncmlkL2dyaWQtaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsaUNBQUE7RUFDQSxnQ0FBQTtBQ0FGO0FEQ0U7RUFDRSx5QkFBQTtFQUNBLGlCQUFBO0FDQ0o7QURDTTtFQUNFLFVBQUE7RUFDQSxlQUFBO0FDQ1I7QURBUTtFQUNFLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7QUNFViIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9ncmlkL2dyaWQtaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uL2Nzcy92YXJzXCI7XG46aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogYXV0bztcbiAgb3ZlcmZsb3cteDogdmlzaWJsZTtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgJGMtYm9yZGVyO1xuICAuZ3JpZC1oZWFkZXIge1xuICAgIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gICAgYm9yZGVyLXNwYWNpbmc6IDA7XG4gICAgJi0tcm93IHtcbiAgICAgICYtLWNlbGwge1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgICYtLWNvbnRlbnQge1xuICAgICAgICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICAgICAgICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgICBwYWRkaW5nOiAwIDEwcHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBvdmVyZmxvdy14OiB2aXNpYmxlO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTJlNmVhO1xufVxuOmhvc3QgLmdyaWQtaGVhZGVyIHtcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgYm9yZGVyLXNwYWNpbmc6IDA7XG59XG46aG9zdCAuZ3JpZC1oZWFkZXItLXJvdy0tY2VsbCB7XG4gIHBhZGRpbmc6IDA7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbjpob3N0IC5ncmlkLWhlYWRlci0tcm93LS1jZWxsLS1jb250ZW50IHtcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBhZGRpbmc6IDAgMTBweDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -4186,7 +1650,7 @@ GridHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  overflow-x: auto;\n  border: 1px solid #ebe8e3;\n  border-radius: 3px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7QUNBRiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9ncmlkL2dyaWQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi8uLi8uLi9jc3MvdmFyc1wiO1xuOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93LXg6IGF1dG87XG4gIGJvcmRlcjogMXB4IHNvbGlkICRjLWJvcmRlcjtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93LXg6IGF1dG87XG4gIGJvcmRlcjogMXB4IHNvbGlkICNlYmU4ZTM7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  overflow-x: auto;\n  border: 1px solid #e2e6ea;\n  border-radius: 3px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7QUNBRiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9ncmlkL2dyaWQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi8uLi8uLi9jc3MvdmFyc1wiO1xuOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93LXg6IGF1dG87XG4gIGJvcmRlcjogMXB4IHNvbGlkICRjLWJvcmRlcjtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93LXg6IGF1dG87XG4gIGJvcmRlcjogMXB4IHNvbGlkICNlMmU2ZWE7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -4265,7 +1729,7 @@ GridComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("@font-face {\n  font-family: \"icons\";\n  src: url('icon.eot');\n  src: url('icon.eot?#iefix') format(\"embedded-opentype\"), url('icon.woff') format(\"woff\"), url('icon.ttf') format(\"truetype\"), url('icon.svg#icons') format(\"svg\");\n  font-weight: normal;\n  font-style: normal;\n}\n:host {\n  display: inline-block;\n  font-size: 20px;\n  color: silver;\n  position: relative;\n  cursor: pointer;\n}\n:host:before {\n  font-family: \"icons\" !important;\n  font-style: normal !important;\n  font-weight: normal !important;\n  font-variant: normal !important;\n  text-transform: none !important;\n  speak: none;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  display: inline-block;\n  position: relative;\n}\n:host.icon-close:before {\n  content: \"!\";\n}\n:host.icon-menu:before {\n  content: '\"';\n}\n:host.icon-school:before {\n  content: \"#\";\n}\n:host.icon-star-outline:before {\n  content: \"$\";\n}\n:host.icon-label-outline:before {\n  content: \"%\";\n}\n:host.icon-search:before {\n  content: \"&\";\n}\n:host.icon-help-outline:before {\n  content: \"'\";\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2ljb24vaWNvbi5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2ljb24vaWNvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLG9CQUFBO0VBQ0Esb0JBQUE7RUFDQSxpS0FBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUNBRjtBREdBO0VBQ0UscUJBQUE7RUFDQSxlQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQ0RGO0FER0U7RUFDRSwrQkFBQTtFQUNBLDZCQUFBO0VBQ0EsOEJBQUE7RUFDQSwrQkFBQTtFQUNBLCtCQUFBO0VBQ0EsV0FBQTtFQUNBLG1DQUFBO0VBQ0Esa0NBQUE7RUFDQSxxQkFBQTtFQUNBLGtCQUFBO0FDREo7QURLSTtFQUNFLFlBQUE7QUNITjtBRE1JO0VBQ0UsWUFBQTtBQ0pOO0FET0k7RUFDRSxZQUFBO0FDTE47QURRSTtFQUNFLFlBQUE7QUNOTjtBRFNJO0VBQ0UsWUFBQTtBQ1BOO0FEVUk7RUFDRSxZQUFBO0FDUk47QURXSTtFQUNFLFlBQUE7QUNUTiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9pY29uL2ljb24uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogXCJpY29uc1wiO1xuICBzcmM6IHVybChcIi4uLy4uL2Fzc2V0cy9mb250cy9pY29uLmVvdFwiKTtcbiAgc3JjOiB1cmwoXCIuLi8uLi9hc3NldHMvZm9udHMvaWNvbi5lb3Q/I2llZml4XCIpIGZvcm1hdChcImVtYmVkZGVkLW9wZW50eXBlXCIpLCB1cmwoXCIuLi8uLi9hc3NldHMvZm9udHMvaWNvbi53b2ZmXCIpIGZvcm1hdChcIndvZmZcIiksIHVybChcIi4uLy4uL2Fzc2V0cy9mb250cy9pY29uLnR0ZlwiKSBmb3JtYXQoXCJ0cnVldHlwZVwiKSwgdXJsKFwiLi4vLi4vYXNzZXRzL2ZvbnRzL2ljb24uc3ZnI2ljb25zXCIpIGZvcm1hdChcInN2Z1wiKTtcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xufVxuXG46aG9zdCB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgZm9udC1zaXplOiAyMHB4O1xuICBjb2xvcjogc2lsdmVyO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGN1cnNvcjogcG9pbnRlcjtcblxuICAmOmJlZm9yZSB7XG4gICAgZm9udC1mYW1pbHk6IFwiaWNvbnNcIiAhaW1wb3J0YW50O1xuICAgIGZvbnQtc3R5bGU6IG5vcm1hbCAhaW1wb3J0YW50O1xuICAgIGZvbnQtd2VpZ2h0OiBub3JtYWwgIWltcG9ydGFudDtcbiAgICBmb250LXZhcmlhbnQ6IG5vcm1hbCAhaW1wb3J0YW50O1xuICAgIHRleHQtdHJhbnNmb3JtOiBub25lICFpbXBvcnRhbnQ7XG4gICAgc3BlYWs6IG5vbmU7XG4gICAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gICAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB9XG5cbiAgJi5pY29uIHtcbiAgICAmLWNsb3NlOmJlZm9yZSB7XG4gICAgICBjb250ZW50OiBcIiFcIjtcbiAgICB9XG5cbiAgICAmLW1lbnU6YmVmb3JlIHtcbiAgICAgIGNvbnRlbnQ6IFwiXFxcIlwiO1xuICAgIH1cblxuICAgICYtc2Nob29sOmJlZm9yZSB7XG4gICAgICBjb250ZW50OiBcIiNcIjtcbiAgICB9XG5cbiAgICAmLXN0YXItb3V0bGluZTpiZWZvcmUge1xuICAgICAgY29udGVudDogXCIkXCI7XG4gICAgfVxuXG4gICAgJi1sYWJlbC1vdXRsaW5lOmJlZm9yZSB7XG4gICAgICBjb250ZW50OiBcIiVcIjtcbiAgICB9XG5cbiAgICAmLXNlYXJjaDpiZWZvcmUge1xuICAgICAgY29udGVudDogXCImXCI7XG4gICAgfVxuXG4gICAgJi1oZWxwLW91dGxpbmU6YmVmb3JlIHtcbiAgICAgIGNvbnRlbnQ6IFwiJ1wiO1xuICAgIH1cbiAgfVxufVxuIiwiQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiBcImljb25zXCI7XG4gIHNyYzogdXJsKFwiLi4vLi4vYXNzZXRzL2ZvbnRzL2ljb24uZW90XCIpO1xuICBzcmM6IHVybChcIi4uLy4uL2Fzc2V0cy9mb250cy9pY29uLmVvdD8jaWVmaXhcIikgZm9ybWF0KFwiZW1iZWRkZWQtb3BlbnR5cGVcIiksIHVybChcIi4uLy4uL2Fzc2V0cy9mb250cy9pY29uLndvZmZcIikgZm9ybWF0KFwid29mZlwiKSwgdXJsKFwiLi4vLi4vYXNzZXRzL2ZvbnRzL2ljb24udHRmXCIpIGZvcm1hdChcInRydWV0eXBlXCIpLCB1cmwoXCIuLi8uLi9hc3NldHMvZm9udHMvaWNvbi5zdmcjaWNvbnNcIikgZm9ybWF0KFwic3ZnXCIpO1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG59XG46aG9zdCB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgZm9udC1zaXplOiAyMHB4O1xuICBjb2xvcjogc2lsdmVyO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbjpob3N0OmJlZm9yZSB7XG4gIGZvbnQtZmFtaWx5OiBcImljb25zXCIgIWltcG9ydGFudDtcbiAgZm9udC1zdHlsZTogbm9ybWFsICFpbXBvcnRhbnQ7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWwgIWltcG9ydGFudDtcbiAgZm9udC12YXJpYW50OiBub3JtYWwgIWltcG9ydGFudDtcbiAgdGV4dC10cmFuc2Zvcm06IG5vbmUgIWltcG9ydGFudDtcbiAgc3BlYWs6IG5vbmU7XG4gIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IGFudGlhbGlhc2VkO1xuICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbjpob3N0Lmljb24tY2xvc2U6YmVmb3JlIHtcbiAgY29udGVudDogXCIhXCI7XG59XG46aG9zdC5pY29uLW1lbnU6YmVmb3JlIHtcbiAgY29udGVudDogJ1wiJztcbn1cbjpob3N0Lmljb24tc2Nob29sOmJlZm9yZSB7XG4gIGNvbnRlbnQ6IFwiI1wiO1xufVxuOmhvc3QuaWNvbi1zdGFyLW91dGxpbmU6YmVmb3JlIHtcbiAgY29udGVudDogXCIkXCI7XG59XG46aG9zdC5pY29uLWxhYmVsLW91dGxpbmU6YmVmb3JlIHtcbiAgY29udGVudDogXCIlXCI7XG59XG46aG9zdC5pY29uLXNlYXJjaDpiZWZvcmUge1xuICBjb250ZW50OiBcIiZcIjtcbn1cbjpob3N0Lmljb24taGVscC1vdXRsaW5lOmJlZm9yZSB7XG4gIGNvbnRlbnQ6IFwiJ1wiO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: inline-block;\n  font-size: 20px;\n  color: #23272b;\n  position: relative;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2ljb24vaWNvbi5jb21wb25lbnQuc2NzcyIsIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY3NzL192YXJzLnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9pY29uL2ljb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSxxQkFBQTtFQUNBLGVBQUE7RUFDQSxjQ2tCWTtFRGpCWixrQkFBQTtFQUNBLGVBQUE7QUVBRiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9pY29uL2ljb24uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXNpemU6IDIwcHg7XG4gIGNvbG9yOiAkYy10ZXh0O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbiIsIi8vIFByaW1hcnkgY29sb3JzXG4kYy1vcmFuZ2UtYjogI2YzNjcwNTtcbiRjLW9yYW5nZTogI2Y4ODMwMDtcbiRjLW9yYW5nZS1sOiAjZmZiMzAyO1xuXG4kYy1ibHVlOiAjMDg2NkM2O1xuJGMtYmx1ZS1iOiAjMDc1M2ExO1xuXG4kYy1jeWFuLWI6ICMzOWFhYWQ7XG4kYy1jeWFuOiAjNmJjM2JkO1xuJGMtY3lhbi1sOiAjZTNmNmY4O1xuXG4kYy1ncmVlbjogIzIzQkYwODtcbiRjLWdyZWVuLWI6ICMxYzlhMDY7XG5cbiRjLXJlZDojREMzNTQ1O1xuJGMtcmVkLWI6I2M4MjMzMztcblxuJGMteWVsbG93OiAjZWVmNjZkO1xuXG4vLyBHcmF5XG4kYy1ibGFjazogIzAwMDtcbiRjLWdyYXktYmJiYjogIzIzMjcyYjtcbiRjLWdyYXktYmJiOiAjMzQzYTQwO1xuJGMtZ3JheS1iYjogIzcyN2I4NDtcbiRjLWdyYXktYjogIzg2OGU5NjtcbiRjLWdyYXk6ICNlMmU2ZWE7XG4kYy1ncmF5LWw6ICNmOGY5ZmE7XG4kYy13aGl0ZTogI2ZmZjtcblxuJGMtdGV4dDogJGMtZ3JheS1iYmJiO1xuJGMtYm9yZGVyOiAkYy1ncmF5O1xuJGMtYmc6ICRjLWdyYXktbDtcblxuJGMtc3VjY2VzczogJGMtZ3JlZW47XG4kYy13YXJuaW5nOiAkYy1vcmFuZ2U7XG4kYy1lcnJvcjogJGMtcmVkO1xuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgY29sb3I6ICMyMzI3MmI7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -4301,7 +1765,7 @@ IconComponent.ctorParameters = () => [
 IconComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'mc-icon',
-        template: '',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./icon.component.html */ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/icon/icon.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./icon.component.scss */ "./projects/mc-ui/src/lib/component/icon/icon.component.scss")).default]
     })
 ], IconComponent);
@@ -4319,7 +1783,7 @@ IconComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  width: 100%;\n  overflow: auto;\n  border: 1px solid #ebe8e3;\n  border-radius: 3px;\n}\n:host.horizontal {\n  border: 0;\n  border-radius: 0;\n  display: inline-block;\n  width: auto;\n}\n:host.is-scroll-page {\n  border: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1iYXNpYy5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1iYXNpYy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7QUNBRjtBREVFO0VBQ0UsU0FBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxXQUFBO0FDQUo7QURHRTtFQUNFLFNBQUE7QUNESiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9saXN0L2xpc3QtYmFzaWMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwJTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIGJvcmRlcjogMXB4IHNvbGlkICRjLWJvcmRlcjtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuXG4gICYuaG9yaXpvbnRhbCB7XG4gICAgYm9yZGVyOiAwO1xuICAgIGJvcmRlci1yYWRpdXM6IDA7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIHdpZHRoOiBhdXRvO1xuICB9XG5cbiAgJi5pcy1zY3JvbGwtcGFnZSB7XG4gICAgYm9yZGVyOiAwO1xuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIG92ZXJmbG93OiBhdXRvO1xuICBib3JkZXI6IDFweCBzb2xpZCAjZWJlOGUzO1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG46aG9zdC5ob3Jpem9udGFsIHtcbiAgYm9yZGVyOiAwO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiBhdXRvO1xufVxuOmhvc3QuaXMtc2Nyb2xsLXBhZ2Uge1xuICBib3JkZXI6IDA7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  width: 100%;\n  overflow: auto;\n  border: 1px solid #e2e6ea;\n  border-radius: 3px;\n}\n:host.horizontal {\n  border: 0;\n  border-radius: 0;\n  display: inline-block;\n  width: auto;\n}\n:host.is-scroll-page {\n  border: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1iYXNpYy5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1iYXNpYy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7QUNBRjtBREVFO0VBQ0UsU0FBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxXQUFBO0FDQUo7QURHRTtFQUNFLFNBQUE7QUNESiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9saXN0L2xpc3QtYmFzaWMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwJTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIGJvcmRlcjogMXB4IHNvbGlkICRjLWJvcmRlcjtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuXG4gICYuaG9yaXpvbnRhbCB7XG4gICAgYm9yZGVyOiAwO1xuICAgIGJvcmRlci1yYWRpdXM6IDA7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIHdpZHRoOiBhdXRvO1xuICB9XG5cbiAgJi5pcy1zY3JvbGwtcGFnZSB7XG4gICAgYm9yZGVyOiAwO1xuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIG92ZXJmbG93OiBhdXRvO1xuICBib3JkZXI6IDFweCBzb2xpZCAjZTJlNmVhO1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG46aG9zdC5ob3Jpem9udGFsIHtcbiAgYm9yZGVyOiAwO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiBhdXRvO1xufVxuOmhvc3QuaXMtc2Nyb2xsLXBhZ2Uge1xuICBib3JkZXI6IDA7XG59Il19 */");
 
 /***/ }),
 
@@ -4403,11 +1867,16 @@ let ListBasicComponent = class ListBasicComponent extends _base_component__WEBPA
     }
     selectItem(item) {
         // TODO: check the list is rerendered.
+        if (!this.multiSelect) {
+            this.selectedItemsMap = new Map();
+        }
         this.selectedItemsMap.set(item[this.idField] + '', item);
     }
     unselectItem(item) {
         // TODO: check the list is rerendered.
-        this.selectedItemsMap.delete(item[this.idField] + '');
+        if (this.multiSelect) {
+            this.selectedItemsMap.delete(item[this.idField] + '');
+        }
     }
     emitAction(actionType, selectedItem, event = null) {
         this.action.emit({ target: this, action: actionType, event: event, selectedItem: selectedItem, selectedItems: this.getSelectedItems() });
@@ -4488,7 +1957,7 @@ ListBasicComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  padding: 0 20px;\n  width: 100%;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #ebe8e3;\n}\n:host:last-child {\n  border-bottom-color: transparent;\n}\n:host.horizontal {\n  float: left;\n  width: auto;\n  border-color: transparent;\n}\n:host.horizontal.selected {\n  border-bottom: 2px solid #333333;\n}\n:host.is-scroll-page-item:last-child {\n  border-bottom-color: #ebe8e3;\n}\n:host.is-scroll-page-item.is-last-page-item:last-child {\n  border-bottom-color: transparent;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1pdGVtLmNvbXBvbmVudC5zY3NzIiwicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvbGlzdC9saXN0LWl0ZW0uY29tcG9uZW50LnNjc3MiLCIvVXNlcnMvbWMvbWMtdWktYW5ndWxhci9wcm9qZWN0cy9tYy11aS9zcmMvbGliL2Nzcy9fdmFycy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLGlDQUFBO0VBQ0EsZ0NBQUE7QUNBSjtBREVJO0VBQ0UsZ0NBQUE7QUNBTjtBREtJO0VBQ0UsV0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtBQ0hOO0FESU07RUFDRSxnQ0FBQTtBQ0ZSO0FET1E7RUFDRSw0QkVWRDtBREtUO0FEUVk7RUFDRSxnQ0FBQTtBQ05kIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1pdGVtLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4vLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwYWRkaW5nOiAwIDIwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAkYy1ib3JkZXI7XG5cbiAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgfVxuXG4gICAgJi5zZWxlY3RlZCB7fVxuXG4gICAgJi5ob3Jpem9udGFsIHtcbiAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgd2lkdGg6IGF1dG87XG4gICAgICBib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgJi5zZWxlY3RlZCB7XG4gICAgICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAkYy1ncmF5LWJiYjtcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmLmlzLXNjcm9sbC1wYWdlLWl0ZW0ge1xuICAgICAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6ICRjLWJvcmRlcjtcbiAgICAgICAgfVxuICAgICAgICAmLmlzLWxhc3QtcGFnZS1pdGVtIHtcbiAgICAgICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgfVxufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBwYWRkaW5nOiAwIDIwcHg7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWJlOGUzO1xufVxuOmhvc3Q6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufVxuOmhvc3QuaG9yaXpvbnRhbCB7XG4gIGZsb2F0OiBsZWZ0O1xuICB3aWR0aDogYXV0bztcbiAgYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cbjpob3N0Lmhvcml6b250YWwuc2VsZWN0ZWQge1xuICBib3JkZXItYm90dG9tOiAycHggc29saWQgIzMzMzMzMztcbn1cbjpob3N0LmlzLXNjcm9sbC1wYWdlLWl0ZW06bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6ICNlYmU4ZTM7XG59XG46aG9zdC5pcy1zY3JvbGwtcGFnZS1pdGVtLmlzLWxhc3QtcGFnZS1pdGVtOmxhc3QtY2hpbGQge1xuICBib3JkZXItYm90dG9tLWNvbG9yOiB0cmFuc3BhcmVudDtcbn0iLCIvLyBQcmltYXJ5IGNvbG9yc1xuJGMtb3JhbmdlLWI6ICNmMzY3MDU7XG4kYy1vcmFuZ2U6ICNmODgzMDA7XG4kYy1vcmFuZ2UtbDogI2ZmYjMwMjtcblxuLy8gU2Vjb25kIGNvbG9yc1xuJGMtY3lhbi1iOiAjMzlhYWFkO1xuJGMtY3lhbjogIzZiYzNiZDtcbiRjLWN5YW4tbDogI2UzZjZmODtcblxuJGMteWVsbG93OiAjZWVmNjZkO1xuXG4vLyBHcmF5XG4kYy1ibGFjazogIzAwMDtcbiRjLWdyYXktYmJiOiAjMzMzMzMzO1xuJGMtZ3JheS1iYjogIzcyNmY2YTtcbiRjLWdyYXktYjogI2M5YzViYjtcbiRjLWdyYXk6ICNlYmU4ZTM7XG4kYy1ncmF5LWw6ICNmN2Y3Zjc7XG4kYy13aGl0ZTogI2ZmZjtcblxuJGMtdGV4dDogJGMtZ3JheS1iYmI7XG4kYy1ib3JkZXI6ICRjLWdyYXk7Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  padding: 0 20px;\n  width: 100%;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #e2e6ea;\n}\n:host:last-child {\n  border-bottom-color: transparent;\n}\n:host.horizontal {\n  float: left;\n  width: auto;\n  border-color: transparent;\n}\n:host.horizontal.selected {\n  border-bottom: 2px solid #343a40;\n}\n:host.is-scroll-page-item:last-child {\n  border-bottom-color: #e2e6ea;\n}\n:host.is-scroll-page-item.is-last-page-item:last-child {\n  border-bottom-color: transparent;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1pdGVtLmNvbXBvbmVudC5zY3NzIiwicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvbGlzdC9saXN0LWl0ZW0uY29tcG9uZW50LnNjc3MiLCIvVXNlcnMvbWMvbWMtdWktYW5ndWxhci9wcm9qZWN0cy9tYy11aS9zcmMvbGliL2Nzcy9fdmFycy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLGlDQUFBO0VBQ0EsZ0NBQUE7QUNBSjtBREVJO0VBQ0UsZ0NBQUE7QUNBTjtBREtJO0VBQ0UsV0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtBQ0hOO0FESU07RUFDRSxnQ0FBQTtBQ0ZSO0FET1E7RUFDRSw0QkVERDtBREpUO0FEUVk7RUFDRSxnQ0FBQTtBQ05kIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1pdGVtLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4vLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwYWRkaW5nOiAwIDIwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAkYy1ib3JkZXI7XG5cbiAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgfVxuXG4gICAgJi5zZWxlY3RlZCB7fVxuXG4gICAgJi5ob3Jpem9udGFsIHtcbiAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgd2lkdGg6IGF1dG87XG4gICAgICBib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgJi5zZWxlY3RlZCB7XG4gICAgICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAkYy1ncmF5LWJiYjtcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmLmlzLXNjcm9sbC1wYWdlLWl0ZW0ge1xuICAgICAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6ICRjLWJvcmRlcjtcbiAgICAgICAgfVxuICAgICAgICAmLmlzLWxhc3QtcGFnZS1pdGVtIHtcbiAgICAgICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgfVxufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBwYWRkaW5nOiAwIDIwcHg7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTJlNmVhO1xufVxuOmhvc3Q6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufVxuOmhvc3QuaG9yaXpvbnRhbCB7XG4gIGZsb2F0OiBsZWZ0O1xuICB3aWR0aDogYXV0bztcbiAgYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cbjpob3N0Lmhvcml6b250YWwuc2VsZWN0ZWQge1xuICBib3JkZXItYm90dG9tOiAycHggc29saWQgIzM0M2E0MDtcbn1cbjpob3N0LmlzLXNjcm9sbC1wYWdlLWl0ZW06bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6ICNlMmU2ZWE7XG59XG46aG9zdC5pcy1zY3JvbGwtcGFnZS1pdGVtLmlzLWxhc3QtcGFnZS1pdGVtOmxhc3QtY2hpbGQge1xuICBib3JkZXItYm90dG9tLWNvbG9yOiB0cmFuc3BhcmVudDtcbn0iLCIvLyBQcmltYXJ5IGNvbG9yc1xuJGMtb3JhbmdlLWI6ICNmMzY3MDU7XG4kYy1vcmFuZ2U6ICNmODgzMDA7XG4kYy1vcmFuZ2UtbDogI2ZmYjMwMjtcblxuJGMtYmx1ZTogIzA4NjZDNjtcbiRjLWJsdWUtYjogIzA3NTNhMTtcblxuJGMtY3lhbi1iOiAjMzlhYWFkO1xuJGMtY3lhbjogIzZiYzNiZDtcbiRjLWN5YW4tbDogI2UzZjZmODtcblxuJGMtZ3JlZW46ICMyM0JGMDg7XG4kYy1ncmVlbi1iOiAjMWM5YTA2O1xuXG4kYy1yZWQ6I0RDMzU0NTtcbiRjLXJlZC1iOiNjODIzMzM7XG5cbiRjLXllbGxvdzogI2VlZjY2ZDtcblxuLy8gR3JheVxuJGMtYmxhY2s6ICMwMDA7XG4kYy1ncmF5LWJiYmI6ICMyMzI3MmI7XG4kYy1ncmF5LWJiYjogIzM0M2E0MDtcbiRjLWdyYXktYmI6ICM3MjdiODQ7XG4kYy1ncmF5LWI6ICM4NjhlOTY7XG4kYy1ncmF5OiAjZTJlNmVhO1xuJGMtZ3JheS1sOiAjZjhmOWZhO1xuJGMtd2hpdGU6ICNmZmY7XG5cbiRjLXRleHQ6ICRjLWdyYXktYmJiYjtcbiRjLWJvcmRlcjogJGMtZ3JheTtcbiRjLWJnOiAkYy1ncmF5LWw7XG5cbiRjLXN1Y2Nlc3M6ICRjLWdyZWVuO1xuJGMtd2FybmluZzogJGMtb3JhbmdlO1xuJGMtZXJyb3I6ICRjLXJlZDtcbiJdfQ== */");
 
 /***/ }),
 
@@ -4585,7 +2054,7 @@ ListItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  border: 1px solid #ebe8e3;\n  border-radius: 3px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSx5QkFBQTtFQUNBLGtCQUFBO0FDQUYiLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvbGlzdC9saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uL2Nzcy92YXJzXCI7XG46aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyOiAxcHggc29saWQgJGMtYm9yZGVyO1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2ViZThlMztcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  border: 1px solid #e2e6ea;\n  border-radius: 3px;\n  background-color: #fff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSx5QkFBQTtFQUNBLGtCQUFBO0VBQ0Esc0JBQUE7QUNBRiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9saXN0L2xpc3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuICBib3JkZXI6IDFweCBzb2xpZCAkYy1ib3JkZXI7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuICBib3JkZXI6IDFweCBzb2xpZCAjZTJlNmVhO1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG59Il19 */");
 
 /***/ }),
 
@@ -4852,7 +2321,7 @@ MessageBarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L3BvcHVwL3BvcHVwLWxpc3QuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9wb3B1cC9wb3B1cC1saXN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUNERiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9wb3B1cC9wb3B1cC1saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cbjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  background-color: transparent;\n}\n:host .popup-list--header--input--icon {\n  position: absolute;\n  right: 10px;\n  top: 0;\n  line-height: 43px;\n}\n:host .popup-list--body-t {\n  background-color: transparent;\n}\n:host .popup-list--body-t mc-list {\n  position: absolute;\n  width: 100%;\n  bottom: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L3BvcHVwL3BvcHVwLWxpc3QuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9wb3B1cC9wb3B1cC1saXN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsNkJBQUE7QUNDRjtBREdRO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0VBQ0EsTUFBQTtFQUNBLGlCQUFBO0FDRFY7QURNTTtFQUNFLDZCQUFBO0FDSlI7QURLUTtFQUNFLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFNBQUE7QUNIViIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9wb3B1cC9wb3B1cC1saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgLnBvcHVwLWxpc3Qge1xuICAgICYtLWhlYWRlciB7XG4gICAgICAmLS1pbnB1dCB7XG4gICAgICAgICYtLWljb24ge1xuICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICByaWdodDogMTBweDtcbiAgICAgICAgICB0b3A6IDA7XG4gICAgICAgICAgbGluZS1oZWlnaHQ6IDQzcHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gICAgJi0tYm9keSB7XG4gICAgICAmLXQge1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAgICAgbWMtbGlzdCB7XG4gICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIGJvdHRvbTogMDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIiwiOmhvc3Qge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cbjpob3N0IC5wb3B1cC1saXN0LS1oZWFkZXItLWlucHV0LS1pY29uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogMTBweDtcbiAgdG9wOiAwO1xuICBsaW5lLWhlaWdodDogNDNweDtcbn1cbjpob3N0IC5wb3B1cC1saXN0LS1ib2R5LXQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cbjpob3N0IC5wb3B1cC1saXN0LS1ib2R5LXQgbWMtbGlzdCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgd2lkdGg6IDEwMCU7XG4gIGJvdHRvbTogMDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -4880,66 +2349,112 @@ let PopupListComponent = class PopupListComponent extends _popup_component__WEBP
         super(er, service);
         this.er = er;
         this.service = service;
-        this.listHeight = 300;
+        this.keyword = '';
+        this.adjustedListHeight = 300;
+        // for displaying the selections.
         this.popupSelectedItems = [];
+        this.listSelectedItems = [];
+        this.lastSelectedName = '';
+        this.listHeight = 300;
+        this.rowHeight = 45;
         this.multiSelect = false;
         // popup
         this.height = 350;
-        this.startFrom = 'start';
-        this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.startFrom = 'overlap';
         this.needData = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.filterDebounce = this.util.debounce(this.filter, 300, this);
     }
+    // read only
     set selectedItems(value) {
         if (value) {
-            // input only
             this.popupSelectedItems = value.concat();
+            this.listSelectedItems = value.concat();
+            this.lastSelectedItem = value.length ? value[0] : null;
         }
     }
-    get selectedItems() {
-        return this._selectedItems;
-    }
     set data(value) {
+        this.adjustedListHeight = this.listHeight;
         // input only
         this._data = value;
+        // console.log('update popup list data', value);
         // update list for calculating scroll height after updating header height.
         setTimeout(() => this.listData = value);
     }
     get data() {
         return this._data;
     }
+    getInputCmp() {
+        return this.indicatorLocation[0] === 't' ? this.inputCmp1 : this.inputCmp2;
+    }
     show() {
+        // init filter
+        if (this.keyword) {
+            this.filter('');
+        }
+        this.updateLastSelectedItemName();
         super.show();
+        setTimeout(() => {
+            // focus
+            const inputCmp = this.getInputCmp();
+            inputCmp.focus();
+        });
     }
     filter(keyword) {
         if (keyword !== this.keyword) {
+            this.keyword = keyword;
+            // it can assign 2 times but it is the same value, so it is not infinity loop.
+            this.lastSelectedName = keyword;
             this.needData.emit({
                 target: this,
+                action: 'filter',
                 keyword
             });
         }
     }
-    onValueChange(e) {
-        this.filterDebounce(e.value);
+    updateLastSelectedItemName() {
+        this.lastSelectedName = this.lastSelectedItem ? this.lastSelectedItem[this.nameField] : '';
     }
-    onClicUnselectButton(item) {
+    onValueChange(e) {
+        // console.log('valueChange', e);
+        if (e.by === 'keyboard') {
+            this.filterDebounce(e.value);
+        }
+    }
+    onClickUnselectButton(item) {
         this.listCmp.unselectItem(item);
     }
     onListAction(e) {
         switch (e.action) {
             case 'unselect-item':
             case 'select-item':
-                // update popup selected item
-                if (e.action === 'select-item') {
-                    this.popupSelectedItems.push(e.item);
+                // for display the selections.
+                this.popupSelectedItems = e.selectedItems.concat();
+                if (!this.multiSelect) {
+                    this.visible = false;
                 }
-                else {
-                    this.popupSelectedItems = this.popupSelectedItems.filter(d => d[this.idField] + '' !== e.item[this.idField] + '');
-                }
-                e.target = this;
-                this.action.emit(e);
+                this.lastSelectedItem = e.selectedItem;
+                break;
+            case 'pages-rendered':
+                // remove the empty space of the list
+                setTimeout(() => {
+                    if (e.rowCount * e.rowHeight < this.listHeight) {
+                        this.adjustedListHeight = e.rowCount * e.rowHeight + 2;
+                    }
+                    else {
+                        this.adjustedListHeight = this.listHeight;
+                    }
+                });
                 break;
         }
+        e.target = this;
+        this.action.emit(e);
+    }
+    onListNeedData(e) {
+        e.target = this;
+        this.needData.emit(e);
+    }
+    onClickListBody() {
+        this.visible = false;
     }
 };
 PopupListComponent.ctorParameters = () => [
@@ -4949,6 +2464,15 @@ PopupListComponent.ctorParameters = () => [
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('listCmp', { static: false })
 ], PopupListComponent.prototype, "listCmp", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('inputCmp1', { static: false })
+], PopupListComponent.prototype, "inputCmp1", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('inputCmp2', { static: false })
+], PopupListComponent.prototype, "inputCmp2", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], PopupListComponent.prototype, "listHeight", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], PopupListComponent.prototype, "itemTpl", void 0);
@@ -4979,9 +2503,6 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], PopupListComponent.prototype, "startFrom", void 0);
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-], PopupListComponent.prototype, "valueChange", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
 ], PopupListComponent.prototype, "needData", void 0);
@@ -5038,11 +2559,13 @@ let PopupComponent = class PopupComponent extends _base_component__WEBPACK_IMPOR
         // for body press event, it is triggered after clicking the target. We need to ignore the body event when visible = true;
         this.bodyEventLock = false;
         this.indicatorHeight = 10;
+        this.indicatorLocation = 'bl'; // 'tl' | 'tr' | 'bl' | 'br' = 'bl'
         this.checkTargetLocation = false;
         // top left is the base state.
         this.startFrom = 'center';
         this.offsetX = 0;
         this.offsetY = 0;
+        this.useTargetWidth = false;
         this.tpl = null;
         this.hided = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.center = false;
@@ -5094,6 +2617,8 @@ let PopupComponent = class PopupComponent extends _base_component__WEBPACK_IMPOR
         // renew check.
         this.uncheckTargetLocation();
         this.checkTargetElLocation();
+        // for updating the last size;
+        this.lastTargetElCoord = this.targetEl.getBoundingClientRect();
         this.el.style.visibility = 'hidden';
         this.el.style.display = '';
         // after the targetEl is changed.
@@ -5107,7 +2632,8 @@ let PopupComponent = class PopupComponent extends _base_component__WEBPACK_IMPOR
             const isLeft = targetSize.left + (this.startFrom === 'center' ? targetSize.width / 2 : 0) + popupSize.width + this.offsetX <= windowSize.width;
             const isTop = targetSize.top + targetSize.height + popupSize.height + this.offsetY + indicatorHeight <= windowSize.height;
             const left = isLeft ? targetSize.left + (this.startFrom === 'center' ? targetSize.width / 2 : 0) + this.offsetX : targetSize.left - popupSize.width + (this.startFrom === 'center' ? targetSize.width / 2 : targetSize.width) - this.offsetX;
-            const top = isTop ? targetSize.top + targetSize.height + this.offsetY + indicatorHeight : targetSize.top - popupSize.height - this.offsetY - indicatorHeight;
+            const top = isTop ? targetSize.top + (this.startFrom === 'overlap' ? 0 : targetSize.height) + this.offsetY + indicatorHeight : targetSize.top - popupSize.height - this.offsetY - indicatorHeight + (this.startFrom === 'overlap' ? targetSize.height : 0);
+            this.indicatorLocation = (isTop ? 't' : 'b') + (isLeft ? 'l' : 'r');
             this.el.style.left = left + 'px';
             this.el.style.top = top + 'px';
             // remove the prev indicator and add the new indicator
@@ -5177,6 +2703,9 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 ], PopupComponent.prototype, "offsetY", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], PopupComponent.prototype, "useTargetWidth", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], PopupComponent.prototype, "tpl", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
@@ -5229,12 +2758,12 @@ class ScrollAsyncComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__[
         this.neededDataIndex = -1;
         this.neededPageIndex = 1;
         this.page1Indexes = {
-            start: 0,
-            end: 0
+            start: -1,
+            end: -1
         };
         this.page2Indexes = {
-            start: 0,
-            end: 0
+            start: -1,
+            end: -1
         };
         this.isLoading = false;
         this.page1IsFirst = false;
@@ -5247,7 +2776,11 @@ class ScrollAsyncComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__[
         this.needData = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
     }
     set data(value) {
+        // console.log('update scroll data', value);
         if (value) {
+            // init page
+            this.page1Indexes = { start: -1, end: -1 };
+            this.page2Indexes = { start: -1, end: -1 };
             let data;
             if (Array.isArray(value)) {
                 data = {
@@ -5268,7 +2801,12 @@ class ScrollAsyncComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__[
                 }) : null;
             }
             this._data = data;
-            this.rowCount = this._data.rowCount;
+            this.rowCount = data.rowCount;
+            // after rendering, it need to update the scroll state manually whenever the data is updated since the scroll doesn't have data property.
+            if (this.rendered) {
+                // update after the rowCount is applied.
+                setTimeout(() => this.scrollCmp.updateState(true));
+            }
         }
     }
     get data() {
@@ -5294,13 +2832,14 @@ class ScrollAsyncComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__[
     updateData(indexes, pageIndex) {
         const start = indexes.start;
         const end = indexes.end;
-        if (!this.data.rows[start]) {
+        if (this.rowCount && !this.data.rows[start]) {
             this.neededPageIndex = pageIndex;
             // skip the same request.
             if (this.neededDataIndex !== start) {
                 this.isLoading = true;
                 this.neededDataIndex = start;
                 this.needData.emit({
+                    target: this,
                     index: this.neededDataIndex,
                     action: 'append'
                 }); // when tree, it needs to insert data
@@ -5320,25 +2859,45 @@ class ScrollAsyncComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__[
         return this.data.rows;
     }
     onUpdatePage(e) {
-        if (this.page1Indexes.start !== e.page1StartIndex || this.page1Indexes.end !== e.page1EndIndex) {
+        if (e.page1StartIndex < 0) {
             this.page1Indexes.start = e.page1StartIndex;
             this.page1Indexes.end = e.page1EndIndex;
-            this.updateData(this.page1Indexes, 1);
+            this.page1Data = [];
         }
-        if (this.page2Indexes.start !== e.page2StartIndex || this.page2Indexes.end !== e.page2EndIndex) {
+        else {
+            if (this.page1Indexes.start !== e.page1StartIndex || this.page1Indexes.end !== e.page1EndIndex) {
+                this.page1Indexes.start = e.page1StartIndex;
+                this.page1Indexes.end = e.page1EndIndex;
+                this.updateData(this.page1Indexes, 1);
+            }
+        }
+        if (e.page2StartIndex < 0) {
             this.page2Indexes.start = e.page2StartIndex;
             this.page2Indexes.end = e.page2EndIndex;
-            this.updateData(this.page2Indexes, 2);
+            this.page2Data = [];
+        }
+        else {
+            if (this.page2Indexes.start !== e.page2StartIndex || this.page2Indexes.end !== e.page2EndIndex) {
+                this.page2Indexes.start = e.page2StartIndex;
+                this.page2Indexes.end = e.page2EndIndex;
+                this.updateData(this.page2Indexes, 2);
+            }
         }
         this.page1IsLast = e.page1IsLast;
         this.page2IsLast = e.page2IsLast;
         this.page1IsFirst = e.page1IsFirst;
         this.page2IsFirst = e.page2IsFirst;
+        this.action.emit({
+            target: this, action: 'pages-rendered', rowCount: this.rowCount, rowHeight: this.rowHeight
+        });
     }
     onAction(e) {
         this.action.emit(e);
     }
 }
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('scrollCmp', { static: false })
+], ScrollAsyncComponent.prototype, "scrollCmp", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])()
 ], ScrollAsyncComponent.prototype, "idField", void 0);
@@ -5409,10 +2968,11 @@ let ScrollComponent = class ScrollComponent extends _base_component__WEBPACK_IMP
     set rowCount(value) {
         if (!this.util.isEmpty(value)) {
             this._rowCount = value;
-            // row count can be updated after rendering ui
-            if (this.rendered) {
-                this.updateState();
-            }
+            // init value
+            this.page1Index = -2;
+            this.page2Index = -1;
+            this.scrollTop = 0;
+            this.oldScrollTop = -1;
         }
     }
     get rowCount() {
@@ -5433,7 +2993,7 @@ let ScrollComponent = class ScrollComponent extends _base_component__WEBPACK_IMP
             page2EndIndex: -1
         };
     }
-    updateState() {
+    updateState(refresh = false) {
         const scrollTop = this.scrollTop;
         const isDown = this.oldScrollTop < scrollTop;
         const rowHeight = this.rowHeight;
@@ -5444,10 +3004,10 @@ let ScrollComponent = class ScrollComponent extends _base_component__WEBPACK_IMP
         const pageRowCount = Math.round((containerHeight / rowHeight) * 1.5);
         const pageHeight = pageRowCount * rowHeight;
         const contentHeight = rowCount === 0 ? rowHeight : rowHeight * rowCount;
-        const pageLastIndex = Math.floor(contentHeight / pageHeight);
+        const pageLastIndex = Math.floor((contentHeight - 1) / pageHeight); // -1 for if it is the same as with the pageHeight, the page can be +1.
         const nextPageIndex = isDown ? Math.ceil(scrollTop / pageHeight) : Math.floor(scrollTop / pageHeight);
         // console.log(nextPageIndex, pageLastIndex, page1Index, page2Index);
-        if (nextPageIndex <= pageLastIndex && page1Index !== nextPageIndex && page2Index !== nextPageIndex) {
+        if (refresh || (nextPageIndex <= pageLastIndex && page1Index !== nextPageIndex && page2Index !== nextPageIndex)) {
             // It may not have two pages at all. keep the full logic for readability.
             if (page1Index === -2) {
                 // init
@@ -5465,10 +3025,26 @@ let ScrollComponent = class ScrollComponent extends _base_component__WEBPACK_IMP
                 page1Index = isDown ? nextPageIndex - 1 : nextPageIndex;
                 page2Index = page1Index + 1;
             }
-            const page1StartIndex = page1Index * pageRowCount;
-            const page2StartIndex = page2Index * pageRowCount;
-            const page1EndIndex = page1StartIndex + pageRowCount - 1;
-            const page2EndIndex = page2StartIndex + pageRowCount - 1;
+            let page1StartIndex = page1Index * pageRowCount;
+            let page2StartIndex = page2Index * pageRowCount;
+            let page1EndIndex = page1StartIndex + pageRowCount - 1;
+            let page2EndIndex = page2StartIndex + pageRowCount - 1;
+            if (page1StartIndex >= rowCount) {
+                page1StartIndex = -1;
+                page1EndIndex = -1;
+                page1Index = -2;
+            }
+            else if (page1EndIndex >= rowCount) {
+                page1EndIndex = rowCount - 1;
+            }
+            if (page2StartIndex >= rowCount) {
+                page2StartIndex = -1;
+                page2EndIndex = -1;
+                page2Index = -1;
+            }
+            else if (page2EndIndex >= rowCount) {
+                page2EndIndex = rowCount - 1;
+            }
             const page1Top = page1StartIndex * rowHeight;
             const page2Top = page2StartIndex * rowHeight;
             this.page1Index = page1Index;
@@ -5493,11 +3069,13 @@ let ScrollComponent = class ScrollComponent extends _base_component__WEBPACK_IMP
                 page2EndIndex,
                 page1Index,
                 page2Index,
+                rowCount,
                 pageLastIndex,
                 page1IsFirst: page1Index === 0,
                 page2IsFirst: page2Index === 0,
-                page1IsLast: page1Index === pageLastIndex,
-                page2IsLast: page2Index === pageLastIndex
+                page1IsLast: page1Index !== -1 && page1Index === pageLastIndex,
+                page2IsLast: page2Index !== -1 && page2Index === pageLastIndex,
+                refresh
             });
         }
         this.oldScrollTop = scrollTop;
@@ -5583,6 +3161,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./component/popup/popup.component */ "./projects/mc-ui/src/lib/component/popup/popup.component.ts");
 /* harmony import */ var _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./component/popup/popup-list.component */ "./projects/mc-ui/src/lib/component/popup/popup-list.component.ts");
 /* harmony import */ var _mc_ui_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./mc-ui.service */ "./projects/mc-ui/src/lib/mc-ui.service.ts");
+/* harmony import */ var _component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./component/form/field/dropdown/dropdown.component */ "./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.ts");
+
 
 
 
@@ -5636,7 +3216,8 @@ MCUIModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _component_grid_grid_component__WEBPACK_IMPORTED_MODULE_21__["GridComponent"],
             _component_mask_mask_component__WEBPACK_IMPORTED_MODULE_20__["MaskComponent"],
             _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_22__["PopupComponent"],
-            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_23__["PopupListComponent"]
+            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_23__["PopupListComponent"],
+            _component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_25__["DropdownComponent"]
         ],
         entryComponents: [
             _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_22__["PopupComponent"],
@@ -5664,7 +3245,8 @@ MCUIModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _component_grid_grid_component__WEBPACK_IMPORTED_MODULE_21__["GridComponent"],
             _component_mask_mask_component__WEBPACK_IMPORTED_MODULE_20__["MaskComponent"],
             _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_22__["PopupComponent"],
-            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_23__["PopupListComponent"]
+            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_23__["PopupListComponent"],
+            _component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_25__["DropdownComponent"]
         ],
         providers: [_mc_ui_service__WEBPACK_IMPORTED_MODULE_24__["MCUIService"]]
     })
@@ -5719,9 +3301,10 @@ let MCUIService = class MCUIService {
         parentEl.appendChild(cmp.location.nativeElement);
         return cmp;
     }
-    removeComponentEl(cmp) {
+    removeComponent(cmp) {
         this.appRef.detachView(cmp.hostView);
         cmp.destroy();
+        cmp = null;
     }
     getBody() {
         return document.body;
@@ -6053,7 +3636,7 @@ class Util {
 /*!******************************************!*\
   !*** ./projects/mc-ui/src/public-api.ts ***!
   \******************************************/
-/*! exports provided: MCUIService, MCUIModule, FieldComponent, TextareaComponent, InputComponent, FormComponent, ScrollComponent, ListComponent, ListBasicComponent, ButtonComponent, IconComponent, ListItemComponent, LoaderComponent, DrawerComponent, MessageBarComponent, GridHeaderComponent, GridBodyComponent, MaskComponent, GridComponent, PopupComponent */
+/*! exports provided: MCUIService, MCUIModule, FieldComponent, TextareaComponent, InputComponent, DropdownComponent, FormComponent, ScrollComponent, ListComponent, ListBasicComponent, ButtonComponent, IconComponent, ListItemComponent, LoaderComponent, DrawerComponent, MessageBarComponent, GridHeaderComponent, GridBodyComponent, MaskComponent, GridComponent, PopupComponent, PopupListComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6074,56 +3657,64 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_component_form_field_input_input_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/component/form/field/input/input.component */ "./projects/mc-ui/src/lib/component/form/field/input/input.component.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InputComponent", function() { return _lib_component_form_field_input_input_component__WEBPACK_IMPORTED_MODULE_5__["InputComponent"]; });
 
-/* harmony import */ var _lib_component_form_form_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/component/form/form.component */ "./projects/mc-ui/src/lib/component/form/form.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FormComponent", function() { return _lib_component_form_form_component__WEBPACK_IMPORTED_MODULE_6__["FormComponent"]; });
+/* harmony import */ var _lib_component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/component/form/field/dropdown/dropdown.component */ "./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DropdownComponent", function() { return _lib_component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_6__["DropdownComponent"]; });
 
-/* harmony import */ var _lib_component_scroll_scroll_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/component/scroll/scroll.component */ "./projects/mc-ui/src/lib/component/scroll/scroll.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollComponent", function() { return _lib_component_scroll_scroll_component__WEBPACK_IMPORTED_MODULE_7__["ScrollComponent"]; });
+/* harmony import */ var _lib_component_form_form_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/component/form/form.component */ "./projects/mc-ui/src/lib/component/form/form.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FormComponent", function() { return _lib_component_form_form_component__WEBPACK_IMPORTED_MODULE_7__["FormComponent"]; });
 
-/* harmony import */ var _lib_component_list_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/component/list/list.component */ "./projects/mc-ui/src/lib/component/list/list.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListComponent", function() { return _lib_component_list_list_component__WEBPACK_IMPORTED_MODULE_8__["ListComponent"]; });
+/* harmony import */ var _lib_component_scroll_scroll_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/component/scroll/scroll.component */ "./projects/mc-ui/src/lib/component/scroll/scroll.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollComponent", function() { return _lib_component_scroll_scroll_component__WEBPACK_IMPORTED_MODULE_8__["ScrollComponent"]; });
 
-/* harmony import */ var _lib_component_list_list_basic_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lib/component/list/list-basic.component */ "./projects/mc-ui/src/lib/component/list/list-basic.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListBasicComponent", function() { return _lib_component_list_list_basic_component__WEBPACK_IMPORTED_MODULE_9__["ListBasicComponent"]; });
+/* harmony import */ var _lib_component_list_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lib/component/list/list.component */ "./projects/mc-ui/src/lib/component/list/list.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListComponent", function() { return _lib_component_list_list_component__WEBPACK_IMPORTED_MODULE_9__["ListComponent"]; });
 
-/* harmony import */ var _lib_component_button_button_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lib/component/button/button.component */ "./projects/mc-ui/src/lib/component/button/button.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ButtonComponent", function() { return _lib_component_button_button_component__WEBPACK_IMPORTED_MODULE_10__["ButtonComponent"]; });
+/* harmony import */ var _lib_component_list_list_basic_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lib/component/list/list-basic.component */ "./projects/mc-ui/src/lib/component/list/list-basic.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListBasicComponent", function() { return _lib_component_list_list_basic_component__WEBPACK_IMPORTED_MODULE_10__["ListBasicComponent"]; });
 
-/* harmony import */ var _lib_component_icon_icon_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./lib/component/icon/icon.component */ "./projects/mc-ui/src/lib/component/icon/icon.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IconComponent", function() { return _lib_component_icon_icon_component__WEBPACK_IMPORTED_MODULE_11__["IconComponent"]; });
+/* harmony import */ var _lib_component_button_button_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./lib/component/button/button.component */ "./projects/mc-ui/src/lib/component/button/button.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ButtonComponent", function() { return _lib_component_button_button_component__WEBPACK_IMPORTED_MODULE_11__["ButtonComponent"]; });
 
-/* harmony import */ var _lib_component_list_list_item_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./lib/component/list/list-item.component */ "./projects/mc-ui/src/lib/component/list/list-item.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListItemComponent", function() { return _lib_component_list_list_item_component__WEBPACK_IMPORTED_MODULE_12__["ListItemComponent"]; });
+/* harmony import */ var _lib_component_icon_icon_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./lib/component/icon/icon.component */ "./projects/mc-ui/src/lib/component/icon/icon.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IconComponent", function() { return _lib_component_icon_icon_component__WEBPACK_IMPORTED_MODULE_12__["IconComponent"]; });
 
-/* harmony import */ var _lib_component_loader_loader_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./lib/component/loader/loader.component */ "./projects/mc-ui/src/lib/component/loader/loader.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoaderComponent", function() { return _lib_component_loader_loader_component__WEBPACK_IMPORTED_MODULE_13__["LoaderComponent"]; });
+/* harmony import */ var _lib_component_list_list_item_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./lib/component/list/list-item.component */ "./projects/mc-ui/src/lib/component/list/list-item.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListItemComponent", function() { return _lib_component_list_list_item_component__WEBPACK_IMPORTED_MODULE_13__["ListItemComponent"]; });
 
-/* harmony import */ var _lib_component_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./lib/component/drawer/drawer.component */ "./projects/mc-ui/src/lib/component/drawer/drawer.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return _lib_component_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_14__["DrawerComponent"]; });
+/* harmony import */ var _lib_component_loader_loader_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./lib/component/loader/loader.component */ "./projects/mc-ui/src/lib/component/loader/loader.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoaderComponent", function() { return _lib_component_loader_loader_component__WEBPACK_IMPORTED_MODULE_14__["LoaderComponent"]; });
 
-/* harmony import */ var _lib_component_message_bar_message_bar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./lib/component/message-bar/message-bar.component */ "./projects/mc-ui/src/lib/component/message-bar/message-bar.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MessageBarComponent", function() { return _lib_component_message_bar_message_bar_component__WEBPACK_IMPORTED_MODULE_15__["MessageBarComponent"]; });
+/* harmony import */ var _lib_component_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./lib/component/drawer/drawer.component */ "./projects/mc-ui/src/lib/component/drawer/drawer.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return _lib_component_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_15__["DrawerComponent"]; });
 
-/* harmony import */ var _lib_component_grid_grid_header_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./lib/component/grid/grid-header.component */ "./projects/mc-ui/src/lib/component/grid/grid-header.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GridHeaderComponent", function() { return _lib_component_grid_grid_header_component__WEBPACK_IMPORTED_MODULE_16__["GridHeaderComponent"]; });
+/* harmony import */ var _lib_component_message_bar_message_bar_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./lib/component/message-bar/message-bar.component */ "./projects/mc-ui/src/lib/component/message-bar/message-bar.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MessageBarComponent", function() { return _lib_component_message_bar_message_bar_component__WEBPACK_IMPORTED_MODULE_16__["MessageBarComponent"]; });
 
-/* harmony import */ var _lib_component_grid_grid_body_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./lib/component/grid/grid-body.component */ "./projects/mc-ui/src/lib/component/grid/grid-body.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GridBodyComponent", function() { return _lib_component_grid_grid_body_component__WEBPACK_IMPORTED_MODULE_17__["GridBodyComponent"]; });
+/* harmony import */ var _lib_component_grid_grid_header_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./lib/component/grid/grid-header.component */ "./projects/mc-ui/src/lib/component/grid/grid-header.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GridHeaderComponent", function() { return _lib_component_grid_grid_header_component__WEBPACK_IMPORTED_MODULE_17__["GridHeaderComponent"]; });
 
-/* harmony import */ var _lib_component_mask_mask_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./lib/component/mask/mask.component */ "./projects/mc-ui/src/lib/component/mask/mask.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MaskComponent", function() { return _lib_component_mask_mask_component__WEBPACK_IMPORTED_MODULE_18__["MaskComponent"]; });
+/* harmony import */ var _lib_component_grid_grid_body_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./lib/component/grid/grid-body.component */ "./projects/mc-ui/src/lib/component/grid/grid-body.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GridBodyComponent", function() { return _lib_component_grid_grid_body_component__WEBPACK_IMPORTED_MODULE_18__["GridBodyComponent"]; });
 
-/* harmony import */ var _lib_component_grid_grid_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./lib/component/grid/grid.component */ "./projects/mc-ui/src/lib/component/grid/grid.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GridComponent", function() { return _lib_component_grid_grid_component__WEBPACK_IMPORTED_MODULE_19__["GridComponent"]; });
+/* harmony import */ var _lib_component_mask_mask_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./lib/component/mask/mask.component */ "./projects/mc-ui/src/lib/component/mask/mask.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MaskComponent", function() { return _lib_component_mask_mask_component__WEBPACK_IMPORTED_MODULE_19__["MaskComponent"]; });
 
-/* harmony import */ var _lib_component_popup_popup_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./lib/component/popup/popup.component */ "./projects/mc-ui/src/lib/component/popup/popup.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PopupComponent", function() { return _lib_component_popup_popup_component__WEBPACK_IMPORTED_MODULE_20__["PopupComponent"]; });
+/* harmony import */ var _lib_component_grid_grid_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./lib/component/grid/grid.component */ "./projects/mc-ui/src/lib/component/grid/grid.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GridComponent", function() { return _lib_component_grid_grid_component__WEBPACK_IMPORTED_MODULE_20__["GridComponent"]; });
+
+/* harmony import */ var _lib_component_popup_popup_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./lib/component/popup/popup.component */ "./projects/mc-ui/src/lib/component/popup/popup.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PopupComponent", function() { return _lib_component_popup_popup_component__WEBPACK_IMPORTED_MODULE_21__["PopupComponent"]; });
+
+/* harmony import */ var _lib_component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./lib/component/popup/popup-list.component */ "./projects/mc-ui/src/lib/component/popup/popup-list.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PopupListComponent", function() { return _lib_component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_22__["PopupListComponent"]; });
 
 /*
  * Public API Surface of mc-ui
  * Need to specify the components one by one
  * if not ERROR in Cannot read property 'members' of undefined
  */
+
+
 
 
 
@@ -6334,7 +3925,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  overflow: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwiL1VzZXJzL21jL21jLXVpLWFuZ3VsYXIvc3JjL2Nzcy9fdmFycy5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUMyQkUsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFRDNCQSxjQUFBO0FFQ0YiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi9jc3MvdmFycyc7XG5cbjpob3N0IHtcbiAgQGluY2x1ZGUgY29udGFpbmVyO1xuICBvdmVyZmxvdzogYXV0bztcbn0iLCIvLyBQcmltYXJ5IGNvbG9yc1xuJGMtb3JhbmdlLWI6ICNmMzY3MDU7XG4kYy1vcmFuZ2U6ICNmODgzMDA7XG4kYy1vcmFuZ2UtbDogI2ZmYjMwMjtcblxuLy8gU2Vjb25kIGNvbG9yc1xuJGMtY3lhbi1iOiAjMzlhYWFkO1xuJGMtY3lhbjogIzZiYzNiZDtcbiRjLWN5YW4tbDogI2UzZjZmODtcblxuJGMteWVsbG93OiAjZWVmNjZkO1xuXG4vLyBHcmF5XG4kYy1ibGFjazogIzAwMDtcbiRjLWdyYXktYmJiOiAjMzMzMzMzO1xuJGMtZ3JheS1iYjogIzcyNmY2YTtcbiRjLWdyYXktYjogI2M5YzViYjtcbiRjLWdyYXk6ICNlYmU4ZTM7XG4kYy1ncmF5LWw6ICNmN2Y3Zjc7XG4kYy13aGl0ZTogI2ZmZjtcblxuJGMtdGV4dDogJGMtZ3JheS1iYmI7XG4kYy1ib3JkZXI6ICRjLWdyYXk7XG5cbiRjLXN1Y2Nlc3M6ICRjLWN5YW47XG4kYy13YXJuaW5nOiAkYy1vcmFuZ2U7XG4kYy1lcnJvcjogJGMtb3JhbmdlLWI7XG5cbkBtaXhpbiBjb250YWluZXIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbkBtaXhpbiByZWFkb25seSB7XG4gIGN1cnNvcjogZGVmYXVsdDtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG5cbkBtaXhpbiByb3VuZGVkIHtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuXG5AbWl4aW4gY2VudGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cblxuQG1peGluIGNhcmQge1xuICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuMTI1KTtcbiAgYm94LXNoYWRvdzogMHB4IDFweCAzcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4yMSk7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgcGFkZGluZzogMjVweDtcbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuICBvdmVyZmxvdzogYXV0bztcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  overflow: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwiL1VzZXJzL21jL21jLXVpLWFuZ3VsYXIvc3JjL2Nzcy9fdmFycy5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUNxQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFRHJDQSxjQUFBO0FFQ0YiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi9jc3MvdmFycyc7XG5cbjpob3N0IHtcbiAgQGluY2x1ZGUgY29udGFpbmVyO1xuICBvdmVyZmxvdzogYXV0bztcbn0iLCIvLyBQcmltYXJ5IGNvbG9yc1xuJGMtb3JhbmdlLWI6ICNmMzY3MDU7XG4kYy1vcmFuZ2U6ICNmODgzMDA7XG4kYy1vcmFuZ2UtbDogI2ZmYjMwMjtcblxuJGMtYmx1ZTogIzA4NjZDNjtcbiRjLWJsdWUtYjogIzA3NTNhMTtcblxuJGMtY3lhbi1iOiAjMzlhYWFkO1xuJGMtY3lhbjogIzZiYzNiZDtcbiRjLWN5YW4tbDogI2UzZjZmODtcblxuJGMtZ3JlZW46ICMyM0JGMDg7XG4kYy1ncmVlbi1iOiAjMWM5YTA2O1xuXG4kYy1yZWQ6I0RDMzU0NTtcbiRjLXJlZC1iOiNjODIzMzM7XG5cbiRjLXllbGxvdzogI2VlZjY2ZDtcblxuLy8gR3JheVxuJGMtYmxhY2s6ICMwMDA7XG4kYy1ncmF5LWJiYmI6ICMyMzI3MmI7XG4kYy1ncmF5LWJiYjogIzM0M2E0MDtcbiRjLWdyYXktYmI6ICM3MjdiODQ7XG4kYy1ncmF5LWI6ICM4NjhlOTY7XG4kYy1ncmF5OiAjZTJlNmVhO1xuJGMtZ3JheS1sOiAjZjhmOWZhO1xuJGMtd2hpdGU6ICNmZmY7XG5cbiRjLXRleHQ6ICRjLWdyYXktYmJiYjtcbiRjLWJvcmRlcjogJGMtZ3JheTtcbiRjLWJnOiAkYy1ncmF5LWw7XG5cbiRjLXN1Y2Nlc3M6ICRjLWdyZWVuO1xuJGMtd2FybmluZzogJGMtb3JhbmdlO1xuJGMtZXJyb3I6ICRjLXJlZDtcblxuQG1peGluIGNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuQG1peGluIHJlYWRvbmx5IHtcbiAgY3Vyc29yOiBkZWZhdWx0O1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuQG1peGluIHJvdW5kZWQge1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG5cbkBtaXhpbiBjZW50ZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNTAlO1xuICBsZWZ0OiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xufVxuXG5AbWl4aW4gY2FyZCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwgMCwgMCwgMC4xMjUpO1xuICBib3gtc2hhZG93OiAwcHggMXB4IDNweCAwcHggcmdiYSgwLCAwLCAwLCAwLjIxKTtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICBwYWRkaW5nOiAyNXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAkYy13aGl0ZTtcbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuICBvdmVyZmxvdzogYXV0bztcbn0iXX0= */");
 
 /***/ }),
 
@@ -6350,7 +3941,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 
 
 
@@ -6373,7 +3964,7 @@ let AppComponent = class AppComponent {
 };
 AppComponent.ctorParameters = () => [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"] },
-    { type: mc_ui_angular__WEBPACK_IMPORTED_MODULE_2__["MCUIService"] }
+    { type: projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_2__["MCUIService"] }
 ];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -6404,7 +3995,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth */ "./src/app/auth/index.ts");
 /* harmony import */ var _home_home_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/home.module */ "./src/app/home/home.module.ts");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 
 
 
@@ -6424,7 +4015,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-            mc_ui_angular__WEBPACK_IMPORTED_MODULE_7__["MCUIModule"],
+            projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_7__["MCUIModule"],
             _home_home_module__WEBPACK_IMPORTED_MODULE_6__["HomeModule"]
         ],
         providers: [_auth__WEBPACK_IMPORTED_MODULE_5__["AuthService"]],
@@ -6448,7 +4039,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 /* harmony import */ var _app_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app-base.service */ "./src/app/app-base.service.ts");
 
 
@@ -6461,7 +4052,7 @@ let AuthService = class AuthService extends _app_base_service__WEBPACK_IMPORTED_
     }
 };
 AuthService.ctorParameters = () => [
-    { type: mc_ui_angular__WEBPACK_IMPORTED_MODULE_2__["MCUIService"] }
+    { type: projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_2__["MCUIService"] }
 ];
 AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
@@ -6503,7 +4094,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  display: grid;\n  place-items: center center;\n  color: #ebe8e3;\n}\n:host a {\n  color: #6bc3bd;\n}\n:host .signin--video {\n  position: fixed;\n  right: 0;\n  bottom: 0;\n  min-width: 100%;\n  min-height: 100%;\n  width: auto;\n  height: auto;\n  z-index: -100;\n  background-size: cover;\n}\n:host .signin {\n  width: 350px;\n  padding: 40px;\n  background-color: #726f6a;\n  border-radius: 3px;\n}\n:host .signin--header .mc-logo-text {\n  font-size: 28px;\n  text-align: center;\n  color: #fff;\n  font-weight: 700;\n}\n:host .signin--header .mc-logo-text--2 {\n  color: #6bc3bd;\n}\n:host .signin--header--description {\n  text-align: center;\n}\n:host .signin--body {\n  padding-top: 60px;\n}\n:host .signin--body--forgot-password {\n  font-size: 12px;\n  margin-bottom: 10px;\n}\n:host .signin--footer {\n  margin-top: 60px;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvYXV0aC9zaWduaW4vc2lnbmluLmNvbXBvbmVudC5zY3NzIiwiL1VzZXJzL21jL21jLXVpLWFuZ3VsYXIvc3JjL2Nzcy9fdmFycy5zY3NzIiwic3JjL2FwcC9hdXRoL3NpZ25pbi9zaWduaW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUM0QkUsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFRDVCRSxhQUFBO0VBQ0EsMEJBQUE7RUFDQSxjQ1lLO0FDVlQ7QUZBSTtFQUNFLGNDREc7QUNHVDtBRkNJO0VBQ0ksZUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7QUVDUjtBRkVJO0VBQ0UsWUFBQTtFQUNBLGFBQUE7RUFDQSx5QkNYTTtFQXlCVixrQkFBQTtBQ2JGO0FGRVE7RUFDRSxlQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0VBQ0EsZ0JBQUE7QUVBVjtBRkVVO0VBQ0ksY0M3Qkw7QUM2QlQ7QUZHUTtFQUNFLGtCQUFBO0FFRFY7QUZJTTtFQUNFLGlCQUFBO0FFRlI7QUZHUTtFQUNFLGVBQUE7RUFDQSxtQkFBQTtBRURWO0FGSU07RUFDRSxnQkFBQTtFQUNBLGtCQUFBO0FFRlIiLCJmaWxlIjoic3JjL2FwcC9hdXRoL3NpZ25pbi9zaWduaW4uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9jc3MvdmFycyc7XG46aG9zdCB7XG4gICAgQGluY2x1ZGUgY29udGFpbmVyO1xuICAgIGRpc3BsYXk6IGdyaWQ7XG4gICAgcGxhY2UtaXRlbXM6IGNlbnRlciBjZW50ZXI7XG4gICAgY29sb3I6ICRjLWdyYXk7XG5cbiAgICBhIHtcbiAgICAgIGNvbG9yOiAkYy1jeWFuO1xuICAgIH1cblxuICAgIC5zaWduaW4tLXZpZGVvIHtcbiAgICAgICAgcG9zaXRpb246IGZpeGVkO1xuICAgICAgICByaWdodDogMDtcbiAgICAgICAgYm90dG9tOiAwO1xuICAgICAgICBtaW4td2lkdGg6IDEwMCU7XG4gICAgICAgIG1pbi1oZWlnaHQ6IDEwMCU7XG4gICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICAgIHotaW5kZXg6IC0xMDA7XG4gICAgICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gICAgfVxuXG4gICAgLnNpZ25pbiB7XG4gICAgICB3aWR0aDogMzUwcHg7XG4gICAgICBwYWRkaW5nOiA0MHB4O1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogJGMtZ3JheS1iYjtcbiAgICAgIEBpbmNsdWRlIHJvdW5kZWQ7XG4gICAgICAmLS1oZWFkZXIge1xuICAgICAgICAubWMtbG9nby10ZXh0IHtcbiAgICAgICAgICBmb250LXNpemU6IDI4cHg7XG4gICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgIGNvbG9yOiAjZmZmO1xuICAgICAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgICAgICAgJi0tMSB7fVxuICAgICAgICAgICYtLTIge1xuICAgICAgICAgICAgICBjb2xvcjogJGMtY3lhbjtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgJi0tZGVzY3JpcHRpb24ge1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgfVxuICAgICAgfVxuICAgICAgJi0tYm9keSB7XG4gICAgICAgIHBhZGRpbmctdG9wOiA2MHB4O1xuICAgICAgICAmLS1mb3Jnb3QtcGFzc3dvcmQge1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgICAmLS1mb290ZXIge1xuICAgICAgICBtYXJnaW4tdG9wOiA2MHB4O1xuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICB9XG4gICAgfVxufVxuIiwiLy8gUHJpbWFyeSBjb2xvcnNcbiRjLW9yYW5nZS1iOiAjZjM2NzA1O1xuJGMtb3JhbmdlOiAjZjg4MzAwO1xuJGMtb3JhbmdlLWw6ICNmZmIzMDI7XG5cbi8vIFNlY29uZCBjb2xvcnNcbiRjLWN5YW4tYjogIzM5YWFhZDtcbiRjLWN5YW46ICM2YmMzYmQ7XG4kYy1jeWFuLWw6ICNlM2Y2Zjg7XG5cbiRjLXllbGxvdzogI2VlZjY2ZDtcblxuLy8gR3JheVxuJGMtYmxhY2s6ICMwMDA7XG4kYy1ncmF5LWJiYjogIzMzMzMzMztcbiRjLWdyYXktYmI6ICM3MjZmNmE7XG4kYy1ncmF5LWI6ICNjOWM1YmI7XG4kYy1ncmF5OiAjZWJlOGUzO1xuJGMtZ3JheS1sOiAjZjdmN2Y3O1xuJGMtd2hpdGU6ICNmZmY7XG5cbiRjLXRleHQ6ICRjLWdyYXktYmJiO1xuJGMtYm9yZGVyOiAkYy1ncmF5O1xuXG4kYy1zdWNjZXNzOiAkYy1jeWFuO1xuJGMtd2FybmluZzogJGMtb3JhbmdlO1xuJGMtZXJyb3I6ICRjLW9yYW5nZS1iO1xuXG5AbWl4aW4gY29udGFpbmVyIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG5AbWl4aW4gcmVhZG9ubHkge1xuICBjdXJzb3I6IGRlZmF1bHQ7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuXG5AbWl4aW4gcm91bmRlZCB7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbn1cblxuQG1peGluIGNlbnRlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiA1MCU7XG4gIGxlZnQ6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG59XG5cbkBtaXhpbiBjYXJkIHtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjEyNSk7XG4gIGJveC1zaGFkb3c6IDBweCAxcHggM3B4IDBweCByZ2JhKDAsIDAsIDAsIDAuMjEpO1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG4gIHBhZGRpbmc6IDI1cHg7XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgZGlzcGxheTogZ3JpZDtcbiAgcGxhY2UtaXRlbXM6IGNlbnRlciBjZW50ZXI7XG4gIGNvbG9yOiAjZWJlOGUzO1xufVxuOmhvc3QgYSB7XG4gIGNvbG9yOiAjNmJjM2JkO1xufVxuOmhvc3QgLnNpZ25pbi0tdmlkZW8ge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHJpZ2h0OiAwO1xuICBib3R0b206IDA7XG4gIG1pbi13aWR0aDogMTAwJTtcbiAgbWluLWhlaWdodDogMTAwJTtcbiAgd2lkdGg6IGF1dG87XG4gIGhlaWdodDogYXV0bztcbiAgei1pbmRleDogLTEwMDtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3Zlcjtcbn1cbjpob3N0IC5zaWduaW4ge1xuICB3aWR0aDogMzUwcHg7XG4gIHBhZGRpbmc6IDQwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICM3MjZmNmE7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbn1cbjpob3N0IC5zaWduaW4tLWhlYWRlciAubWMtbG9nby10ZXh0IHtcbiAgZm9udC1zaXplOiAyOHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiAjZmZmO1xuICBmb250LXdlaWdodDogNzAwO1xufVxuOmhvc3QgLnNpZ25pbi0taGVhZGVyIC5tYy1sb2dvLXRleHQtLTIge1xuICBjb2xvcjogIzZiYzNiZDtcbn1cbjpob3N0IC5zaWduaW4tLWhlYWRlci0tZGVzY3JpcHRpb24ge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG46aG9zdCAuc2lnbmluLS1ib2R5IHtcbiAgcGFkZGluZy10b3A6IDYwcHg7XG59XG46aG9zdCAuc2lnbmluLS1ib2R5LS1mb3Jnb3QtcGFzc3dvcmQge1xuICBmb250LXNpemU6IDEycHg7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG59XG46aG9zdCAuc2lnbmluLS1mb290ZXIge1xuICBtYXJnaW4tdG9wOiA2MHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  display: grid;\n  place-items: center center;\n  color: #e2e6ea;\n}\n:host a {\n  color: #6bc3bd;\n}\n:host .signin--video {\n  position: fixed;\n  right: 0;\n  bottom: 0;\n  min-width: 100%;\n  min-height: 100%;\n  width: auto;\n  height: auto;\n  z-index: -100;\n  background-size: cover;\n}\n:host .signin {\n  width: 350px;\n  padding: 40px;\n  background-color: #727b84;\n  border-radius: 3px;\n}\n:host .signin--header .mc-logo-text {\n  font-size: 28px;\n  text-align: center;\n  color: #fff;\n  font-weight: 700;\n}\n:host .signin--header .mc-logo-text--2 {\n  color: #6bc3bd;\n}\n:host .signin--header--description {\n  text-align: center;\n}\n:host .signin--body {\n  padding-top: 60px;\n}\n:host .signin--body--forgot-password {\n  font-size: 12px;\n  margin-bottom: 10px;\n}\n:host .signin--footer {\n  margin-top: 60px;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvYXV0aC9zaWduaW4vc2lnbmluLmNvbXBvbmVudC5zY3NzIiwiL1VzZXJzL21jL21jLXVpLWFuZ3VsYXIvc3JjL2Nzcy9fdmFycy5zY3NzIiwic3JjL2FwcC9hdXRoL3NpZ25pbi9zaWduaW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUNzQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFRHRDRSxhQUFBO0VBQ0EsMEJBQUE7RUFDQSxjQ3FCSztBQ25CVDtBRkFJO0VBQ0UsY0NDRztBQ0NUO0FGQ0k7RUFDSSxlQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtBRUNSO0FGRUk7RUFDRSxZQUFBO0VBQ0EsYUFBQTtFQUNBLHlCQ0ZNO0VBMEJWLGtCQUFBO0FDdkJGO0FGRVE7RUFDRSxlQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0VBQ0EsZ0JBQUE7QUVBVjtBRkVVO0VBQ0ksY0MzQkw7QUMyQlQ7QUZHUTtFQUNFLGtCQUFBO0FFRFY7QUZJTTtFQUNFLGlCQUFBO0FFRlI7QUZHUTtFQUNFLGVBQUE7RUFDQSxtQkFBQTtBRURWO0FGSU07RUFDRSxnQkFBQTtFQUNBLGtCQUFBO0FFRlIiLCJmaWxlIjoic3JjL2FwcC9hdXRoL3NpZ25pbi9zaWduaW4uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9jc3MvdmFycyc7XG46aG9zdCB7XG4gICAgQGluY2x1ZGUgY29udGFpbmVyO1xuICAgIGRpc3BsYXk6IGdyaWQ7XG4gICAgcGxhY2UtaXRlbXM6IGNlbnRlciBjZW50ZXI7XG4gICAgY29sb3I6ICRjLWdyYXk7XG5cbiAgICBhIHtcbiAgICAgIGNvbG9yOiAkYy1jeWFuO1xuICAgIH1cblxuICAgIC5zaWduaW4tLXZpZGVvIHtcbiAgICAgICAgcG9zaXRpb246IGZpeGVkO1xuICAgICAgICByaWdodDogMDtcbiAgICAgICAgYm90dG9tOiAwO1xuICAgICAgICBtaW4td2lkdGg6IDEwMCU7XG4gICAgICAgIG1pbi1oZWlnaHQ6IDEwMCU7XG4gICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICAgIHotaW5kZXg6IC0xMDA7XG4gICAgICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gICAgfVxuXG4gICAgLnNpZ25pbiB7XG4gICAgICB3aWR0aDogMzUwcHg7XG4gICAgICBwYWRkaW5nOiA0MHB4O1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogJGMtZ3JheS1iYjtcbiAgICAgIEBpbmNsdWRlIHJvdW5kZWQ7XG4gICAgICAmLS1oZWFkZXIge1xuICAgICAgICAubWMtbG9nby10ZXh0IHtcbiAgICAgICAgICBmb250LXNpemU6IDI4cHg7XG4gICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgIGNvbG9yOiAjZmZmO1xuICAgICAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgICAgICAgJi0tMSB7fVxuICAgICAgICAgICYtLTIge1xuICAgICAgICAgICAgICBjb2xvcjogJGMtY3lhbjtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgJi0tZGVzY3JpcHRpb24ge1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgfVxuICAgICAgfVxuICAgICAgJi0tYm9keSB7XG4gICAgICAgIHBhZGRpbmctdG9wOiA2MHB4O1xuICAgICAgICAmLS1mb3Jnb3QtcGFzc3dvcmQge1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgICAmLS1mb290ZXIge1xuICAgICAgICBtYXJnaW4tdG9wOiA2MHB4O1xuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICB9XG4gICAgfVxufVxuIiwiLy8gUHJpbWFyeSBjb2xvcnNcbiRjLW9yYW5nZS1iOiAjZjM2NzA1O1xuJGMtb3JhbmdlOiAjZjg4MzAwO1xuJGMtb3JhbmdlLWw6ICNmZmIzMDI7XG5cbiRjLWJsdWU6ICMwODY2QzY7XG4kYy1ibHVlLWI6ICMwNzUzYTE7XG5cbiRjLWN5YW4tYjogIzM5YWFhZDtcbiRjLWN5YW46ICM2YmMzYmQ7XG4kYy1jeWFuLWw6ICNlM2Y2Zjg7XG5cbiRjLWdyZWVuOiAjMjNCRjA4O1xuJGMtZ3JlZW4tYjogIzFjOWEwNjtcblxuJGMtcmVkOiNEQzM1NDU7XG4kYy1yZWQtYjojYzgyMzMzO1xuXG4kYy15ZWxsb3c6ICNlZWY2NmQ7XG5cbi8vIEdyYXlcbiRjLWJsYWNrOiAjMDAwO1xuJGMtZ3JheS1iYmJiOiAjMjMyNzJiO1xuJGMtZ3JheS1iYmI6ICMzNDNhNDA7XG4kYy1ncmF5LWJiOiAjNzI3Yjg0O1xuJGMtZ3JheS1iOiAjODY4ZTk2O1xuJGMtZ3JheTogI2UyZTZlYTtcbiRjLWdyYXktbDogI2Y4ZjlmYTtcbiRjLXdoaXRlOiAjZmZmO1xuXG4kYy10ZXh0OiAkYy1ncmF5LWJiYmI7XG4kYy1ib3JkZXI6ICRjLWdyYXk7XG4kYy1iZzogJGMtZ3JheS1sO1xuXG4kYy1zdWNjZXNzOiAkYy1ncmVlbjtcbiRjLXdhcm5pbmc6ICRjLW9yYW5nZTtcbiRjLWVycm9yOiAkYy1yZWQ7XG5cbkBtaXhpbiBjb250YWluZXIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbkBtaXhpbiByZWFkb25seSB7XG4gIGN1cnNvcjogZGVmYXVsdDtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG5cbkBtaXhpbiByb3VuZGVkIHtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuXG5AbWl4aW4gY2VudGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cblxuQG1peGluIGNhcmQge1xuICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuMTI1KTtcbiAgYm94LXNoYWRvdzogMHB4IDFweCAzcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4yMSk7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgcGFkZGluZzogMjVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJGMtd2hpdGU7XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgZGlzcGxheTogZ3JpZDtcbiAgcGxhY2UtaXRlbXM6IGNlbnRlciBjZW50ZXI7XG4gIGNvbG9yOiAjZTJlNmVhO1xufVxuOmhvc3QgYSB7XG4gIGNvbG9yOiAjNmJjM2JkO1xufVxuOmhvc3QgLnNpZ25pbi0tdmlkZW8ge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHJpZ2h0OiAwO1xuICBib3R0b206IDA7XG4gIG1pbi13aWR0aDogMTAwJTtcbiAgbWluLWhlaWdodDogMTAwJTtcbiAgd2lkdGg6IGF1dG87XG4gIGhlaWdodDogYXV0bztcbiAgei1pbmRleDogLTEwMDtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3Zlcjtcbn1cbjpob3N0IC5zaWduaW4ge1xuICB3aWR0aDogMzUwcHg7XG4gIHBhZGRpbmc6IDQwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICM3MjdiODQ7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbn1cbjpob3N0IC5zaWduaW4tLWhlYWRlciAubWMtbG9nby10ZXh0IHtcbiAgZm9udC1zaXplOiAyOHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiAjZmZmO1xuICBmb250LXdlaWdodDogNzAwO1xufVxuOmhvc3QgLnNpZ25pbi0taGVhZGVyIC5tYy1sb2dvLXRleHQtLTIge1xuICBjb2xvcjogIzZiYzNiZDtcbn1cbjpob3N0IC5zaWduaW4tLWhlYWRlci0tZGVzY3JpcHRpb24ge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG46aG9zdCAuc2lnbmluLS1ib2R5IHtcbiAgcGFkZGluZy10b3A6IDYwcHg7XG59XG46aG9zdCAuc2lnbmluLS1ib2R5LS1mb3Jnb3QtcGFzc3dvcmQge1xuICBmb250LXNpemU6IDEycHg7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG59XG46aG9zdCAuc2lnbmluLS1mb290ZXIge1xuICBtYXJnaW4tdG9wOiA2MHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59Il19 */");
 
 /***/ }),
 
@@ -6521,7 +4112,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../index */ "./src/app/index.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 /* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../auth.service */ "./src/app/auth/auth.service.ts");
 
 
@@ -6547,7 +4138,7 @@ let SigninComponent = class SigninComponent extends _index__WEBPACK_IMPORTED_MOD
 };
 SigninComponent.ctorParameters = () => [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"] },
-    { type: mc_ui_angular__WEBPACK_IMPORTED_MODULE_4__["MCUIService"] },
+    { type: projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__["MCUIService"] },
     { type: _auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
@@ -6612,7 +4203,7 @@ ExampleRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n}\n:host .example--header {\n  padding: 5px 0 25px 0;\n}\n:host .example--item {\n  border: 1px solid rgba(0, 0, 0, 0.125);\n  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21);\n  border-radius: 3px;\n  padding: 25px;\n  margin-bottom: 20px;\n}\n:host .example--item--header {\n  padding-bottom: 20px;\n}\n:host .example--item--header h6 {\n  text-transform: uppercase;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvaG9tZS9leGFtcGxlL2V4YW1wbGUuY29tcG9uZW50LnNjc3MiLCIvVXNlcnMvbWMvbWMtdWktYW5ndWxhci9zcmMvY3NzL192YXJzLnNjc3MiLCJzcmMvYXBwL2hvbWUvZXhhbXBsZS9leGFtcGxlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VDMkJFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7QUMzQkY7QUZDSTtFQUNFLHFCQUFBO0FFQ047QUZDSTtFQzJDRixzQ0FBQTtFQUNBLCtDQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0VENUNJLG1CQUFBO0FFSU47QUZITTtFQUNFLG9CQUFBO0FFS1I7QUZKUTtFQUNFLHlCQUFBO0FFTVYiLCJmaWxlIjoic3JjL2FwcC9ob21lL2V4YW1wbGUvZXhhbXBsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uLy4uL2Nzcy92YXJzJztcblxuOmhvc3Qge1xuICBAaW5jbHVkZSBjb250YWluZXI7XG4gIC5leGFtcGxlIHtcbiAgICAmLS1oZWFkZXIge1xuICAgICAgcGFkZGluZzogNXB4IDAgMjVweCAwO1xuICAgIH1cbiAgICAmLS1pdGVtIHtcbiAgICAgIEBpbmNsdWRlIGNhcmQ7XG4gICAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICAgICAgJi0taGVhZGVyIHtcbiAgICAgICAgcGFkZGluZy1ib3R0b206IDIwcHg7XG4gICAgICAgIGg2IHtcbiAgICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgICAmLS1ib2R5IHtcbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiIsIi8vIFByaW1hcnkgY29sb3JzXG4kYy1vcmFuZ2UtYjogI2YzNjcwNTtcbiRjLW9yYW5nZTogI2Y4ODMwMDtcbiRjLW9yYW5nZS1sOiAjZmZiMzAyO1xuXG4vLyBTZWNvbmQgY29sb3JzXG4kYy1jeWFuLWI6ICMzOWFhYWQ7XG4kYy1jeWFuOiAjNmJjM2JkO1xuJGMtY3lhbi1sOiAjZTNmNmY4O1xuXG4kYy15ZWxsb3c6ICNlZWY2NmQ7XG5cbi8vIEdyYXlcbiRjLWJsYWNrOiAjMDAwO1xuJGMtZ3JheS1iYmI6ICMzMzMzMzM7XG4kYy1ncmF5LWJiOiAjNzI2ZjZhO1xuJGMtZ3JheS1iOiAjYzljNWJiO1xuJGMtZ3JheTogI2ViZThlMztcbiRjLWdyYXktbDogI2Y3ZjdmNztcbiRjLXdoaXRlOiAjZmZmO1xuXG4kYy10ZXh0OiAkYy1ncmF5LWJiYjtcbiRjLWJvcmRlcjogJGMtZ3JheTtcblxuJGMtc3VjY2VzczogJGMtY3lhbjtcbiRjLXdhcm5pbmc6ICRjLW9yYW5nZTtcbiRjLWVycm9yOiAkYy1vcmFuZ2UtYjtcblxuQG1peGluIGNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuQG1peGluIHJlYWRvbmx5IHtcbiAgY3Vyc29yOiBkZWZhdWx0O1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuQG1peGluIHJvdW5kZWQge1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG5cbkBtaXhpbiBjZW50ZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNTAlO1xuICBsZWZ0OiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xufVxuXG5AbWl4aW4gY2FyZCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwgMCwgMCwgMC4xMjUpO1xuICBib3gtc2hhZG93OiAwcHggMXB4IDNweCAwcHggcmdiYSgwLCAwLCAwLCAwLjIxKTtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICBwYWRkaW5nOiAyNXB4O1xufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG46aG9zdCAuZXhhbXBsZS0taGVhZGVyIHtcbiAgcGFkZGluZzogNXB4IDAgMjVweCAwO1xufVxuOmhvc3QgLmV4YW1wbGUtLWl0ZW0ge1xuICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuMTI1KTtcbiAgYm94LXNoYWRvdzogMHB4IDFweCAzcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4yMSk7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgcGFkZGluZzogMjVweDtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cbjpob3N0IC5leGFtcGxlLS1pdGVtLS1oZWFkZXIge1xuICBwYWRkaW5nLWJvdHRvbTogMjBweDtcbn1cbjpob3N0IC5leGFtcGxlLS1pdGVtLS1oZWFkZXIgaDYge1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  background-color: #f8f9fa;\n}\n:host .example--header {\n  padding: 5px 0 25px 0;\n}\n:host .example--item {\n  border: 1px solid rgba(0, 0, 0, 0.125);\n  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21);\n  border-radius: 3px;\n  padding: 25px;\n  background-color: #fff;\n  margin-bottom: 20px;\n}\n:host .example--item--header {\n  padding-bottom: 20px;\n}\n:host .example--item--header h6 {\n  text-transform: uppercase;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvaG9tZS9leGFtcGxlL2V4YW1wbGUuY29tcG9uZW50LnNjc3MiLCIvVXNlcnMvbWMvbWMtdWktYW5ndWxhci9zcmMvY3NzL192YXJzLnNjc3MiLCJzcmMvYXBwL2hvbWUvZXhhbXBsZS9leGFtcGxlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VDcUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RURyQ0EseUJDdUJTO0FDdEJYO0FGQ0k7RUFDRSxxQkFBQTtBRUNOO0FGQ0k7RUNvREYsc0NBQUE7RUFDQSwrQ0FBQTtFQUNBLGtCQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQXJDUTtFRGpCSixtQkFBQTtBRUtOO0FGSk07RUFDRSxvQkFBQTtBRU1SO0FGTFE7RUFDRSx5QkFBQTtBRU9WIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9leGFtcGxlL2V4YW1wbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9jc3MvdmFycyc7XG5cbjpob3N0IHtcbiAgQGluY2x1ZGUgY29udGFpbmVyO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAkYy1iZztcbiAgLmV4YW1wbGUge1xuICAgICYtLWhlYWRlciB7XG4gICAgICBwYWRkaW5nOiA1cHggMCAyNXB4IDA7XG4gICAgfVxuICAgICYtLWl0ZW0ge1xuICAgICAgQGluY2x1ZGUgY2FyZDtcbiAgICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gICAgICAmLS1oZWFkZXIge1xuICAgICAgICBwYWRkaW5nLWJvdHRvbTogMjBweDtcbiAgICAgICAgaDYge1xuICAgICAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICAgICYtLWJvZHkge1xuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIiwiLy8gUHJpbWFyeSBjb2xvcnNcbiRjLW9yYW5nZS1iOiAjZjM2NzA1O1xuJGMtb3JhbmdlOiAjZjg4MzAwO1xuJGMtb3JhbmdlLWw6ICNmZmIzMDI7XG5cbiRjLWJsdWU6ICMwODY2QzY7XG4kYy1ibHVlLWI6ICMwNzUzYTE7XG5cbiRjLWN5YW4tYjogIzM5YWFhZDtcbiRjLWN5YW46ICM2YmMzYmQ7XG4kYy1jeWFuLWw6ICNlM2Y2Zjg7XG5cbiRjLWdyZWVuOiAjMjNCRjA4O1xuJGMtZ3JlZW4tYjogIzFjOWEwNjtcblxuJGMtcmVkOiNEQzM1NDU7XG4kYy1yZWQtYjojYzgyMzMzO1xuXG4kYy15ZWxsb3c6ICNlZWY2NmQ7XG5cbi8vIEdyYXlcbiRjLWJsYWNrOiAjMDAwO1xuJGMtZ3JheS1iYmJiOiAjMjMyNzJiO1xuJGMtZ3JheS1iYmI6ICMzNDNhNDA7XG4kYy1ncmF5LWJiOiAjNzI3Yjg0O1xuJGMtZ3JheS1iOiAjODY4ZTk2O1xuJGMtZ3JheTogI2UyZTZlYTtcbiRjLWdyYXktbDogI2Y4ZjlmYTtcbiRjLXdoaXRlOiAjZmZmO1xuXG4kYy10ZXh0OiAkYy1ncmF5LWJiYmI7XG4kYy1ib3JkZXI6ICRjLWdyYXk7XG4kYy1iZzogJGMtZ3JheS1sO1xuXG4kYy1zdWNjZXNzOiAkYy1ncmVlbjtcbiRjLXdhcm5pbmc6ICRjLW9yYW5nZTtcbiRjLWVycm9yOiAkYy1yZWQ7XG5cbkBtaXhpbiBjb250YWluZXIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbkBtaXhpbiByZWFkb25seSB7XG4gIGN1cnNvcjogZGVmYXVsdDtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG5cbkBtaXhpbiByb3VuZGVkIHtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuXG5AbWl4aW4gY2VudGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cblxuQG1peGluIGNhcmQge1xuICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuMTI1KTtcbiAgYm94LXNoYWRvdzogMHB4IDFweCAzcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4yMSk7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgcGFkZGluZzogMjVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJGMtd2hpdGU7XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y4ZjlmYTtcbn1cbjpob3N0IC5leGFtcGxlLS1oZWFkZXIge1xuICBwYWRkaW5nOiA1cHggMCAyNXB4IDA7XG59XG46aG9zdCAuZXhhbXBsZS0taXRlbSB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwgMCwgMCwgMC4xMjUpO1xuICBib3gtc2hhZG93OiAwcHggMXB4IDNweCAwcHggcmdiYSgwLCAwLCAwLCAwLjIxKTtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICBwYWRkaW5nOiAyNXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuOmhvc3QgLmV4YW1wbGUtLWl0ZW0tLWhlYWRlciB7XG4gIHBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuOmhvc3QgLmV4YW1wbGUtLWl0ZW0tLWhlYWRlciBoNiB7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG59Il19 */");
 
 /***/ }),
 
@@ -6629,10 +4220,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../index */ "./src/app/index.ts");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 /* harmony import */ var _home_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../home.service */ "./src/app/home/home.service.ts");
-
-
 
 
 
@@ -6646,12 +4235,15 @@ let ExampleComponent = class ExampleComponent extends _index__WEBPACK_IMPORTED_M
         this.homeService = homeService;
         this.data = this.homeService.getUserListMock().data;
         this.gridCell = {};
+        this.dropdownData = this.data.concat();
+        this.listData = this.data.concat();
+        this.gridData = this.data.concat();
     }
     showPopup(el) {
         let instance = this.popupCmp ? this.popupCmp.instance : null;
         if (!this.popupCmp) {
             // add to root
-            this.popupCmp = this.service.addComponent(mc_ui_angular__WEBPACK_IMPORTED_MODULE_3__["PopupComponent"]);
+            this.popupCmp = this.service.addComponent(projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_3__["PopupComponent"]);
             instance = this.popupCmp.instance;
             instance.tpl = this.popupTpl;
             instance.theme = 'audit';
@@ -6665,7 +4257,7 @@ let ExampleComponent = class ExampleComponent extends _index__WEBPACK_IMPORTED_M
         let instance = this.drawerCmp ? this.drawerCmp.instance : null;
         if (!this.drawerCmp) {
             // add to root
-            this.drawerCmp = this.service.addComponent(mc_ui_angular__WEBPACK_IMPORTED_MODULE_3__["DrawerComponent"]);
+            this.drawerCmp = this.service.addComponent(projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_3__["DrawerComponent"]);
             instance = this.drawerCmp.instance;
             instance.from = 'right';
             instance.mask = false;
@@ -6692,18 +4284,26 @@ let ExampleComponent = class ExampleComponent extends _index__WEBPACK_IMPORTED_M
                 break;
         }
     }
+    onDropdownNeedData(e) {
+        switch (e.action) {
+            case 'filter':
+                this.dropdownData = this.service.util.data.search(this.data, e.keyword, 'name');
+                // console.log('dropdown filter', this.dropdownData);
+                break;
+        }
+    }
     destroyCmp() {
         if (this.popupCmp) {
-            this.popupCmp.destroy();
+            this.service.removeComponent(this.popupCmp);
         }
         if (this.drawerCmp) {
-            this.drawerCmp.destroy();
+            this.service.removeComponent(this.drawerCmp);
         }
     }
 };
 ExampleComponent.ctorParameters = () => [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"] },
-    { type: mc_ui_angular__WEBPACK_IMPORTED_MODULE_3__["MCUIService"] },
+    { type: projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_3__["MCUIService"] },
     { type: _home_service__WEBPACK_IMPORTED_MODULE_4__["HomeService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -6740,7 +4340,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExampleModule", function() { return ExampleModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 /* harmony import */ var _example_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./example-routing.module */ "./src/app/home/example/example-routing.module.ts");
 /* harmony import */ var _example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./example.component */ "./src/app/home/example/example.component.ts");
 
@@ -6752,7 +4352,7 @@ let ExampleModule = class ExampleModule {
 };
 ExampleModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [mc_ui_angular__WEBPACK_IMPORTED_MODULE_2__["MCUIModule"], _example_routing_module__WEBPACK_IMPORTED_MODULE_3__["ExampleRoutingModule"]],
+        imports: [projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_2__["MCUIModule"], _example_routing_module__WEBPACK_IMPORTED_MODULE_3__["ExampleRoutingModule"]],
         declarations: [
             _example_component__WEBPACK_IMPORTED_MODULE_4__["ExampleComponent"]
         ],
@@ -6774,7 +4374,7 @@ ExampleModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1000;\n  width: 100%;\n  height: 55px;\n  background-color: #fff;\n  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.16);\n}\n:host .home-header--header {\n  position: absolute;\n  left: 0;\n  top: 0;\n  padding: 0 20px;\n}\n:host .home-header--header--logo {\n  font-size: 24px;\n  letter-spacing: -1px;\n  line-height: 54px;\n  font-weight: 700;\n}\n:host .home-header--header--logo--1 {\n  color: #000;\n}\n:host .home-header--header--logo--2 {\n  color: #39aaad;\n}\n:host .home-header--body {\n  text-align: center;\n  line-height: 53px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvaG9tZS9ob21lLWhlYWRlci9ob21lLWhlYWRlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvaG9tZS9ob21lLWhlYWRlci9ob21lLWhlYWRlci5jb21wb25lbnQuc2NzcyIsIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9jc3MvX3ZhcnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLGNBQUE7RUFDQSxlQUFBO0VBQ0EsTUFBQTtFQUNBLE9BQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxzQkFBQTtFQUNBLDZDQUFBO0FDREY7QURHSTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLE1BQUE7RUFDQSxlQUFBO0FDRE47QURFTTtFQUNFLGVBQUE7RUFDQSxvQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUNBUjtBREVRO0VBQ0UsV0VaQTtBRFlWO0FER1E7RUFDRSxjRXZCQztBRHNCWDtBRE1JO0VBQ0Usa0JBQUE7RUFDQSxpQkFBQTtBQ0pOIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLWhlYWRlci9ob21lLWhlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uLy4uL2Nzcy92YXJzJztcblxuOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIHotaW5kZXg6IDEwMDA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDU1cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gIGJveC1zaGFkb3c6IDAgMXB4IDRweCAwcHggcmdiYSgwLCAwLCAwLCAwLjE2KTtcbiAgLmhvbWUtaGVhZGVyIHtcbiAgICAmLS1oZWFkZXIge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgbGVmdDogMDtcbiAgICAgIHRvcDogMDtcbiAgICAgIHBhZGRpbmc6IDAgMjBweDtcbiAgICAgICYtLWxvZ28ge1xuICAgICAgICBmb250LXNpemU6IDI0cHg7XG4gICAgICAgIGxldHRlci1zcGFjaW5nOiAtMXB4O1xuICAgICAgICBsaW5lLWhlaWdodDogNTRweDtcbiAgICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcblxuICAgICAgICAmLS0xIHtcbiAgICAgICAgICBjb2xvcjogJGMtYmxhY2s7XG4gICAgICAgIH1cblxuICAgICAgICAmLS0yIHtcbiAgICAgICAgICBjb2xvcjogJGMtY3lhbi1iO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuXG4gICAgJi0tYm9keSB7XG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICBsaW5lLWhlaWdodDogNTNweDtcbiAgICB9XG4gIH1cbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICB6LWluZGV4OiAxMDAwO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiA1NXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICBib3gtc2hhZG93OiAwIDFweCA0cHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xNik7XG59XG46aG9zdCAuaG9tZS1oZWFkZXItLWhlYWRlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICBwYWRkaW5nOiAwIDIwcHg7XG59XG46aG9zdCAuaG9tZS1oZWFkZXItLWhlYWRlci0tbG9nbyB7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgbGV0dGVyLXNwYWNpbmc6IC0xcHg7XG4gIGxpbmUtaGVpZ2h0OiA1NHB4O1xuICBmb250LXdlaWdodDogNzAwO1xufVxuOmhvc3QgLmhvbWUtaGVhZGVyLS1oZWFkZXItLWxvZ28tLTEge1xuICBjb2xvcjogIzAwMDtcbn1cbjpob3N0IC5ob21lLWhlYWRlci0taGVhZGVyLS1sb2dvLS0yIHtcbiAgY29sb3I6ICMzOWFhYWQ7XG59XG46aG9zdCAuaG9tZS1oZWFkZXItLWJvZHkge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGxpbmUtaGVpZ2h0OiA1M3B4O1xufSIsIi8vIFByaW1hcnkgY29sb3JzXG4kYy1vcmFuZ2UtYjogI2YzNjcwNTtcbiRjLW9yYW5nZTogI2Y4ODMwMDtcbiRjLW9yYW5nZS1sOiAjZmZiMzAyO1xuXG4vLyBTZWNvbmQgY29sb3JzXG4kYy1jeWFuLWI6ICMzOWFhYWQ7XG4kYy1jeWFuOiAjNmJjM2JkO1xuJGMtY3lhbi1sOiAjZTNmNmY4O1xuXG4kYy15ZWxsb3c6ICNlZWY2NmQ7XG5cbi8vIEdyYXlcbiRjLWJsYWNrOiAjMDAwO1xuJGMtZ3JheS1iYmI6ICMzMzMzMzM7XG4kYy1ncmF5LWJiOiAjNzI2ZjZhO1xuJGMtZ3JheS1iOiAjYzljNWJiO1xuJGMtZ3JheTogI2ViZThlMztcbiRjLWdyYXktbDogI2Y3ZjdmNztcbiRjLXdoaXRlOiAjZmZmO1xuXG4kYy10ZXh0OiAkYy1ncmF5LWJiYjtcbiRjLWJvcmRlcjogJGMtZ3JheTtcblxuJGMtc3VjY2VzczogJGMtY3lhbjtcbiRjLXdhcm5pbmc6ICRjLW9yYW5nZTtcbiRjLWVycm9yOiAkYy1vcmFuZ2UtYjtcblxuQG1peGluIGNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuQG1peGluIHJlYWRvbmx5IHtcbiAgY3Vyc29yOiBkZWZhdWx0O1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuQG1peGluIHJvdW5kZWQge1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG5cbkBtaXhpbiBjZW50ZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNTAlO1xuICBsZWZ0OiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xufVxuXG5AbWl4aW4gY2FyZCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwgMCwgMCwgMC4xMjUpO1xuICBib3gtc2hhZG93OiAwcHggMXB4IDNweCAwcHggcmdiYSgwLCAwLCAwLCAwLjIxKTtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICBwYWRkaW5nOiAyNXB4O1xufVxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1000;\n  width: 100%;\n  height: 55px;\n  background-color: #fff;\n  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.16);\n}\n:host .home-header--header {\n  position: absolute;\n  left: 0;\n  top: 0;\n  padding: 0 20px;\n}\n:host .home-header--header--logo {\n  font-size: 24px;\n  letter-spacing: -1px;\n  line-height: 54px;\n  font-weight: 700;\n}\n:host .home-header--header--logo--1 {\n  color: #000;\n}\n:host .home-header--header--logo--2 {\n  color: #39aaad;\n}\n:host .home-header--body {\n  text-align: center;\n  line-height: 53px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvaG9tZS9ob21lLWhlYWRlci9ob21lLWhlYWRlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvaG9tZS9ob21lLWhlYWRlci9ob21lLWhlYWRlci5jb21wb25lbnQuc2NzcyIsIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9jc3MvX3ZhcnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLGNBQUE7RUFDQSxlQUFBO0VBQ0EsTUFBQTtFQUNBLE9BQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxzQkFBQTtFQUNBLDZDQUFBO0FDREY7QURHSTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLE1BQUE7RUFDQSxlQUFBO0FDRE47QURFTTtFQUNFLGVBQUE7RUFDQSxvQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUNBUjtBREVRO0VBQ0UsV0VKQTtBRElWO0FER1E7RUFDRSxjRXJCQztBRG9CWDtBRE1JO0VBQ0Usa0JBQUE7RUFDQSxpQkFBQTtBQ0pOIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLWhlYWRlci9ob21lLWhlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uLy4uL2Nzcy92YXJzJztcblxuOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIHotaW5kZXg6IDEwMDA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDU1cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gIGJveC1zaGFkb3c6IDAgMXB4IDRweCAwcHggcmdiYSgwLCAwLCAwLCAwLjE2KTtcbiAgLmhvbWUtaGVhZGVyIHtcbiAgICAmLS1oZWFkZXIge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgbGVmdDogMDtcbiAgICAgIHRvcDogMDtcbiAgICAgIHBhZGRpbmc6IDAgMjBweDtcbiAgICAgICYtLWxvZ28ge1xuICAgICAgICBmb250LXNpemU6IDI0cHg7XG4gICAgICAgIGxldHRlci1zcGFjaW5nOiAtMXB4O1xuICAgICAgICBsaW5lLWhlaWdodDogNTRweDtcbiAgICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcblxuICAgICAgICAmLS0xIHtcbiAgICAgICAgICBjb2xvcjogJGMtYmxhY2s7XG4gICAgICAgIH1cblxuICAgICAgICAmLS0yIHtcbiAgICAgICAgICBjb2xvcjogJGMtY3lhbi1iO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuXG4gICAgJi0tYm9keSB7XG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICBsaW5lLWhlaWdodDogNTNweDtcbiAgICB9XG4gIH1cbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICB6LWluZGV4OiAxMDAwO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiA1NXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICBib3gtc2hhZG93OiAwIDFweCA0cHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xNik7XG59XG46aG9zdCAuaG9tZS1oZWFkZXItLWhlYWRlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICBwYWRkaW5nOiAwIDIwcHg7XG59XG46aG9zdCAuaG9tZS1oZWFkZXItLWhlYWRlci0tbG9nbyB7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgbGV0dGVyLXNwYWNpbmc6IC0xcHg7XG4gIGxpbmUtaGVpZ2h0OiA1NHB4O1xuICBmb250LXdlaWdodDogNzAwO1xufVxuOmhvc3QgLmhvbWUtaGVhZGVyLS1oZWFkZXItLWxvZ28tLTEge1xuICBjb2xvcjogIzAwMDtcbn1cbjpob3N0IC5ob21lLWhlYWRlci0taGVhZGVyLS1sb2dvLS0yIHtcbiAgY29sb3I6ICMzOWFhYWQ7XG59XG46aG9zdCAuaG9tZS1oZWFkZXItLWJvZHkge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGxpbmUtaGVpZ2h0OiA1M3B4O1xufSIsIi8vIFByaW1hcnkgY29sb3JzXG4kYy1vcmFuZ2UtYjogI2YzNjcwNTtcbiRjLW9yYW5nZTogI2Y4ODMwMDtcbiRjLW9yYW5nZS1sOiAjZmZiMzAyO1xuXG4kYy1ibHVlOiAjMDg2NkM2O1xuJGMtYmx1ZS1iOiAjMDc1M2ExO1xuXG4kYy1jeWFuLWI6ICMzOWFhYWQ7XG4kYy1jeWFuOiAjNmJjM2JkO1xuJGMtY3lhbi1sOiAjZTNmNmY4O1xuXG4kYy1ncmVlbjogIzIzQkYwODtcbiRjLWdyZWVuLWI6ICMxYzlhMDY7XG5cbiRjLXJlZDojREMzNTQ1O1xuJGMtcmVkLWI6I2M4MjMzMztcblxuJGMteWVsbG93OiAjZWVmNjZkO1xuXG4vLyBHcmF5XG4kYy1ibGFjazogIzAwMDtcbiRjLWdyYXktYmJiYjogIzIzMjcyYjtcbiRjLWdyYXktYmJiOiAjMzQzYTQwO1xuJGMtZ3JheS1iYjogIzcyN2I4NDtcbiRjLWdyYXktYjogIzg2OGU5NjtcbiRjLWdyYXk6ICNlMmU2ZWE7XG4kYy1ncmF5LWw6ICNmOGY5ZmE7XG4kYy13aGl0ZTogI2ZmZjtcblxuJGMtdGV4dDogJGMtZ3JheS1iYmJiO1xuJGMtYm9yZGVyOiAkYy1ncmF5O1xuJGMtYmc6ICRjLWdyYXktbDtcblxuJGMtc3VjY2VzczogJGMtZ3JlZW47XG4kYy13YXJuaW5nOiAkYy1vcmFuZ2U7XG4kYy1lcnJvcjogJGMtcmVkO1xuXG5AbWl4aW4gY29udGFpbmVyIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG5AbWl4aW4gcmVhZG9ubHkge1xuICBjdXJzb3I6IGRlZmF1bHQ7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuXG5AbWl4aW4gcm91bmRlZCB7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbn1cblxuQG1peGluIGNlbnRlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiA1MCU7XG4gIGxlZnQ6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG59XG5cbkBtaXhpbiBjYXJkIHtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjEyNSk7XG4gIGJveC1zaGFkb3c6IDBweCAxcHggM3B4IDBweCByZ2JhKDAsIDAsIDAsIDAuMjEpO1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG4gIHBhZGRpbmc6IDI1cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICRjLXdoaXRlO1xufVxuIl19 */");
 
 /***/ }),
 
@@ -6792,7 +4392,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../index */ "./src/app/index.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 /* harmony import */ var _home_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../home.service */ "./src/app/home/home.service.ts");
 
 
@@ -6819,7 +4419,7 @@ let HomeHeaderComponent = class HomeHeaderComponent extends _index__WEBPACK_IMPO
 };
 HomeHeaderComponent.ctorParameters = () => [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"] },
-    { type: mc_ui_angular__WEBPACK_IMPORTED_MODULE_4__["MCUIService"] },
+    { type: projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__["MCUIService"] },
     { type: _home_service__WEBPACK_IMPORTED_MODULE_5__["HomeService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
@@ -6889,7 +4489,7 @@ HomeRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  padding: 20px;\n  padding-top: 75px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIiwiL1VzZXJzL21jL21jLXVpLWFuZ3VsYXIvc3JjL2Nzcy9fdmFycy5zY3NzIiwic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUMyQkUsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFRDNCQSxhQUFBO0VBQ0EsaUJBQUE7QUVDRiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL2Nzcy92YXJzJztcblxuOmhvc3Qge1xuICBAaW5jbHVkZSBjb250YWluZXI7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIHBhZGRpbmctdG9wOiA3NXB4OyAvLyBoZWFkZXJcbn1cbiIsIi8vIFByaW1hcnkgY29sb3JzXG4kYy1vcmFuZ2UtYjogI2YzNjcwNTtcbiRjLW9yYW5nZTogI2Y4ODMwMDtcbiRjLW9yYW5nZS1sOiAjZmZiMzAyO1xuXG4vLyBTZWNvbmQgY29sb3JzXG4kYy1jeWFuLWI6ICMzOWFhYWQ7XG4kYy1jeWFuOiAjNmJjM2JkO1xuJGMtY3lhbi1sOiAjZTNmNmY4O1xuXG4kYy15ZWxsb3c6ICNlZWY2NmQ7XG5cbi8vIEdyYXlcbiRjLWJsYWNrOiAjMDAwO1xuJGMtZ3JheS1iYmI6ICMzMzMzMzM7XG4kYy1ncmF5LWJiOiAjNzI2ZjZhO1xuJGMtZ3JheS1iOiAjYzljNWJiO1xuJGMtZ3JheTogI2ViZThlMztcbiRjLWdyYXktbDogI2Y3ZjdmNztcbiRjLXdoaXRlOiAjZmZmO1xuXG4kYy10ZXh0OiAkYy1ncmF5LWJiYjtcbiRjLWJvcmRlcjogJGMtZ3JheTtcblxuJGMtc3VjY2VzczogJGMtY3lhbjtcbiRjLXdhcm5pbmc6ICRjLW9yYW5nZTtcbiRjLWVycm9yOiAkYy1vcmFuZ2UtYjtcblxuQG1peGluIGNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuQG1peGluIHJlYWRvbmx5IHtcbiAgY3Vyc29yOiBkZWZhdWx0O1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuQG1peGluIHJvdW5kZWQge1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG5cbkBtaXhpbiBjZW50ZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNTAlO1xuICBsZWZ0OiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xufVxuXG5AbWl4aW4gY2FyZCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwgMCwgMCwgMC4xMjUpO1xuICBib3gtc2hhZG93OiAwcHggMXB4IDNweCAwcHggcmdiYSgwLCAwLCAwLCAwLjIxKTtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICBwYWRkaW5nOiAyNXB4O1xufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIHBhZGRpbmctdG9wOiA3NXB4O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  padding: 20px;\n  padding-top: 75px;\n  background-color: #f8f9fa;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIiwiL1VzZXJzL21jL21jLXVpLWFuZ3VsYXIvc3JjL2Nzcy9fdmFycy5zY3NzIiwic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUNxQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFRHJDQSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSx5QkNxQlM7QUNwQlgiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi9jc3MvdmFycyc7XG5cbjpob3N0IHtcbiAgQGluY2x1ZGUgY29udGFpbmVyO1xuICBwYWRkaW5nOiAyMHB4O1xuICBwYWRkaW5nLXRvcDogNzVweDsgLy8gaGVhZGVyXG4gIGJhY2tncm91bmQtY29sb3I6ICRjLWJnO1xufVxuIiwiLy8gUHJpbWFyeSBjb2xvcnNcbiRjLW9yYW5nZS1iOiAjZjM2NzA1O1xuJGMtb3JhbmdlOiAjZjg4MzAwO1xuJGMtb3JhbmdlLWw6ICNmZmIzMDI7XG5cbiRjLWJsdWU6ICMwODY2QzY7XG4kYy1ibHVlLWI6ICMwNzUzYTE7XG5cbiRjLWN5YW4tYjogIzM5YWFhZDtcbiRjLWN5YW46ICM2YmMzYmQ7XG4kYy1jeWFuLWw6ICNlM2Y2Zjg7XG5cbiRjLWdyZWVuOiAjMjNCRjA4O1xuJGMtZ3JlZW4tYjogIzFjOWEwNjtcblxuJGMtcmVkOiNEQzM1NDU7XG4kYy1yZWQtYjojYzgyMzMzO1xuXG4kYy15ZWxsb3c6ICNlZWY2NmQ7XG5cbi8vIEdyYXlcbiRjLWJsYWNrOiAjMDAwO1xuJGMtZ3JheS1iYmJiOiAjMjMyNzJiO1xuJGMtZ3JheS1iYmI6ICMzNDNhNDA7XG4kYy1ncmF5LWJiOiAjNzI3Yjg0O1xuJGMtZ3JheS1iOiAjODY4ZTk2O1xuJGMtZ3JheTogI2UyZTZlYTtcbiRjLWdyYXktbDogI2Y4ZjlmYTtcbiRjLXdoaXRlOiAjZmZmO1xuXG4kYy10ZXh0OiAkYy1ncmF5LWJiYmI7XG4kYy1ib3JkZXI6ICRjLWdyYXk7XG4kYy1iZzogJGMtZ3JheS1sO1xuXG4kYy1zdWNjZXNzOiAkYy1ncmVlbjtcbiRjLXdhcm5pbmc6ICRjLW9yYW5nZTtcbiRjLWVycm9yOiAkYy1yZWQ7XG5cbkBtaXhpbiBjb250YWluZXIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbkBtaXhpbiByZWFkb25seSB7XG4gIGN1cnNvcjogZGVmYXVsdDtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG5cbkBtaXhpbiByb3VuZGVkIHtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuXG5AbWl4aW4gY2VudGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cblxuQG1peGluIGNhcmQge1xuICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuMTI1KTtcbiAgYm94LXNoYWRvdzogMHB4IDFweCAzcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4yMSk7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgcGFkZGluZzogMjVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJGMtd2hpdGU7XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgcGFkZGluZzogMjBweDtcbiAgcGFkZGluZy10b3A6IDc1cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmOGY5ZmE7XG59Il19 */");
 
 /***/ }),
 
@@ -6906,7 +4506,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../index */ "./src/app/index.ts");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 
 
 
@@ -6920,7 +4520,7 @@ let HomeComponent = class HomeComponent extends _index__WEBPACK_IMPORTED_MODULE_
 };
 HomeComponent.ctorParameters = () => [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"] },
-    { type: mc_ui_angular__WEBPACK_IMPORTED_MODULE_3__["MCUIService"] }
+    { type: projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_3__["MCUIService"] }
 ];
 HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -6947,7 +4547,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! . */ "./src/app/home/index.ts");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 /* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home-routing.module */ "./src/app/home/home-routing.module.ts");
 /* harmony import */ var _example_example_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./example/example.module */ "./src/app/home/example/example.module.ts");
 /* harmony import */ var _home_header_home_header_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home-header/home-header.component */ "./src/app/home/home-header/home-header.component.ts");
@@ -6962,7 +4562,7 @@ let HomeModule = class HomeModule {
 };
 HomeModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [mc_ui_angular__WEBPACK_IMPORTED_MODULE_3__["MCUIModule"], _home_routing_module__WEBPACK_IMPORTED_MODULE_4__["HomeRoutingModule"], _example_example_module__WEBPACK_IMPORTED_MODULE_5__["ExampleModule"]],
+        imports: [projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_3__["MCUIModule"], _home_routing_module__WEBPACK_IMPORTED_MODULE_4__["HomeRoutingModule"], _example_example_module__WEBPACK_IMPORTED_MODULE_5__["ExampleModule"]],
         declarations: [
             ___WEBPACK_IMPORTED_MODULE_2__["HomeComponent"],
             _home_header_home_header_component__WEBPACK_IMPORTED_MODULE_6__["HomeHeaderComponent"],
@@ -6990,7 +4590,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeService", function() { return HomeService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var mc_ui_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mc-ui-angular */ "./dist/mc-ui/fesm2015/mc-ui-angular.js");
+/* harmony import */ var projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/mc-ui/src/public-api */ "./projects/mc-ui/src/public-api.ts");
 /* harmony import */ var _app_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app-base.service */ "./src/app/app-base.service.ts");
 /* harmony import */ var src_test_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/test/api */ "./src/test/api/index.ts");
 
@@ -7020,7 +4620,7 @@ let HomeService = class HomeService extends _app_base_service__WEBPACK_IMPORTED_
     }
 };
 HomeService.ctorParameters = () => [
-    { type: mc_ui_angular__WEBPACK_IMPORTED_MODULE_2__["MCUIService"] }
+    { type: projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_2__["MCUIService"] }
 ];
 HomeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
@@ -7034,7 +4634,7 @@ HomeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*******************************!*\
   !*** ./src/app/home/index.ts ***!
   \*******************************/
-/*! exports provided: HomeHeaderComponent, HomeComponent, HomeService */
+/*! exports provided: HomeService, HomeHeaderComponent, HomeComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7061,7 +4661,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************!*\
   !*** ./src/app/index.ts ***!
   \**************************/
-/*! exports provided: AppComponent, AppBaseService, AppBaseComponent, MCUIService, MCUIModule, FieldComponent, TextareaComponent, InputComponent, FormComponent, ScrollComponent, ListComponent, ListBasicComponent, ButtonComponent, IconComponent, ListItemComponent, LoaderComponent, DrawerComponent, MessageBarComponent, GridHeaderComponent, GridBodyComponent, MaskComponent, GridComponent, PopupComponent */
+/*! exports provided: AppComponent, AppBaseService, MCUIService, MCUIModule, FieldComponent, TextareaComponent, InputComponent, DropdownComponent, FormComponent, ScrollComponent, ListComponent, ListBasicComponent, ButtonComponent, IconComponent, ListItemComponent, LoaderComponent, DrawerComponent, MessageBarComponent, GridHeaderComponent, GridBodyComponent, MaskComponent, GridComponent, PopupComponent, PopupListComponent, AppBaseComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7086,6 +4686,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TextareaComponent", function() { return _projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__["TextareaComponent"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InputComponent", function() { return _projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__["InputComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DropdownComponent", function() { return _projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__["DropdownComponent"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FormComponent", function() { return _projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__["FormComponent"]; });
 
@@ -7116,6 +4718,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GridComponent", function() { return _projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__["GridComponent"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PopupComponent", function() { return _projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__["PopupComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PopupListComponent", function() { return _projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_4__["PopupListComponent"]; });
 
 
 
