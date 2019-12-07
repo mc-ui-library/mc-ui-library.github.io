@@ -146,7 +146,7 @@ var __extends = (this && this.__extends) || (function () {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<mc-grid-header [columns]=\"data.columns\" [data]=\"headerData\" [rowHeight]=\"rowHeight\" [style.width]=\"bodyWidth\">\n</mc-grid-header>\n<mc-scroll [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" (updatePage)=\"onUpdatePage($event)\" [style.height.px]=\"bodyHeight\" [style.width]=\"bodyWidth\">\n  <ng-template #page1Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page1IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page2IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\"\n      [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n</mc-scroll>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<mc-grid-header [columns]=\"data.columns\" [data]=\"headerData\" [rowHeight]=\"rowHeight\" [style.width]=\"bodyWidth\">\n</mc-grid-header>\n<mc-scroll [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\"  [emptyText]=\"emptyText\" (updatePage)=\"onUpdatePage($event)\" [style.height.px]=\"bodyHeight\" [style.width]=\"bodyWidth\">\n  <ng-template #page1Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page1IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page2IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\"\n      [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n</mc-scroll>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/icon/icon.component.html": 
@@ -168,7 +168,7 @@ var __extends = (this && this.__extends) || (function () {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<mc-list-item *ngFor=\"let item of data; trackBy: key\" [style.height]=\"horizontal ? '100%' : rowHeight + 'px'\" [style.lineHeight]=\"horizontal ? '' : (rowHeight - 2) + 'px'\"\n  [tpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\" [data]=\"item\" [hasCheckBox]=\"multiSelect\"\n  [hasDeleteButton]=\"delete\" [selected]=\"selectedItemsMap.has('' + item[idField])\" [class.horizontal]=\"horizontal\" [class.is-scroll-page-item]=\"isScrollPage\"\n  [class.is-first-page-item]=\"isFirstPage\" [class.is-last-page-item]=\"isLastPage\" (action)=\"onListItemAction($event)\">\n  </mc-list-item>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<mc-list-item *ngFor=\"let item of data; trackBy: key\" [style.height]=\"horizontal ? '100%' : rowHeight + 'px'\" [style.lineHeight]=\"horizontal ? '' : (rowHeight - 2) + 'px'\"\n  [tpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\" [data]=\"item\" [hasCheckBox]=\"multiSelect\"\n  [hasDeleteButton]=\"delete\" [selected]=\"selectedItemsMap.has('' + item[idField])\" [class.horizontal]=\"horizontal\"\n  [theme]=\"item.theme\" [class.is-scroll-page-item]=\"isScrollPage\"\n  [class.is-first-page-item]=\"isFirstPage\" [class.is-last-page-item]=\"isLastPage\" (action)=\"onListItemAction($event)\">\n  </mc-list-item>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/list/list-item.component.html": 
@@ -190,7 +190,7 @@ var __extends = (this && this.__extends) || (function () {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<mc-scroll #scrollCmp [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" (updatePage)=\"onUpdatePage($event)\">\n  <ng-template #page1Tpl>\n    <mc-list-basic #listBasic1Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page1IsFirst\"\n      [isLastPage]=\"page1IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-list-basic #listBasic2Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page2IsFirst\" [isLastPage]=\"page2IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n</mc-scroll>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<mc-scroll #scrollCmp [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" [emptyText]=\"emptyText\" (updatePage)=\"onUpdatePage($event)\">\n  <ng-template #page1Tpl>\n    <mc-list-basic #listBasic1Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page1IsFirst\"\n      [isLastPage]=\"page1IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-list-basic #listBasic2Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page2IsFirst\" [isLastPage]=\"page2IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n</mc-scroll>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/loader/loader.component.html": 
@@ -234,7 +234,7 @@ var __extends = (this && this.__extends) || (function () {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"indicatorLocation[0] === 't'\" class=\"popup-list--header\">\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\"\n    [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input #inputCmp1 class=\"popup-list--header--input--input\" [value]=\"lastSelectedName\"\n      (valueChange)=\"onValueChange($event)\"></mc-input>\n    <div class=\"popup-list--header--input--icon\">\n      <mc-icon theme=\"down\"></mc-icon>\n    </div>\n  </div>\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClickUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"popup-list--body\" [style.height.px]=\"listHeight\" [class.popup-list--body-t]=\"indicatorLocation[0] !== 't' && listHeight !== adjustedListHeight\" (click)=\"onClickListBody();\">\n  <mc-list #listCmp [data]=\"listData\" [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n    [rowHeight]=\"rowHeight\" [multiSelect]=\"multiSelect\" [selectedItems]=\"listSelectedItems\"\n    [additionalData]=\"additionalData\" (needData)=\"onListNeedData($event)\" (action)=\"onListAction($event)\"\n    [style.height.px]=\"adjustedListHeight\">\n  </mc-list>\n</div>\n<div *ngIf=\"indicatorLocation[0] !== 't'\" class=\"popup-list--header\">\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClickUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\"\n    [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input #inputCmp2 class=\"popup-list--header--input--input\" [value]=\"lastSelectedName\"\n      (valueChange)=\"onValueChange($event)\"></mc-input>\n    <div class=\"popup-list--header--input--icon\">\n      <mc-icon theme=\"down\"></mc-icon>\n    </div>\n  </div>\n</div>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"indicatorLocation[0] === 't'\" class=\"popup-list--header\">\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\"\n    [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input #inputCmp1 class=\"popup-list--header--input--input\" [value]=\"lastSelectedName\"\n      (valueChange)=\"onValueChange($event)\"></mc-input>\n    <div class=\"popup-list--header--input--icon\">\n      <mc-icon theme=\"down\"></mc-icon>\n    </div>\n  </div>\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClickUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"popup-list--body\" [style.height.px]=\"listHeight\" [class.popup-list--body-t]=\"indicatorLocation[0] !== 't'\" (click)=\"onClickListBody();\">\n  <mc-list #listCmp [data]=\"listData\" [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n    [rowHeight]=\"rowHeight\" [multiSelect]=\"multiSelect\" [selectedItems]=\"listSelectedItems\"\n    [additionalData]=\"additionalData\" (needData)=\"onListNeedData($event)\" (action)=\"onListAction($event)\"\n    [style.height.px]=\"listHeight\">\n  </mc-list>\n</div>\n<div *ngIf=\"indicatorLocation[0] !== 't'\" class=\"popup-list--header\">\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClickUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\"\n    [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input #inputCmp2 class=\"popup-list--header--input--input\" [value]=\"lastSelectedName\"\n      (valueChange)=\"onValueChange($event)\"></mc-input>\n    <div class=\"popup-list--header--input--icon\">\n      <mc-icon theme=\"down\"></mc-icon>\n    </div>\n  </div>\n</div>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/popup/popup.component.html": 
@@ -256,7 +256,7 @@ var __extends = (this && this.__extends) || (function () {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"scroll\" (scroll)=\"onScroll($event)\">\n  <div class=\"scroll--content\" [style.height.px]=\"state.contentHeight\">\n    <div class=\"scroll--content--page1\" [style.top.px]=\"state.page1Top\">\n      <ng-container *ngTemplateOutlet=\"page1Tpl\"></ng-container>\n    </div>\n    <div class=\"scroll--content--page2\" [style.top.px]=\"state.page2Top\">\n      <ng-container *ngTemplateOutlet=\"page2Tpl\"></ng-container>\n    </div>\n  </div>\n</div>\n<mc-loader [style.display]=\"isLoading ? '' : 'none'\" [theme]=\"['ring', 'small']\"></mc-loader>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"scroll\" (scroll)=\"onScroll($event)\">\n  <div class=\"scroll--content\" [style.height.px]=\"state.contentHeight\">\n    <div class=\"scroll--content--page1\" [style.top.px]=\"state.page1Top\">\n      <ng-container *ngTemplateOutlet=\"page1Tpl\"></ng-container>\n    </div>\n    <div class=\"scroll--content--page2\" [style.top.px]=\"state.page2Top\">\n      <ng-container *ngTemplateOutlet=\"page2Tpl\"></ng-container>\n    </div>\n  </div>\n</div>\n<div *ngIf=\"!rowCount\" class=\"scroll--empty\" [style.lineHeight.px]=\"rowHeight\">{{emptyText}}</div>\n<mc-loader [style.display]=\"isLoading ? '' : 'none'\" [theme]=\"['ring', 'small']\"></mc-loader>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html": 
@@ -289,7 +289,7 @@ var __extends = (this && this.__extends) || (function () {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"example--header\">\n  <h4>Component Examples</h4>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>list with Infinity Scroll</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-list [data]=\"listData\" [itemTpl]=\"itemTpl\">\n      <ng-template #itemTpl let-data>\n        {{data.index}}: {{data.name}}\n      </ng-template>\n    </mc-list>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Grid with Infinity Scroll | Popup | Drawer</h6>\n    <p>- Popup example: Click a cell </p>\n    <p>- Drawer example: Click the friends column cell </p>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-grid [data]=\"gridData\" (action)=\"onGridAction($event)\"></mc-grid>\n    <ng-template #popupTpl>\n      <h6>{{gridCell.name}} {{gridCell.field}} {{gridCell.field === 'tags' ? '' : gridCell.value}}</h6>\n      <ng-container *ngIf=\"gridCell.field === 'tags'\">\n        <mc-list-basic [data]=\"gridCell.value\" style=\"height:100px;margin-top: 20px;\"></mc-list-basic>\n      </ng-container>\n    </ng-template>\n    <ng-template #drawerTpl>\n      <div style=\"padding: 20px;padding-top: 75px;width: 240px;\">\n        <h6>{{gridCell.name}} {{gridCell.field}}</h6>\n        <mc-list-basic [data]=\"gridCell.value\" style=\"margin-top: 20px;\"></mc-list-basic>\n      </div>\n    </ng-template>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Dropdown</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"500\">\n    <mc-dropdown [data]=\"dropdownData\" (needData)=\"onDropdownNeedData($event)\"></mc-dropdown>\n  </div>\n</div>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"example--header\">\n  <h4>Component Examples</h4>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Basic List - Horizontal Toggle</h6>\n  </div>\n  <div class=\"example--item--body\">\n    <mc-list-basic [data]=\"listBasicToggleData\" [selectedItems]=\"[listBasicToggleData[0]]\" [horizontal]=\"true\"\n      [style.lineHeight.px]=\"53\"></mc-list-basic>\n    <mc-list-basic [data]=\"listBasicTagsData\" [horizontal]=\"true\" [style.lineHeight.px]=\"18\"></mc-list-basic>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>list with Infinity Scroll</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-list [data]=\"listData\" [itemTpl]=\"itemTpl\">\n      <ng-template #itemTpl let-data>\n        {{data.index}}: {{data.name}}\n      </ng-template>\n    </mc-list>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Grid with Infinity Scroll | Popup | Drawer</h6>\n    <p>- Popup example: Click a cell </p>\n    <p>- Drawer example: Click the friends column cell </p>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-grid [data]=\"gridData\" (action)=\"onGridAction($event)\"></mc-grid>\n    <ng-template #popupTpl>\n      <h6>{{gridCell.name}} {{gridCell.field}} {{gridCell.field === 'tags' ? '' : gridCell.value}}</h6>\n      <ng-container *ngIf=\"gridCell.field === 'tags'\">\n        <mc-list-basic [data]=\"gridCell.value\" style=\"height:100px;margin-top: 20px;\"></mc-list-basic>\n      </ng-container>\n    </ng-template>\n    <ng-template #drawerTpl>\n      <div style=\"padding: 20px;padding-top: 75px;width: 240px;\">\n        <h6>{{gridCell.name}} {{gridCell.field}}</h6>\n        <mc-list-basic [data]=\"gridCell.value\" style=\"margin-top: 20px;\"></mc-list-basic>\n      </div>\n    </ng-template>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Dropdown</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"500\">\n    <mc-dropdown [data]=\"dropdownData\" (needData)=\"onDropdownNeedData($event)\"></mc-dropdown>\n  </div>\n</div>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home-header/home-header.component.html": 
@@ -654,12 +654,12 @@ var __extends = (this && this.__extends) || (function () {
                 };
                 BaseComponent.prototype.ngOnInit = function () {
                     this.initCmp();
-                    // theme should be the last class for priority
-                    this.applyThemeClass();
                 };
                 BaseComponent.prototype.ngAfterViewInit = function () {
                     var _this = this;
                     this.afterInitCmp();
+                    // theme should be the last class for priority
+                    this.applyThemeClass();
                     setTimeout(function () {
                         _this.afterRenderCmp();
                         _this.rendered = true;
@@ -1764,7 +1764,7 @@ var __extends = (this && this.__extends) || (function () {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  width: 100%;\n  overflow: auto;\n  border: 1px solid #e2e6ea;\n  border-radius: 3px;\n}\n:host.horizontal {\n  border: 0;\n  border-radius: 0;\n  display: inline-block;\n  width: auto;\n}\n:host.is-scroll-page {\n  border: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1iYXNpYy5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1iYXNpYy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7QUNBRjtBREVFO0VBQ0UsU0FBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxXQUFBO0FDQUo7QURHRTtFQUNFLFNBQUE7QUNESiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9saXN0L2xpc3QtYmFzaWMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwJTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIGJvcmRlcjogMXB4IHNvbGlkICRjLWJvcmRlcjtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuXG4gICYuaG9yaXpvbnRhbCB7XG4gICAgYm9yZGVyOiAwO1xuICAgIGJvcmRlci1yYWRpdXM6IDA7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIHdpZHRoOiBhdXRvO1xuICB9XG5cbiAgJi5pcy1zY3JvbGwtcGFnZSB7XG4gICAgYm9yZGVyOiAwO1xuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIG92ZXJmbG93OiBhdXRvO1xuICBib3JkZXI6IDFweCBzb2xpZCAjZTJlNmVhO1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG46aG9zdC5ob3Jpem9udGFsIHtcbiAgYm9yZGVyOiAwO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiBhdXRvO1xufVxuOmhvc3QuaXMtc2Nyb2xsLXBhZ2Uge1xuICBib3JkZXI6IDA7XG59Il19 */");
+            /* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  width: 100%;\n  overflow: auto;\n  border: 1px solid #e2e6ea;\n  border-radius: 3px;\n}\n:host.horizontal {\n  border: 0;\n  border-radius: 0;\n  display: inline-block;\n  white-space: nowrap;\n}\n:host.is-scroll-page {\n  border: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1iYXNpYy5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1iYXNpYy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7QUNBRjtBREVFO0VBQ0UsU0FBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxtQkFBQTtBQ0FKO0FER0U7RUFDRSxTQUFBO0FDREoiLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvbGlzdC9saXN0LWJhc2ljLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uL2Nzcy92YXJzXCI7XG46aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIG92ZXJmbG93OiBhdXRvO1xuICBib3JkZXI6IDFweCBzb2xpZCAkYy1ib3JkZXI7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcblxuICAmLmhvcml6b250YWwge1xuICAgIGJvcmRlcjogMDtcbiAgICBib3JkZXItcmFkaXVzOiAwO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICB9XG5cbiAgJi5pcy1zY3JvbGwtcGFnZSB7XG4gICAgYm9yZGVyOiAwO1xuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIG92ZXJmbG93OiBhdXRvO1xuICBib3JkZXI6IDFweCBzb2xpZCAjZTJlNmVhO1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG59XG46aG9zdC5ob3Jpem9udGFsIHtcbiAgYm9yZGVyOiAwO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG59XG46aG9zdC5pcy1zY3JvbGwtcGFnZSB7XG4gIGJvcmRlcjogMDtcbn0iXX0= */");
             /***/ 
         }),
         /***/ "./projects/mc-ui/src/lib/component/list/list-basic.component.ts": 
@@ -1941,7 +1941,7 @@ var __extends = (this && this.__extends) || (function () {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  padding: 0 20px;\n  width: 100%;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #e2e6ea;\n}\n:host:last-child {\n  border-bottom-color: transparent;\n}\n:host.horizontal {\n  float: left;\n  width: auto;\n  border-color: transparent;\n}\n:host.horizontal.selected {\n  border-bottom: 2px solid #343a40;\n}\n:host.is-scroll-page-item:last-child {\n  border-bottom-color: #e2e6ea;\n}\n:host.is-scroll-page-item.is-last-page-item:last-child {\n  border-bottom-color: transparent;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1pdGVtLmNvbXBvbmVudC5zY3NzIiwicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvbGlzdC9saXN0LWl0ZW0uY29tcG9uZW50LnNjc3MiLCIvVXNlcnMvbWMvbWMtdWktYW5ndWxhci9wcm9qZWN0cy9tYy11aS9zcmMvbGliL2Nzcy9fdmFycy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLGlDQUFBO0VBQ0EsZ0NBQUE7QUNBSjtBREVJO0VBQ0UsZ0NBQUE7QUNBTjtBREtJO0VBQ0UsV0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtBQ0hOO0FESU07RUFDRSxnQ0FBQTtBQ0ZSO0FET1E7RUFDRSw0QkVERDtBREpUO0FEUVk7RUFDRSxnQ0FBQTtBQ05kIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1pdGVtLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4vLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwYWRkaW5nOiAwIDIwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAkYy1ib3JkZXI7XG5cbiAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgfVxuXG4gICAgJi5zZWxlY3RlZCB7fVxuXG4gICAgJi5ob3Jpem9udGFsIHtcbiAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgd2lkdGg6IGF1dG87XG4gICAgICBib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgJi5zZWxlY3RlZCB7XG4gICAgICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAkYy1ncmF5LWJiYjtcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmLmlzLXNjcm9sbC1wYWdlLWl0ZW0ge1xuICAgICAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6ICRjLWJvcmRlcjtcbiAgICAgICAgfVxuICAgICAgICAmLmlzLWxhc3QtcGFnZS1pdGVtIHtcbiAgICAgICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgfVxufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBwYWRkaW5nOiAwIDIwcHg7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTJlNmVhO1xufVxuOmhvc3Q6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufVxuOmhvc3QuaG9yaXpvbnRhbCB7XG4gIGZsb2F0OiBsZWZ0O1xuICB3aWR0aDogYXV0bztcbiAgYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cbjpob3N0Lmhvcml6b250YWwuc2VsZWN0ZWQge1xuICBib3JkZXItYm90dG9tOiAycHggc29saWQgIzM0M2E0MDtcbn1cbjpob3N0LmlzLXNjcm9sbC1wYWdlLWl0ZW06bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6ICNlMmU2ZWE7XG59XG46aG9zdC5pcy1zY3JvbGwtcGFnZS1pdGVtLmlzLWxhc3QtcGFnZS1pdGVtOmxhc3QtY2hpbGQge1xuICBib3JkZXItYm90dG9tLWNvbG9yOiB0cmFuc3BhcmVudDtcbn0iLCIvLyBQcmltYXJ5IGNvbG9yc1xuJGMtb3JhbmdlLWI6ICNmMzY3MDU7XG4kYy1vcmFuZ2U6ICNmODgzMDA7XG4kYy1vcmFuZ2UtbDogI2ZmYjMwMjtcblxuJGMtYmx1ZTogIzA4NjZDNjtcbiRjLWJsdWUtYjogIzA3NTNhMTtcblxuJGMtY3lhbi1iOiAjMzlhYWFkO1xuJGMtY3lhbjogIzZiYzNiZDtcbiRjLWN5YW4tbDogI2UzZjZmODtcblxuJGMtZ3JlZW46ICMyM0JGMDg7XG4kYy1ncmVlbi1iOiAjMWM5YTA2O1xuXG4kYy1yZWQ6I0RDMzU0NTtcbiRjLXJlZC1iOiNjODIzMzM7XG5cbiRjLXllbGxvdzogI2VlZjY2ZDtcblxuLy8gR3JheVxuJGMtYmxhY2s6ICMwMDA7XG4kYy1ncmF5LWJiYmI6ICMyMzI3MmI7XG4kYy1ncmF5LWJiYjogIzM0M2E0MDtcbiRjLWdyYXktYmI6ICM3MjdiODQ7XG4kYy1ncmF5LWI6ICM4NjhlOTY7XG4kYy1ncmF5OiAjZTJlNmVhO1xuJGMtZ3JheS1sOiAjZjhmOWZhO1xuJGMtd2hpdGU6ICNmZmY7XG5cbiRjLXRleHQ6ICRjLWdyYXktYmJiYjtcbiRjLWJvcmRlcjogJGMtZ3JheTtcbiRjLWJnOiAkYy1ncmF5LWw7XG5cbiRjLXN1Y2Nlc3M6ICRjLWdyZWVuO1xuJGMtd2FybmluZzogJGMtb3JhbmdlO1xuJGMtZXJyb3I6ICRjLXJlZDtcbiJdfQ== */");
+            /* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  padding: 0 20px;\n  width: 100%;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #e2e6ea;\n}\n:host:last-child {\n  border-bottom-color: transparent;\n}\n:host.horizontal {\n  width: auto;\n  border-color: transparent;\n}\n:host.horizontal.selected {\n  margin-top: -1px;\n  border-bottom: 2px solid #343a40;\n}\n:host.is-scroll-page-item:last-child {\n  border-bottom-color: #e2e6ea;\n}\n:host.is-scroll-page-item.is-last-page-item:last-child {\n  border-bottom-color: transparent;\n}\n:host.list-item-tag {\n  margin-right: 10px;\n  padding: 0 15px;\n  font-size: 9px;\n  background-color: #343a40;\n  color: #fff;\n}\n:host.list-item-tag-orange {\n  background-color: #f88300;\n}\n:host.list-item-tag.selected {\n  border-bottom: 1px solid transparent;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1pdGVtLmNvbXBvbmVudC5zY3NzIiwicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvbGlzdC9saXN0LWl0ZW0uY29tcG9uZW50LnNjc3MiLCIvVXNlcnMvbWMvbWMtdWktYW5ndWxhci9wcm9qZWN0cy9tYy11aS9zcmMvbGliL2Nzcy9fdmFycy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UscUJBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLGlDQUFBO0VBQ0EsZ0NBQUE7QUNERjtBREdFO0VBQ0UsZ0NBQUE7QUNESjtBRE1FO0VBQ0UsV0FBQTtFQUNBLHlCQUFBO0FDSko7QURNSTtFQUNFLGdCQUFBO0VBQ0EsZ0NBQUE7QUNKTjtBRFNJO0VBQ0UsNEJFSEc7QURKVDtBRFdNO0VBQ0UsZ0NBQUE7QUNUUjtBRGdCSTtFQUNFLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7RUFDQSx5QkV0Qk87RUZ1QlAsV0VsQkk7QURJVjtBRGVNO0VBQ0UseUJFOUNHO0FEaUNYO0FEZU07RUFDRSxvQ0FBQTtBQ2JSIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2xpc3QvbGlzdC1pdGVtLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4vLi4vLi4vY3NzL3ZhcnNcIjtcblxuOmhvc3Qge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBwYWRkaW5nOiAwIDIwcHg7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAkYy1ib3JkZXI7XG5cbiAgJjpsYXN0LWNoaWxkIHtcbiAgICBib3JkZXItYm90dG9tLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgfVxuXG4gICYuc2VsZWN0ZWQge31cblxuICAmLmhvcml6b250YWwge1xuICAgIHdpZHRoOiBhdXRvO1xuICAgIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG5cbiAgICAmLnNlbGVjdGVkIHtcbiAgICAgIG1hcmdpbi10b3A6IC0xcHg7XG4gICAgICBib3JkZXItYm90dG9tOiAycHggc29saWQgJGMtZ3JheS1iYmI7XG4gICAgfVxuICB9XG5cbiAgJi5pcy1zY3JvbGwtcGFnZS1pdGVtIHtcbiAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogJGMtYm9yZGVyO1xuICAgIH1cblxuICAgICYuaXMtbGFzdC1wYWdlLWl0ZW0ge1xuICAgICAgJjpsYXN0LWNoaWxkIHtcbiAgICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgLy8gVGhlbWVzXG4gICYubGlzdC1pdGVtIHtcbiAgICAmLXRhZyB7XG4gICAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gICAgICBwYWRkaW5nOiAwIDE1cHg7XG4gICAgICBmb250LXNpemU6IDlweDtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICRjLWdyYXktYmJiO1xuICAgICAgY29sb3I6ICRjLXdoaXRlO1xuICAgICAgJi1vcmFuZ2Uge1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkYy1vcmFuZ2U7XG4gICAgICB9XG4gICAgICAmLnNlbGVjdGVkIHtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBwYWRkaW5nOiAwIDIwcHg7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTJlNmVhO1xufVxuOmhvc3Q6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufVxuOmhvc3QuaG9yaXpvbnRhbCB7XG4gIHdpZHRoOiBhdXRvO1xuICBib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xufVxuOmhvc3QuaG9yaXpvbnRhbC5zZWxlY3RlZCB7XG4gIG1hcmdpbi10b3A6IC0xcHg7XG4gIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjMzQzYTQwO1xufVxuOmhvc3QuaXMtc2Nyb2xsLXBhZ2UtaXRlbTpsYXN0LWNoaWxkIHtcbiAgYm9yZGVyLWJvdHRvbS1jb2xvcjogI2UyZTZlYTtcbn1cbjpob3N0LmlzLXNjcm9sbC1wYWdlLWl0ZW0uaXMtbGFzdC1wYWdlLWl0ZW06bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufVxuOmhvc3QubGlzdC1pdGVtLXRhZyB7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgcGFkZGluZzogMCAxNXB4O1xuICBmb250LXNpemU6IDlweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzM0M2E0MDtcbiAgY29sb3I6ICNmZmY7XG59XG46aG9zdC5saXN0LWl0ZW0tdGFnLW9yYW5nZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmODgzMDA7XG59XG46aG9zdC5saXN0LWl0ZW0tdGFnLnNlbGVjdGVkIHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xufSIsIi8vIFByaW1hcnkgY29sb3JzXG4kYy1vcmFuZ2UtYjogI2YzNjcwNTtcbiRjLW9yYW5nZTogI2Y4ODMwMDtcbiRjLW9yYW5nZS1sOiAjZmZiMzAyO1xuXG4kYy1ibHVlOiAjMDg2NkM2O1xuJGMtYmx1ZS1iOiAjMDc1M2ExO1xuXG4kYy1jeWFuLWI6ICMzOWFhYWQ7XG4kYy1jeWFuOiAjNmJjM2JkO1xuJGMtY3lhbi1sOiAjZTNmNmY4O1xuXG4kYy1ncmVlbjogIzIzQkYwODtcbiRjLWdyZWVuLWI6ICMxYzlhMDY7XG5cbiRjLXJlZDojREMzNTQ1O1xuJGMtcmVkLWI6I2M4MjMzMztcblxuJGMteWVsbG93OiAjZWVmNjZkO1xuXG4vLyBHcmF5XG4kYy1ibGFjazogIzAwMDtcbiRjLWdyYXktYmJiYjogIzIzMjcyYjtcbiRjLWdyYXktYmJiOiAjMzQzYTQwO1xuJGMtZ3JheS1iYjogIzcyN2I4NDtcbiRjLWdyYXktYjogIzg2OGU5NjtcbiRjLWdyYXk6ICNlMmU2ZWE7XG4kYy1ncmF5LWw6ICNmOGY5ZmE7XG4kYy13aGl0ZTogI2ZmZjtcblxuJGMtdGV4dDogJGMtZ3JheS1iYmJiO1xuJGMtYm9yZGVyOiAkYy1ncmF5O1xuJGMtYmc6ICRjLWdyYXktbDtcblxuJGMtc3VjY2VzczogJGMtZ3JlZW47XG4kYy13YXJuaW5nOiAkYy1vcmFuZ2U7XG4kYy1lcnJvcjogJGMtcmVkO1xuIl19 */");
             /***/ 
         }),
         /***/ "./projects/mc-ui/src/lib/component/list/list-item.component.ts": 
@@ -2293,7 +2293,6 @@ var __extends = (this && this.__extends) || (function () {
                     _this.er = er;
                     _this.service = service;
                     _this.keyword = '';
-                    _this.adjustedListHeight = 300;
                     // for displaying the selections.
                     _this.popupSelectedItems = [];
                     _this.listSelectedItems = [];
@@ -2326,7 +2325,6 @@ var __extends = (this && this.__extends) || (function () {
                     },
                     set: function (value) {
                         var _this = this;
-                        this.adjustedListHeight = this.listHeight;
                         // input only
                         this._data = value;
                         // console.log('update popup list data', value);
@@ -2378,7 +2376,6 @@ var __extends = (this && this.__extends) || (function () {
                     this.listCmp.unselectItem(item);
                 };
                 PopupListComponent.prototype.onListAction = function (e) {
-                    var _this = this;
                     switch (e.action) {
                         case 'unselect-item':
                         case 'select-item':
@@ -2388,17 +2385,6 @@ var __extends = (this && this.__extends) || (function () {
                                 this.visible = false;
                             }
                             this.lastSelectedItem = e.selectedItem;
-                            break;
-                        case 'pages-rendered':
-                            // remove the empty space of the list
-                            setTimeout(function () {
-                                if (e.rowCount * e.rowHeight < _this.listHeight) {
-                                    _this.adjustedListHeight = e.rowCount * e.rowHeight + 2;
-                                }
-                                else {
-                                    _this.adjustedListHeight = _this.listHeight;
-                                }
-                            });
                             break;
                     }
                     e.target = this;
@@ -2728,6 +2714,7 @@ var __extends = (this && this.__extends) || (function () {
                     _this.page2IsFirst = false;
                     _this.page1IsLast = false;
                     _this.page2IsLast = false;
+                    _this.emptyText = 'No Data';
                     _this.idField = 'id';
                     _this.rowHeight = 45;
                     // there is no data, then it triggers "needData" event.
@@ -2768,6 +2755,7 @@ var __extends = (this && this.__extends) || (function () {
                             this.rowCount = data.rowCount;
                             // after rendering, it need to update the scroll state manually whenever the data is updated since the scroll doesn't have data property.
                             if (this.rendered) {
+                                this.updateHeight();
                                 // update after the rowCount is applied.
                                 setTimeout(function () { return _this.scrollCmp.updateState(true); });
                             }
@@ -2797,6 +2785,11 @@ var __extends = (this && this.__extends) || (function () {
                     enumerable: true,
                     configurable: true
                 });
+                ScrollAsyncComponent.prototype.afterInitCmp = function () {
+                    // the content height is smaller than container height, adjust container height.
+                    // this needs to run before rendering scroll.
+                    this.updateHeight();
+                };
                 ScrollAsyncComponent.prototype.updateData = function (indexes, pageIndex) {
                     var start = indexes.start;
                     var end = indexes.end;
@@ -2821,6 +2814,19 @@ var __extends = (this && this.__extends) || (function () {
                         else {
                             this.page2Data = data;
                         }
+                    }
+                };
+                ScrollAsyncComponent.prototype.updateHeight = function () {
+                    // when the items height are smaller than container height.
+                    var height = this.rowCount === 0 ? this.rowHeight : this.rowHeight * this.rowCount;
+                    if (!this.originHeight) {
+                        this.originHeight = this.el.clientHeight;
+                    }
+                    if (this.originHeight > height) {
+                        this.el.style.height = height + 'px';
+                    }
+                    else {
+                        this.el.style.height = this.originHeight + 'px';
                     }
                 };
                 ScrollAsyncComponent.prototype.getItems = function () {
@@ -2855,9 +2861,6 @@ var __extends = (this && this.__extends) || (function () {
                     this.page2IsLast = e.page2IsLast;
                     this.page1IsFirst = e.page1IsFirst;
                     this.page2IsFirst = e.page2IsFirst;
-                    this.action.emit({
-                        target: this, action: 'pages-rendered', rowCount: this.rowCount, rowHeight: this.rowHeight
-                    });
                 };
                 ScrollAsyncComponent.prototype.onAction = function (e) {
                     this.action.emit(e);
@@ -2867,6 +2870,9 @@ var __extends = (this && this.__extends) || (function () {
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('scrollCmp', { static: false })
             ], ScrollAsyncComponent.prototype, "scrollCmp", void 0);
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])()
+            ], ScrollAsyncComponent.prototype, "emptyText", void 0);
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])()
             ], ScrollAsyncComponent.prototype, "idField", void 0);
@@ -2892,7 +2898,7 @@ var __extends = (this && this.__extends) || (function () {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n}\n:host .scroll {\n  overflow-y: auto;\n  height: 100%;\n}\n:host .scroll--content--page1, :host .scroll--content--page2 {\n  position: absolute;\n  width: 100%;\n  left: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L3Njcm9sbC9zY3JvbGwuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9zY3JvbGwvc2Nyb2xsLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtBQ0NGO0FEQUU7RUFDRSxnQkFBQTtFQUNBLFlBQUE7QUNFSjtBREFNO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0VBQ0EsT0FBQTtBQ0VSIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L3Njcm9sbC9zY3JvbGwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgLnNjcm9sbCB7XG4gICAgb3ZlcmZsb3cteTogYXV0bztcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgJi0tY29udGVudCB7XG4gICAgICAmLS1wYWdlMSwgJi0tcGFnZTIge1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBsZWZ0OiAwO1xuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG46aG9zdCAuc2Nyb2xsIHtcbiAgb3ZlcmZsb3cteTogYXV0bztcbiAgaGVpZ2h0OiAxMDAlO1xufVxuOmhvc3QgLnNjcm9sbC0tY29udGVudC0tcGFnZTEsIDpob3N0IC5zY3JvbGwtLWNvbnRlbnQtLXBhZ2UyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB3aWR0aDogMTAwJTtcbiAgbGVmdDogMDtcbn0iXX0= */");
+            /* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n}\n:host .scroll {\n  overflow-y: auto;\n  height: 100%;\n}\n:host .scroll--content--page1, :host .scroll--content--page2 {\n  position: absolute;\n  width: 100%;\n  left: 0;\n}\n:host .scroll--empty {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L3Njcm9sbC9zY3JvbGwuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9zY3JvbGwvc2Nyb2xsLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtBQ0NGO0FEQUU7RUFDRSxnQkFBQTtFQUNBLFlBQUE7QUNFSjtBREFNO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0VBQ0EsT0FBQTtBQ0VSO0FEQ0k7RUFDRSxrQkFBQTtFQUNBLE1BQUE7RUFDQSxPQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0FDQ04iLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvc2Nyb2xsL3Njcm9sbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuICAuc2Nyb2xsIHtcbiAgICBvdmVyZmxvdy15OiBhdXRvO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICAmLS1jb250ZW50IHtcbiAgICAgICYtLXBhZ2UxLCAmLS1wYWdlMiB7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIGxlZnQ6IDA7XG4gICAgICB9XG4gICAgfVxuICAgICYtLWVtcHR5IHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIHRvcDogMDtcbiAgICAgIGxlZnQ6IDA7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICB9XG4gIH1cbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuOmhvc3QgLnNjcm9sbCB7XG4gIG92ZXJmbG93LXk6IGF1dG87XG4gIGhlaWdodDogMTAwJTtcbn1cbjpob3N0IC5zY3JvbGwtLWNvbnRlbnQtLXBhZ2UxLCA6aG9zdCAuc2Nyb2xsLS1jb250ZW50LS1wYWdlMiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgd2lkdGg6IDEwMCU7XG4gIGxlZnQ6IDA7XG59XG46aG9zdCAuc2Nyb2xsLS1lbXB0eSB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICB3aWR0aDogMTAwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */");
             /***/ 
         }),
         /***/ "./projects/mc-ui/src/lib/component/scroll/scroll.component.ts": 
@@ -2920,6 +2926,7 @@ var __extends = (this && this.__extends) || (function () {
                     _this.page2Index = -1;
                     _this._rowCount = 0;
                     _this.ticking = false;
+                    _this.emptyText = 'No Data';
                     _this.page1Tpl = null;
                     _this.page2Tpl = null;
                     _this.rowHeight = 45;
@@ -3065,6 +3072,9 @@ var __extends = (this && this.__extends) || (function () {
                 { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] },
                 { type: _mc_ui_service__WEBPACK_IMPORTED_MODULE_1__["MCUIService"] }
             ]; };
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])()
+            ], ScrollComponent.prototype, "emptyText", void 0);
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])()
             ], ScrollComponent.prototype, "page1Tpl", void 0);
@@ -4069,6 +4079,18 @@ var __extends = (this && this.__extends) || (function () {
                     _this.data = _this.homeService.getUserListMock().data;
                     _this.gridCell = {};
                     _this.dropdownData = _this.data.concat();
+                    _this.listBasicToggleData = _this.data.concat();
+                    _this.listBasicTagsData = _this.data.map(function (d, i) {
+                        var item = {
+                            id: d.id,
+                            name: d.name,
+                            theme: ['tag']
+                        };
+                        if (i % 2 === 0) {
+                            item.theme.push('tag-orange');
+                        }
+                        return item;
+                    });
                     _this.listData = _this.data.concat();
                     _this.gridData = _this.data.concat();
                     return _this;
