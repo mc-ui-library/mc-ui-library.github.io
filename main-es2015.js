@@ -122,6 +122,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/grid/grid-basic.component.html":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/grid/grid-basic.component.html ***!
+  \***************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<mc-grid-header\n  [columns]=\"data.columns\"\n  [data]=\"data.headerData\"\n  [rowHeight]=\"rowHeight\"\n  [style.width]=\"bodyWidth\"\n>\n</mc-grid-header>\n<div\n  class=\"grid-basic--scroll\"\n  [style.height.px]=\"bodyHeight\"\n  [style.width]=\"bodyWidth\"\n>\n  <mc-grid-body\n    [columns]=\"data.columns\"\n    [rowHeight]=\"rowHeight\"\n    [data]=\"data.rows\"\n    [idField]=\"idField\"\n    [class.is-basic]=\"true\"\n    (action)=\"onAction($event)\"\n  >\n  </mc-grid-body>\n</div>\n<mc-loader\n  [style.display]=\"isLoading ? '' : 'none'\"\n  [theme]=\"['ring', 'small']\"\n></mc-loader>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/grid/grid-body.component.html":
 /*!**************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/grid/grid-body.component.html ***!
@@ -131,7 +144,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<table class=\"grid-body\">\n    <tr *ngFor=\"let row of data; index as r\" class=\"grid-body--row\" [style.height.px]=\"rowHeight\" >\n        <td *ngFor=\"let column of columns; index as c;\" class=\"grid-body--row--cell\" [attr.data-field]=\"column.field\" [attr.data-id]=\"row[idField]\" [attr.data-rowIndex]=\"r\" [attr.data-cellIndex]=\"c\" data-action=\"select-cell\">\n            <div class=\"grid-body--row--cell--content\" [style.lineHeight.px]=\"rowHeight - 2\" [style.height.px]=\"rowHeight - 2\" [style.width.px]=\"column.width\" [title]=\"row[column.field]\"><ng-container *ngTemplateOutlet=\"column.tpl; context: {$implicit: row}\"></ng-container>{{column.tpl ? '' : row[column.field]}}</div>\n        </td>\n    </tr>\n</table>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<table class=\"grid-body\">\n  <tr\n    *ngFor=\"let row of data; index as r\"\n    class=\"grid-body--row\"\n    [style.height.px]=\"rowHeight\"\n  >\n    <td\n      *ngFor=\"let column of columns; index as c\"\n      class=\"grid-body--row--cell\"\n      [attr.data-field]=\"column.field\"\n      [attr.data-id]=\"row[idField]\"\n      [attr.data-rowIndex]=\"r\"\n      [attr.data-cellIndex]=\"c\"\n      data-action=\"select-cell\"\n    >\n      <div\n        class=\"grid-body--row--cell--content\"\n        [style.lineHeight.px]=\"rowHeight - 2\"\n        [style.height.px]=\"rowHeight - 2\"\n        [style.width.px]=\"column.width\"\n        [title]=\"row[column.field]\"\n      >\n        <ng-container\n          *ngTemplateOutlet=\"tpls[column.field]; context: { $implicit: row }\"\n        ></ng-container\n        >{{ tpls[column.field] ? \"\" : row[column.field] }}\n      </div>\n    </td>\n  </tr>\n</table>\n");
 
 /***/ }),
 
@@ -144,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<table class=\"grid-header\">\n    <tr class=\"grid-header--row\" *ngFor=\"let cells of data;\" [style.height.px]=\"rowHeight\" >\n        <th class=\"grid-header--row--cell\" *ngFor=\"let cell of cells;\" [attr.data-id]=\"cell.id\" data-action=\"select-cell\" [colSpan]=\"cell.colspan || 1\" [rowSpan]=\"cell.rowspan || 1\">\n            <div class=\"grid-header--row--cell--content\" [style.lineHeight.px]=\"rowHeight - 2\" [style.height.px]=\"rowHeight - 2\" [style.width.px]=\"cell.width\" [title]=\"cell.name\"><ng-container *ngTemplateOutlet=\"cell.tpl; context: {$implicit: cell}\"></ng-container>{{cell.tpl ? '' : cell.name}}</div>\n        </th>\n    </tr>\n</table>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<table class=\"grid-header\">\n  <tr\n    class=\"grid-header--row\"\n    *ngFor=\"let cells of data\"\n    [style.height.px]=\"rowHeight\"\n  >\n    <th\n      class=\"grid-header--row--cell\"\n      *ngFor=\"let cell of cells\"\n      [class.is-last-row]=\"cell.isLastRow\"\n      [attr.data-id]=\"cell.id\"\n      data-action=\"select-cell\"\n      [colSpan]=\"cell.colspan || 1\"\n      [rowSpan]=\"cell.rowspan || 1\"\n    >\n      <div\n        class=\"grid-header--row--cell--content\"\n        [style.lineHeight.px]=\"rowHeight - 2\"\n        [style.height.px]=\"rowHeight - 2\"\n        [style.width.px]=\"cell.width\"\n        [title]=\"cell.name\"\n      >\n        <ng-container\n          *ngTemplateOutlet=\"tpls[cell.name]; context: { $implicit: cell }\"\n        ></ng-container\n        >{{ tpls[cell.name] ? \"\" : cell.name }}\n      </div>\n    </th>\n  </tr>\n</table>\n");
 
 /***/ }),
 
@@ -157,7 +170,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mc-grid-header [columns]=\"data.columns\" [data]=\"headerData\" [rowHeight]=\"rowHeight\" [style.width]=\"bodyWidth\">\n</mc-grid-header>\n<mc-scroll [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\"  [emptyText]=\"emptyText\" (updatePage)=\"onUpdatePage($event)\" [style.height.px]=\"bodyHeight\" [style.width]=\"bodyWidth\">\n  <ng-template #page1Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page1IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page2IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\"\n      [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n</mc-scroll>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mc-grid-header\n  [columns]=\"data.columns\"\n  [data]=\"data.headerData\"\n  [rowHeight]=\"rowHeight\"\n  [style.width]=\"bodyWidth\"\n  [tpls]=\"headerTpls\"\n>\n</mc-grid-header>\n<mc-scroll\n  [page1Tpl]=\"page1Tpl\"\n  [page2Tpl]=\"page2Tpl\"\n  [rowHeight]=\"rowHeight\"\n  [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\"\n  [emptyText]=\"emptyText\"\n  (updatePage)=\"onUpdatePage($event)\"\n  [style.height.px]=\"bodyHeight\"\n  [style.width]=\"bodyWidth\"\n>\n  <ng-template #page1Tpl>\n    <mc-grid-body\n      [class.is-scroll-page]=\"true\"\n      [class.is-last-page]=\"page1IsLast\"\n      [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\"\n      [data]=\"page1Data\"\n      [idField]=\"idField\"\n      [tpls]=\"columnTpls\"\n      (action)=\"onAction($event)\"\n    >\n    </mc-grid-body>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-grid-body\n      [class.is-scroll-page]=\"true\"\n      [class.is-last-page]=\"page2IsLast\"\n      [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\"\n      [data]=\"page2Data\"\n      [idField]=\"idField\"\n      [tpls]=\"columnTpls\"\n      (action)=\"onAction($event)\"\n    >\n    </mc-grid-body>\n  </ng-template>\n</mc-scroll>\n");
 
 /***/ }),
 
@@ -326,7 +339,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"example--header\">\n  <h4>Component Examples</h4>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Basic List - Horizontal Toggle</h6>\n  </div>\n  <div class=\"example--item--body\">\n    <mc-list-basic [data]=\"listBasicToggleData\" [selectedItems]=\"[listBasicToggleData[0]]\" [horizontal]=\"true\"></mc-list-basic>\n    <mc-list-basic [data]=\"listBasicTagsData\" [horizontal]=\"true\" [rowHeight]=\"20\"></mc-list-basic>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>list with Infinity Scroll</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-list [data]=\"listData\" [itemTpl]=\"itemTpl\">\n      <ng-template #itemTpl let-data>\n        {{data.index}}: {{data.name}}\n      </ng-template>\n    </mc-list>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Grid with Infinity Scroll | Popup | Drawer</h6>\n    <p>- Popup example: Click a cell </p>\n    <p>- Drawer example: Click the friends column cell </p>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-grid [data]=\"gridData\" (action)=\"onGridAction($event)\"></mc-grid>\n    <ng-template #popupTpl>\n      <h6>{{gridCell.name}} {{gridCell.field}} {{gridCell.field === 'tags' ? '' : gridCell.value}}</h6>\n      <ng-container *ngIf=\"gridCell.field === 'tags'\">\n        <mc-list-basic [data]=\"gridCell.value\" [horizontal]=\"true\" [rowHeight]=\"20\" style=\"margin-top: 20px;white-space: normal;\"></mc-list-basic>\n      </ng-container>\n    </ng-template>\n    <ng-template #drawerTpl>\n      <div style=\"padding: 20px;padding-top: 75px;width: 240px;\">\n        <h6>{{gridCell.name}} {{gridCell.field}}</h6>\n        <mc-list-basic [data]=\"gridCell.value\" style=\"margin-top: 20px;\"></mc-list-basic>\n      </div>\n    </ng-template>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Dropdown</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"500\">\n    <mc-dropdown [data]=\"dropdownData\" (needData)=\"onDropdownNeedData($event)\"></mc-dropdown>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"example--header\">\n  <h4>Component Examples</h4>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Basic List - Horizontal Toggle</h6>\n  </div>\n  <div class=\"example--item--body\">\n    <mc-list-basic\n      [data]=\"listBasicToggleData\"\n      [selectedItems]=\"[listBasicToggleData[0]]\"\n      [horizontal]=\"true\"\n    ></mc-list-basic>\n    <mc-list-basic\n      [data]=\"listBasicTagsData\"\n      [horizontal]=\"true\"\n      [rowHeight]=\"20\"\n    ></mc-list-basic>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>list with Infinity Scroll</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-list [data]=\"listData\" [itemTpl]=\"itemTpl\">\n      <ng-template #itemTpl let-data>\n        {{ data.index }}: {{ data.name }}\n      </ng-template>\n    </mc-list>\n  </div>\n</div>\n<!-- <div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Basic Grid</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-grid-basic [data]=\"gridBasicData\"></mc-grid-basic>\n  </div>\n</div> -->\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Grid with Infinity Scroll | Popup | Drawer</h6>\n    <p>- Popup example: Click a cell</p>\n    <p>- Drawer example: Click the friends column cell</p>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-grid [data]=\"gridData\" (action)=\"onGridAction($event)\"></mc-grid>\n    <ng-template #popupTpl>\n      <h6>\n        {{ gridCell.name }} {{ gridCell.field }}\n        {{ gridCell.field === \"tags\" ? \"\" : gridCell.value }}\n      </h6>\n      <ng-container *ngIf=\"gridCell.field === 'tags'\">\n        <mc-list-basic\n          [data]=\"gridCell.value\"\n          [horizontal]=\"true\"\n          [rowHeight]=\"20\"\n          style=\"margin-top: 20px;white-space: normal;\"\n        ></mc-list-basic>\n      </ng-container>\n    </ng-template>\n    <ng-template #drawerTpl>\n      <div style=\"padding: 20px;padding-top: 75px;width: 240px;\">\n        <h6>{{ gridCell.name }} {{ gridCell.field }}</h6>\n        <mc-list-basic\n          [data]=\"gridCell.value\"\n          style=\"margin-top: 20px;\"\n        ></mc-list-basic>\n      </div>\n    </ng-template>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Grid with Custom Headers and cells</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"300\">\n    <mc-grid\n      [data]=\"gridCustomData\"\n      [columnTpls]=\"{ isActive: isActiveTpl, eyeColor: eyeColorTpl, tags: tagsTpl }\"\n    >\n      <ng-template #isActiveTpl let-row>\n        <div [style.textAlign]=\"'center'\">\n        <div\n          [ngStyle]=\"{\n            display: 'inline-block',\n            backgroundColor: row.isActive ? 'green' : 'silver',\n            width: '20px',\n            height: '20px',\n            borderRadius: '50%',\n            verticalAlign: 'middle'\n          }\"\n        ></div>\n        </div>\n      </ng-template>\n      <ng-template #eyeColorTpl let-row>\n        <div [style.textAlign]=\"'center'\">\n          <mc-icon\n            theme=\"eye-o\"\n            [ngStyle]=\"{\n              color: row.eyeColor,\n              fontWeight: 'bold',\n              fontSize: '30px'\n            }\"\n          ></mc-icon>\n        </div>\n      </ng-template>\n      <ng-template #tagsTpl let-row>\n        <div>\n          <mc-list-basic\n            [data]=\"row.tags\"\n            [horizontal]=\"true\"\n            [rowHeight]=\"20\"\n          ></mc-list-basic>\n        </div>\n      </ng-template>\n    </mc-grid>\n  </div>\n</div>\n<div class=\"example--item\">\n  <div class=\"example--item--header\">\n    <h6>Dropdown</h6>\n  </div>\n  <div class=\"example--item--body\" [style.height.px]=\"500\">\n    <mc-dropdown\n      [data]=\"dropdownData\"\n      (needData)=\"onDropdownNeedData($event)\"\n    ></mc-dropdown>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -1451,6 +1464,135 @@ FormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./projects/mc-ui/src/lib/component/grid/grid-basic.component.scss":
+/*!*************************************************************************!*\
+  !*** ./projects/mc-ui/src/lib/component/grid/grid-basic.component.scss ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  overflow-x: auto;\n  border: 1px solid #e2e6ea;\n  border-radius: 3px;\n}\n:host .grid-basic--scroll {\n  overflow-y: auto;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1iYXNpYy5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1iYXNpYy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7QUNBRjtBREVJO0VBQ0UsZ0JBQUE7RUFDQSxZQUFBO0FDQU4iLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvZ3JpZC9ncmlkLWJhc2ljLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4vLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuICBvdmVyZmxvdy14OiBhdXRvO1xuICBib3JkZXI6IDFweCBzb2xpZCAkYy1ib3JkZXI7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgLmdyaWQtYmFzaWMge1xuICAgICYtLXNjcm9sbCB7XG4gICAgICBvdmVyZmxvdy15OiBhdXRvO1xuICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgIH1cbiAgfVxufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93LXg6IGF1dG87XG4gIGJvcmRlcjogMXB4IHNvbGlkICNlMmU2ZWE7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbn1cbjpob3N0IC5ncmlkLWJhc2ljLS1zY3JvbGwge1xuICBvdmVyZmxvdy15OiBhdXRvO1xuICBoZWlnaHQ6IDEwMCU7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./projects/mc-ui/src/lib/component/grid/grid-basic.component.ts":
+/*!***********************************************************************!*\
+  !*** ./projects/mc-ui/src/lib/component/grid/grid-basic.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: GridBasicComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridBasicComponent", function() { return GridBasicComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../base.component */ "./projects/mc-ui/src/lib/component/base.component.ts");
+/* harmony import */ var _mc_ui_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mc-ui.service */ "./projects/mc-ui/src/lib/mc-ui.service.ts");
+
+
+
+
+let GridBasicComponent = 
+/**
+ * This is the same as the grid except it doesn't have the infinity scroll.
+ */
+class GridBasicComponent extends _base_component__WEBPACK_IMPORTED_MODULE_2__["BaseComponent"] {
+    constructor(_el, _service) {
+        super(_el, _service);
+        this._el = _el;
+        this._service = _service;
+        this.bodyWidth = '100%';
+        this.rowHeight = 45;
+        this.idField = 'id';
+        this.isLoading = true;
+    }
+    set data(value) {
+        if (value) {
+            let data;
+            if (Array.isArray(value)) {
+                data = {
+                    rows: value
+                };
+            }
+            else {
+                data = value;
+            }
+            if (!data.columns) {
+                data.columns = data.rows[0] ? Object.keys(data.rows[0]).map(key => {
+                    return {
+                        field: key
+                    };
+                }) : null;
+            }
+            this._data = data;
+            this.isLoading = false;
+        }
+    }
+    get data() {
+        return this._data;
+    }
+    initCmp() {
+        // update column width
+        if (this.data.columns && !this.data.columns[0].width) {
+            const containerWidth = this.el.clientWidth;
+            let colWidth = containerWidth / this.data.columns.length;
+            colWidth = colWidth < 100 ? 100 : colWidth;
+            this.data.columns.forEach(column => column.width = colWidth);
+        }
+    }
+    afterRenderCmp() {
+        const headerEl = this.el.querySelector('mc-grid-header');
+        this.bodyHeight = this.el.clientHeight - headerEl.clientHeight - 2; // header borders
+    }
+    onAction(e) {
+        switch (e.action) {
+            case 'update-width':
+                this.bodyWidth = e.width + 'px';
+                break;
+        }
+        this.action.emit(e);
+    }
+};
+GridBasicComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
+    { type: _mc_ui_service__WEBPACK_IMPORTED_MODULE_3__["MCUIService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], GridBasicComponent.prototype, "rowHeight", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], GridBasicComponent.prototype, "columns", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], GridBasicComponent.prototype, "headerData", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], GridBasicComponent.prototype, "idField", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], GridBasicComponent.prototype, "isLoading", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], GridBasicComponent.prototype, "data", null);
+GridBasicComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'mc-grid-basic',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./grid-basic.component.html */ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/grid/grid-basic.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./grid-basic.component.scss */ "./projects/mc-ui/src/lib/component/grid/grid-basic.component.scss")).default]
+    })
+    /**
+     * This is the same as the grid except it doesn't have the infinity scroll.
+     */
+], GridBasicComponent);
+
+
+
+/***/ }),
+
 /***/ "./projects/mc-ui/src/lib/component/grid/grid-body.component.scss":
 /*!************************************************************************!*\
   !*** ./projects/mc-ui/src/lib/component/grid/grid-body.component.scss ***!
@@ -1460,7 +1602,7 @@ FormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n  border: 1px solid #e2e6ea;\n  border-radius: 3px;\n}\n:host .grid-body {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n:host .grid-body--row {\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #e2e6ea;\n}\n:host .grid-body--row--cell {\n  padding: 0;\n  cursor: pointer;\n}\n:host .grid-body--row--cell--content {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  padding: 0 10px;\n}\n:host.is-scroll-page {\n  border: 0;\n}\n:host.is-scroll-page.is-last-page .grid-body--row:last-child {\n  border-bottom-color: transparent;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1ib2R5LmNvbXBvbmVudC5zY3NzIiwicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvZ3JpZC9ncmlkLWJvZHkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtBQ0FGO0FEQ0U7RUFDRSx5QkFBQTtFQUNBLGlCQUFBO0FDQ0o7QURBSTtFQUNFLGlDQUFBO0VBQ0EsZ0NBQUE7QUNFTjtBRERNO0VBQ0UsVUFBQTtFQUNBLGVBQUE7QUNHUjtBREZRO0VBQ0UsdUJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQ0lWO0FERUU7RUFDRSxTQUFBO0FDQUo7QURJVTtFQUNFLGdDQUFBO0FDRloiLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvZ3JpZC9ncmlkLWJvZHkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi8uLi8uLi9jc3MvdmFyc1wiO1xuOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJvcmRlcjogMXB4IHNvbGlkICRjLWJvcmRlcjtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICAuZ3JpZC1ib2R5IHtcbiAgICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xuICAgIGJvcmRlci1zcGFjaW5nOiAwO1xuICAgICYtLXJvdyB7XG4gICAgICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgJGMtYm9yZGVyO1xuICAgICAgJi0tY2VsbCB7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgJi0tY29udGVudCB7XG4gICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTBweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxuXG4gICYuaXMtc2Nyb2xsLXBhZ2Uge1xuICAgIGJvcmRlcjogMDtcbiAgICAmLmlzLWxhc3QtcGFnZSB7XG4gICAgICAuZ3JpZC1ib2R5IHtcbiAgICAgICAgJi0tcm93IHtcbiAgICAgICAgICAmOmxhc3QtY2hpbGQge1xuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2UyZTZlYTtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuOmhvc3QgLmdyaWQtYm9keSB7XG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gIGJvcmRlci1zcGFjaW5nOiAwO1xufVxuOmhvc3QgLmdyaWQtYm9keS0tcm93IHtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2UyZTZlYTtcbn1cbjpob3N0IC5ncmlkLWJvZHktLXJvdy0tY2VsbCB7XG4gIHBhZGRpbmc6IDA7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbjpob3N0IC5ncmlkLWJvZHktLXJvdy0tY2VsbC0tY29udGVudCB7XG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwYWRkaW5nOiAwIDEwcHg7XG59XG46aG9zdC5pcy1zY3JvbGwtcGFnZSB7XG4gIGJvcmRlcjogMDtcbn1cbjpob3N0LmlzLXNjcm9sbC1wYWdlLmlzLWxhc3QtcGFnZSAuZ3JpZC1ib2R5LS1yb3c6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: 100%;\n}\n:host .grid-body {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n:host .grid-body--row {\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #e2e6ea;\n}\n:host .grid-body--row--cell {\n  padding: 0;\n  cursor: pointer;\n}\n:host .grid-body--row--cell--content {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  padding: 0 10px;\n}\n:host.is-scroll-page.is-last-page .grid-body--row:last-child {\n  border-bottom-color: transparent;\n}\n:host.is-basic .grid-body--row:last-child {\n  border-bottom: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1ib2R5LmNvbXBvbmVudC5zY3NzIiwicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvZ3JpZC9ncmlkLWJvZHkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0FDQUY7QURDRTtFQUNFLHlCQUFBO0VBQ0EsaUJBQUE7QUNDSjtBREFJO0VBQ0UsaUNBQUE7RUFDQSxnQ0FBQTtBQ0VOO0FERE07RUFDRSxVQUFBO0VBQ0EsZUFBQTtBQ0dSO0FERlE7RUFDRSx1QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0FDSVY7QURNVTtFQUNFLGdDQUFBO0FDSlo7QURjVTtFQUNFLGdCQUFBO0FDWloiLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnQvZ3JpZC9ncmlkLWJvZHkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi8uLi8uLi9jc3MvdmFyc1wiO1xuOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIC5ncmlkLWJvZHkge1xuICAgIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gICAgYm9yZGVyLXNwYWNpbmc6IDA7XG4gICAgJi0tcm93IHtcbiAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcbiAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAkYy1ib3JkZXI7XG4gICAgICAmLS1jZWxsIHtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICAmLS1jb250ZW50IHtcbiAgICAgICAgICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgICAgcGFkZGluZzogMCAxMHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgJi5pcy1zY3JvbGwtcGFnZSB7XG4gICAgJi5pcy1sYXN0LXBhZ2Uge1xuICAgICAgLmdyaWQtYm9keSB7XG4gICAgICAgICYtLXJvdyB7XG4gICAgICAgICAgJjpsYXN0LWNoaWxkIHtcbiAgICAgICAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxuXG4gICYuaXMtYmFzaWMge1xuICAgIC5ncmlkLWJvZHkge1xuICAgICAgICAmLS1yb3cge1xuICAgICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgICBib3JkZXItYm90dG9tOiAwO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbn1cbjpob3N0IC5ncmlkLWJvZHkge1xuICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xuICBib3JkZXItc3BhY2luZzogMDtcbn1cbjpob3N0IC5ncmlkLWJvZHktLXJvdyB7XG4gIGJvcmRlci10b3A6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlMmU2ZWE7XG59XG46aG9zdCAuZ3JpZC1ib2R5LS1yb3ctLWNlbGwge1xuICBwYWRkaW5nOiAwO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG46aG9zdCAuZ3JpZC1ib2R5LS1yb3ctLWNlbGwtLWNvbnRlbnQge1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgcGFkZGluZzogMCAxMHB4O1xufVxuOmhvc3QuaXMtc2Nyb2xsLXBhZ2UuaXMtbGFzdC1wYWdlIC5ncmlkLWJvZHktLXJvdzpsYXN0LWNoaWxkIHtcbiAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG46aG9zdC5pcy1iYXNpYyAuZ3JpZC1ib2R5LS1yb3c6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b206IDA7XG59Il19 */");
 
 /***/ }),
 
@@ -1491,6 +1633,7 @@ let GridBodyComponent = class GridBodyComponent extends _base_component__WEBPACK
         this.lastWidth = 0;
         this.rowHeight = 45;
         this.idField = 'id';
+        this.tpls = {};
     }
     set columns(value) {
         this._columns = value;
@@ -1552,6 +1695,9 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])()
 ], GridBodyComponent.prototype, "idField", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])()
+], GridBodyComponent.prototype, "tpls", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"])('click', ['$event'])
 ], GridBodyComponent.prototype, "onPress", null);
 GridBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1575,7 +1721,7 @@ GridBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: auto;\n  overflow-x: visible;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #e2e6ea;\n}\n:host .grid-header {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n:host .grid-header--row--cell {\n  padding: 0;\n  cursor: pointer;\n}\n:host .grid-header--row--cell--content {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  padding: 0 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9ncmlkL2dyaWQtaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsaUNBQUE7RUFDQSxnQ0FBQTtBQ0FGO0FEQ0U7RUFDRSx5QkFBQTtFQUNBLGlCQUFBO0FDQ0o7QURDTTtFQUNFLFVBQUE7RUFDQSxlQUFBO0FDQ1I7QURBUTtFQUNFLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7QUNFViIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9ncmlkL2dyaWQtaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uLy4uL2Nzcy92YXJzXCI7XG46aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogYXV0bztcbiAgb3ZlcmZsb3cteDogdmlzaWJsZTtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgJGMtYm9yZGVyO1xuICAuZ3JpZC1oZWFkZXIge1xuICAgIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gICAgYm9yZGVyLXNwYWNpbmc6IDA7XG4gICAgJi0tcm93IHtcbiAgICAgICYtLWNlbGwge1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgICYtLWNvbnRlbnQge1xuICAgICAgICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICAgICAgICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgICBwYWRkaW5nOiAwIDEwcHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiIsIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBvdmVyZmxvdy14OiB2aXNpYmxlO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTJlNmVhO1xufVxuOmhvc3QgLmdyaWQtaGVhZGVyIHtcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgYm9yZGVyLXNwYWNpbmc6IDA7XG59XG46aG9zdCAuZ3JpZC1oZWFkZXItLXJvdy0tY2VsbCB7XG4gIHBhZGRpbmc6IDA7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbjpob3N0IC5ncmlkLWhlYWRlci0tcm93LS1jZWxsLS1jb250ZW50IHtcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBhZGRpbmc6IDAgMTBweDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  position: relative;\n  height: auto;\n  overflow-x: visible;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid #e2e6ea;\n}\n:host .grid-header {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n:host .grid-header--row--cell {\n  padding: 0;\n  border-bottom: 1px solid #e2e6ea;\n  cursor: pointer;\n}\n:host .grid-header--row--cell--content {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  padding: 0 10px;\n}\n:host .grid-header--row--cell.is-last-row {\n  border-bottom: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudC9ncmlkL2dyaWQtaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsaUNBQUE7RUFDQSxnQ0FBQTtBQ0FGO0FEQ0U7RUFDRSx5QkFBQTtFQUNBLGlCQUFBO0FDQ0o7QURDTTtFQUNFLFVBQUE7RUFDQSxnQ0FBQTtFQUNBLGVBQUE7QUNDUjtBREFRO0VBQ0UsdUJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQ0VWO0FEQVE7RUFDRSxnQkFBQTtBQ0VWIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50L2dyaWQvZ3JpZC1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vLi4vY3NzL3ZhcnNcIjtcbjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBvdmVyZmxvdy14OiB2aXNpYmxlO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAkYy1ib3JkZXI7XG4gIC5ncmlkLWhlYWRlciB7XG4gICAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgICBib3JkZXItc3BhY2luZzogMDtcbiAgICAmLS1yb3cge1xuICAgICAgJi0tY2VsbCB7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAkYy1ib3JkZXI7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgJi0tY29udGVudCB7XG4gICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTBweDtcbiAgICAgICAgfVxuICAgICAgICAmLmlzLWxhc3Qtcm93IHtcbiAgICAgICAgICBib3JkZXItYm90dG9tOiAwO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogYXV0bztcbiAgb3ZlcmZsb3cteDogdmlzaWJsZTtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2UyZTZlYTtcbn1cbjpob3N0IC5ncmlkLWhlYWRlciB7XG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gIGJvcmRlci1zcGFjaW5nOiAwO1xufVxuOmhvc3QgLmdyaWQtaGVhZGVyLS1yb3ctLWNlbGwge1xuICBwYWRkaW5nOiAwO1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2UyZTZlYTtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuOmhvc3QgLmdyaWQtaGVhZGVyLS1yb3ctLWNlbGwtLWNvbnRlbnQge1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgcGFkZGluZzogMCAxMHB4O1xufVxuOmhvc3QgLmdyaWQtaGVhZGVyLS1yb3ctLWNlbGwuaXMtbGFzdC1yb3cge1xuICBib3JkZXItYm90dG9tOiAwO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1603,12 +1749,47 @@ let GridHeaderComponent = class GridHeaderComponent extends _base_component__WEB
         this._el = _el;
         this._service = _service;
         this.rowHeight = 30;
+        this.tpls = {};
     }
     initCmp() {
         if (!this.data) {
             // generate header data
             // TODO: update column width for colspan
-            this.data = [this.columns.map(column => { return { id: column.field, name: column.name || column.field, tpl: column.headerTpl, width: column.width }; })];
+            this.data = [this.columns.map(column => {
+                    return { id: column.field, name: column.name || column.field, width: column.width };
+                })];
+        }
+        else {
+            const rows = [];
+            // calc col width
+            const lastIndex = this.data.length - 1;
+            this.data.forEach((row, r) => {
+                rows[r] = rows[r] || [];
+                let c = 0;
+                row.forEach(cell => {
+                    while (row[r][c] === -1) {
+                        c++;
+                    }
+                    const colspan = cell.colspan || 1;
+                    const rowspan = cell.rowspan || 1;
+                    if (r === lastIndex || r + rowspan - 1 === lastIndex) {
+                        cell.isLastRow = true;
+                    }
+                    let width = 0;
+                    for (let i = 0; i < colspan; i++) {
+                        width += this.columns[c + i].width;
+                    }
+                    cell.width = width;
+                    // flag the empty cells
+                    for (let i = 1; i < rowspan; i++) {
+                        for (let j = 0; j < colspan; j++) {
+                            rows[r + i] = rows[r + i] || [];
+                            rows[r + i][c + j] = -1;
+                        }
+                    }
+                    c += colspan;
+                });
+            });
         }
     }
 };
@@ -1625,6 +1806,9 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])()
 ], GridHeaderComponent.prototype, "rowHeight", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])()
+], GridHeaderComponent.prototype, "tpls", void 0);
 GridHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: 'mc-grid-header',
@@ -1661,19 +1845,21 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridComponent", function() { return GridComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _mc_ui_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mc-ui.service */ "./projects/mc-ui/src/lib/mc-ui.service.ts");
-/* harmony import */ var _scroll_scroll_async_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scroll/scroll-async.component */ "./projects/mc-ui/src/lib/component/scroll/scroll-async.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _scroll_scroll_async_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scroll/scroll-async.component */ "./projects/mc-ui/src/lib/component/scroll/scroll-async.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _mc_ui_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mc-ui.service */ "./projects/mc-ui/src/lib/mc-ui.service.ts");
 
 
 
 
-let GridComponent = class GridComponent extends _scroll_scroll_async_component__WEBPACK_IMPORTED_MODULE_2__["ScrollAsyncComponent"] {
+let GridComponent = class GridComponent extends _scroll_scroll_async_component__WEBPACK_IMPORTED_MODULE_1__["ScrollAsyncComponent"] {
     constructor(_el, _service) {
         super(_el, _service);
         this._el = _el;
         this._service = _service;
         this.bodyWidth = '100%';
+        this.columnTpls = {};
+        this.headerTpls = {};
     }
     initCmp() {
         // update column width
@@ -1686,7 +1872,7 @@ let GridComponent = class GridComponent extends _scroll_scroll_async_component__
     }
     afterRenderCmp() {
         const headerEl = this.el.querySelector('mc-grid-header');
-        this.bodyHeight = this.el.clientHeight - headerEl.clientHeight;
+        this.bodyHeight = this.el.clientHeight - headerEl.clientHeight - 2; // header borders
     }
     onAction(e) {
         switch (e.action) {
@@ -1698,14 +1884,17 @@ let GridComponent = class GridComponent extends _scroll_scroll_async_component__
     }
 };
 GridComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] },
-    { type: _mc_ui_service__WEBPACK_IMPORTED_MODULE_1__["MCUIService"] }
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"] },
+    { type: _mc_ui_service__WEBPACK_IMPORTED_MODULE_3__["MCUIService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])()
-], GridComponent.prototype, "headerData", void 0);
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])()
+], GridComponent.prototype, "columnTpls", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])()
+], GridComponent.prototype, "headerTpls", void 0);
 GridComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: 'mc-grid',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./grid.component.html */ "./node_modules/raw-loader/dist/cjs.js!./projects/mc-ui/src/lib/component/grid/grid.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./grid.component.scss */ "./projects/mc-ui/src/lib/component/grid/grid.component.scss")).default]
@@ -2800,10 +2989,7 @@ class ScrollAsyncComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__[
             let data;
             if (Array.isArray(value)) {
                 data = {
-                    action: 'initialize',
-                    rows: value,
-                    start: 0,
-                    rowCount: value.length
+                    rows: value
                 };
             }
             else {
@@ -2816,9 +3002,11 @@ class ScrollAsyncComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__[
                     };
                 }) : null;
             }
+            data.rowCount = data.rowCount ? data.rowCount : data.rows ? data.rows.length : 0;
+            data.start = data.start ? data.start : 0;
+            data.action = data.action ? data.action : 'initialize';
             this._data = data;
             this.rowCount = data.rowCount;
-            data.action = data.action ? data.action : 'initialize';
             if (data.action === 'initialize') {
                 // init page
                 this.page1Indexes = { start: -1, end: -1 };
@@ -3194,10 +3382,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component_grid_grid_body_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./component/grid/grid-body.component */ "./projects/mc-ui/src/lib/component/grid/grid-body.component.ts");
 /* harmony import */ var _component_mask_mask_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./component/mask/mask.component */ "./projects/mc-ui/src/lib/component/mask/mask.component.ts");
 /* harmony import */ var _component_grid_grid_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./component/grid/grid.component */ "./projects/mc-ui/src/lib/component/grid/grid.component.ts");
-/* harmony import */ var _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./component/popup/popup.component */ "./projects/mc-ui/src/lib/component/popup/popup.component.ts");
-/* harmony import */ var _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./component/popup/popup-list.component */ "./projects/mc-ui/src/lib/component/popup/popup-list.component.ts");
-/* harmony import */ var _mc_ui_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./mc-ui.service */ "./projects/mc-ui/src/lib/mc-ui.service.ts");
-/* harmony import */ var _component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./component/form/field/dropdown/dropdown.component */ "./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.ts");
+/* harmony import */ var _component_grid_grid_basic_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./component/grid/grid-basic.component */ "./projects/mc-ui/src/lib/component/grid/grid-basic.component.ts");
+/* harmony import */ var _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./component/popup/popup.component */ "./projects/mc-ui/src/lib/component/popup/popup.component.ts");
+/* harmony import */ var _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./component/popup/popup-list.component */ "./projects/mc-ui/src/lib/component/popup/popup-list.component.ts");
+/* harmony import */ var _mc_ui_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./mc-ui.service */ "./projects/mc-ui/src/lib/mc-ui.service.ts");
+/* harmony import */ var _component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./component/form/field/dropdown/dropdown.component */ "./projects/mc-ui/src/lib/component/form/field/dropdown/dropdown.component.ts");
+
 
 
 
@@ -3250,14 +3440,15 @@ MCUIModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _component_grid_grid_header_component__WEBPACK_IMPORTED_MODULE_18__["GridHeaderComponent"],
             _component_grid_grid_body_component__WEBPACK_IMPORTED_MODULE_19__["GridBodyComponent"],
             _component_grid_grid_component__WEBPACK_IMPORTED_MODULE_21__["GridComponent"],
+            _component_grid_grid_basic_component__WEBPACK_IMPORTED_MODULE_22__["GridBasicComponent"],
             _component_mask_mask_component__WEBPACK_IMPORTED_MODULE_20__["MaskComponent"],
-            _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_22__["PopupComponent"],
-            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_23__["PopupListComponent"],
-            _component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_25__["DropdownComponent"]
+            _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_23__["PopupComponent"],
+            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_24__["PopupListComponent"],
+            _component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_26__["DropdownComponent"]
         ],
         entryComponents: [
-            _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_22__["PopupComponent"],
-            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_23__["PopupListComponent"],
+            _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_23__["PopupComponent"],
+            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_24__["PopupListComponent"],
             _component_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_16__["DrawerComponent"]
         ],
         exports: [
@@ -3279,12 +3470,13 @@ MCUIModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _component_grid_grid_header_component__WEBPACK_IMPORTED_MODULE_18__["GridHeaderComponent"],
             _component_grid_grid_body_component__WEBPACK_IMPORTED_MODULE_19__["GridBodyComponent"],
             _component_grid_grid_component__WEBPACK_IMPORTED_MODULE_21__["GridComponent"],
+            _component_grid_grid_basic_component__WEBPACK_IMPORTED_MODULE_22__["GridBasicComponent"],
             _component_mask_mask_component__WEBPACK_IMPORTED_MODULE_20__["MaskComponent"],
-            _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_22__["PopupComponent"],
-            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_23__["PopupListComponent"],
-            _component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_25__["DropdownComponent"]
+            _component_popup_popup_component__WEBPACK_IMPORTED_MODULE_23__["PopupComponent"],
+            _component_popup_popup_list_component__WEBPACK_IMPORTED_MODULE_24__["PopupListComponent"],
+            _component_form_field_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_26__["DropdownComponent"]
         ],
-        providers: [_mc_ui_service__WEBPACK_IMPORTED_MODULE_24__["MCUIService"]]
+        providers: [_mc_ui_service__WEBPACK_IMPORTED_MODULE_25__["MCUIService"]]
     })
 ], MCUIModule);
 
@@ -4284,10 +4476,70 @@ let ExampleComponent = class ExampleComponent extends _index__WEBPACK_IMPORTED_M
         this.data = this.homeService.getUserListMock().data;
         this.gridCell = {};
         this.dropdownData = this.data.concat();
-        this.listBasicToggleData = this.data.concat();
-        this.listBasicTagsData = this.data.map((d, i) => this.getTagThemeItem(d, i));
+        this.listBasicToggleData = this.data.slice(0, 10);
+        this.listBasicTagsData = this.data.map((d, i) => this.getTagThemeItem(d, i)).slice(0, 10);
         this.listData = this.data.concat();
+        this.gridBasicData = this.data.slice(0, 20);
         this.gridData = this.data.concat();
+        this.gridCustomData = this.getCustomGridData();
+    }
+    getCustomGridData() {
+        const headerData = [
+            [
+                { name: 'ID', rowspan: 2 },
+                { name: 'Active', rowspan: 2 },
+                { name: 'Balance', rowspan: 2 },
+                { name: 'Tags', rowspan: 2 },
+                { name: 'Personal Detail', colspan: 5 },
+                { name: 'Contact Info', colspan: 3 },
+            ],
+            [
+                { name: 'Age' },
+                { name: 'Eye Color' },
+                { name: 'Name' },
+                { name: 'Gender' },
+                { name: 'Company' },
+                { name: 'Email' },
+                { name: 'Mobile' },
+                { name: 'Address' },
+            ]
+        ];
+        const columns = [
+            {
+                field: 'id'
+            }, {
+                field: 'isActive'
+            }, {
+                field: 'balance'
+            }, {
+                field: 'tags'
+            }, {
+                field: 'age'
+            }, {
+                field: 'eyeColor'
+            }, {
+                field: 'name'
+            }, {
+                field: 'gender'
+            }, {
+                field: 'company'
+            }, {
+                field: 'email'
+            }, {
+                field: 'phone'
+            }, {
+                field: 'address'
+            }
+        ];
+        const data = {
+            headerData,
+            columns,
+            rows: this.data.map((d) => {
+                d.tags = d.tags ? d.tags.map((d, i) => this.getTagThemeItem(d, i)) : null;
+                return d;
+            })
+        };
+        return data;
     }
     getTagThemeItem(d, i) {
         const item = {
@@ -4724,7 +4976,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************!*\
   !*** ./src/app/index.ts ***!
   \**************************/
-/*! exports provided: AppComponent, AppBaseService, MCUIService, MCUIModule, FieldComponent, TextareaComponent, InputComponent, DropdownComponent, FormComponent, ScrollComponent, ListComponent, ListBasicComponent, ButtonComponent, IconComponent, ListItemComponent, LoaderComponent, DrawerComponent, MessageBarComponent, GridHeaderComponent, GridBodyComponent, MaskComponent, GridComponent, PopupComponent, PopupListComponent, AppBaseComponent */
+/*! exports provided: AppComponent, MCUIService, MCUIModule, FieldComponent, TextareaComponent, InputComponent, DropdownComponent, FormComponent, ScrollComponent, ListComponent, ListBasicComponent, ButtonComponent, IconComponent, ListItemComponent, LoaderComponent, DrawerComponent, MessageBarComponent, GridHeaderComponent, GridBodyComponent, MaskComponent, GridComponent, PopupComponent, PopupListComponent, AppBaseComponent, AppBaseService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
