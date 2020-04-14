@@ -47,9 +47,11 @@ __webpack_require__.r(__webpack_exports__);
  * https://www.mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/
  * It checks all the values or property of a value that are used by the component template.
  * If a property of an object is used for the template, it checks only the property value even if the obejct is changed.
- * The object is changed, but the property value of the object that is used by the template is not changed, it will not trigger the change detection.
+ * The object is changed, but the property value of the object that is used by the template is not changed,
+ * it will not trigger the change detection.
  * If you don't want to check the property that is used by the template, you can use "changeDetection: ChangeDetectionStrategy.OnPush".
- * If you change the property of an object that is used by the template. The detector only check the object is changed or not when using OnPush.
+ * If you change the property of an object that is used by the template.
+ * The detector only check the object is changed or not when using OnPush.
  * If you use "OnPush", you may need immutable.js library for immutable object.
  */
 /**
@@ -789,7 +791,7 @@ GridBodyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefine
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, GridBodyComponent_div_0_Template, 5, 13, "div", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.state == null ? null : ctx.state.data);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgTemplateOutlet"], _icon_icon_component__WEBPACK_IMPORTED_MODULE_5__["IconComponent"]], styles: ["[_nghost-%COMP%] {\n  display: block;\n  position: relative;\n  height: 100%;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%] {\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid transparent;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell[_ngcontent-%COMP%] {\n  cursor: pointer;\n  overflow: hidden;\n  display: inline-block;\n  white-space: nowrap;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.overflow-mask[_ngcontent-%COMP%] {\n  -webkit-mask-image: linear-gradient(to right, #fff 75%, transparent 100%);\n          mask-image: linear-gradient(to right, #fff 75%, transparent 100%);\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.unselectable[_ngcontent-%COMP%] {\n  cursor: default;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.unselectable[_ngcontent-%COMP%]:hover {\n  background: none;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.align-right[_ngcontent-%COMP%] {\n  text-align: right;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.align-right.overflow-mask[_ngcontent-%COMP%] {\n  -webkit-mask-image: linear-gradient(to left, #fff 75%, transparent 100%);\n          mask-image: linear-gradient(to left, #fff 75%, transparent 100%);\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell-accordion[_ngcontent-%COMP%] {\n  position: absolute;\n  right: 6px;\n  top: 0;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell-accordion[_ngcontent-%COMP%]   mc-icon[_ngcontent-%COMP%] {\n  height: 10px;\n}\n[_nghost-%COMP%]   .row--content[_ngcontent-%COMP%] {\n  height: 0px;\n  transition: transform 0.3s, height ease-in-out 0.3s;\n  overflow: hidden;\n}\n[_nghost-%COMP%]   .row--content--container[_ngcontent-%COMP%] {\n  overflow: auto;\n}\n.is-scroll-page.is-last-page[_nghost-%COMP%]   .row[_ngcontent-%COMP%]:last-child {\n  border-bottom-color: transparent;\n}\n.is-loading[_nghost-%COMP%] {\n  opacity: 0.1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy9ncmlkL2dyaWQtYm9keS5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy9ncmlkL2dyaWQtYm9keS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7QUNDRjtBRENFO0VBQ0UsaUNBQUE7RUFDQSxvQ0FBQTtBQ0NKO0FET007RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQUFBO0FDTFI7QURPUTtFQUNFLHlFQUFBO1VBQUEsaUVBQUE7QUNMVjtBRFlRO0VBQ0UsZUFBQTtBQ1ZWO0FEWVU7RUFDRSxnQkFBQTtBQ1ZaO0FEY1E7RUFDRSxpQkFBQTtBQ1pWO0FEY1U7RUFDRSx3RUFBQTtVQUFBLGdFQUFBO0FDWlo7QURvQk07RUFDRSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxNQUFBO0FDbEJSO0FEbUJRO0VBQ0UsWUFBQTtBQ2pCVjtBRHFCSTtFQUNFLFdBQUE7RUFDQSxtREFBQTtFQUNBLGdCQUFBO0FDbkJOO0FEb0JNO0VBQ0UsY0FBQTtBQ2xCUjtBRDBCUTtFQUNFLGdDQUFBO0FDeEJWO0FEOEJFO0VBQ0UsWUFBQTtBQzVCSiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudHMvZ3JpZC9ncmlkLWJvZHkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcblxuICAucm93IHtcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuXG4gICAgJi1vZGQge31cblxuICAgICYtZXZlbiB7XG4gICAgICAvLyBhc3NpZ24gYSBjb2xvciBpbiB0aGUgY29tcG9uZW50LnRoZW1lcy5zY3NzIGZpbGUuXG4gICAgfVxuICAgIC5jZWxscyB7XG4gICAgICAuY2VsbCB7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuXG4gICAgICAgICYub3ZlcmZsb3ctbWFzayB7XG4gICAgICAgICAgbWFzay1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIHJpZ2h0LCAjZmZmIDc1JSwgdHJhbnNwYXJlbnQgMTAwJSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAvLyB5b3UgY2FuIGFzc2lnbiBzcGVjaWZpYyBjc3MgdG8gY29tcG9uZW50LnRoZW1lcy5zY3NzLiBsaWtlIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMjVkZWcsIHJnYmEoMjU1LCAyNTUsIDI1NSwgLjE1KSwgcmdiYSgyNTUsIDI1NSwgMjU1LCAuMDUpKTtcbiAgICAgICAgfVxuXG4gICAgICAgICYudW5zZWxlY3RhYmxlIHtcbiAgICAgICAgICBjdXJzb3I6IGRlZmF1bHQ7XG5cbiAgICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgIGJhY2tncm91bmQ6IG5vbmU7XG4gICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgICAgJi5hbGlnbi1yaWdodCB7XG4gICAgICAgICAgdGV4dC1hbGlnbjogcmlnaHQ7XG5cbiAgICAgICAgICAmLm92ZXJmbG93LW1hc2sge1xuICAgICAgICAgICAgbWFzay1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIGxlZnQsICNmZmYgNzUlLCB0cmFuc3BhcmVudCAxMDAlKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICAmLnNlbGVjdGVkIHtcbiAgICAgICAgICAvLyBuZWVkIHRvIGJlIGRlZmluZWQgYnkgY29tcG9uZW50LnRoZW1lcy5zY3NzIGxpa2UgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEyNWRlZywgcmdiYSgyNTUsIDI1NSwgMjU1LCAuMTUpLCByZ2JhKDI1NSwgMjU1LCAyNTUsIC4wNSkpO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgICAuY2VsbC1hY2NvcmRpb24ge1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIHJpZ2h0OiA2cHg7XG4gICAgICAgIHRvcDogMDtcbiAgICAgICAgbWMtaWNvbiB7XG4gICAgICAgICAgaGVpZ2h0OiAxMHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICAgICYtLWNvbnRlbnQge1xuICAgICAgaGVpZ2h0OiAwcHg7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4zcywgaGVpZ2h0IGVhc2UtaW4tb3V0IDAuM3M7XG4gICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgJi0tY29udGFpbmVyIHtcbiAgICAgICAgb3ZlcmZsb3c6IGF1dG87XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgJi5pcy1zY3JvbGwtcGFnZSB7XG4gICAgJi5pcy1sYXN0LXBhZ2Uge1xuICAgICAgLnJvdyB7XG4gICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cblxuICAmLmlzLWxvYWRpbmcge1xuICAgIG9wYWNpdHk6IDAuMTtcbiAgfVxufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG46aG9zdCAucm93IHtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG59XG46aG9zdCAucm93IC5jZWxscyAuY2VsbCB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xufVxuOmhvc3QgLnJvdyAuY2VsbHMgLmNlbGwub3ZlcmZsb3ctbWFzayB7XG4gIG1hc2staW1hZ2U6IGxpbmVhci1ncmFkaWVudCh0byByaWdodCwgI2ZmZiA3NSUsIHRyYW5zcGFyZW50IDEwMCUpO1xufVxuOmhvc3QgLnJvdyAuY2VsbHMgLmNlbGwudW5zZWxlY3RhYmxlIHtcbiAgY3Vyc29yOiBkZWZhdWx0O1xufVxuOmhvc3QgLnJvdyAuY2VsbHMgLmNlbGwudW5zZWxlY3RhYmxlOmhvdmVyIHtcbiAgYmFja2dyb3VuZDogbm9uZTtcbn1cbjpob3N0IC5yb3cgLmNlbGxzIC5jZWxsLmFsaWduLXJpZ2h0IHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG59XG46aG9zdCAucm93IC5jZWxscyAuY2VsbC5hbGlnbi1yaWdodC5vdmVyZmxvdy1tYXNrIHtcbiAgbWFzay1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIGxlZnQsICNmZmYgNzUlLCB0cmFuc3BhcmVudCAxMDAlKTtcbn1cbjpob3N0IC5yb3cgLmNlbGxzIC5jZWxsLWFjY29yZGlvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgcmlnaHQ6IDZweDtcbiAgdG9wOiAwO1xufVxuOmhvc3QgLnJvdyAuY2VsbHMgLmNlbGwtYWNjb3JkaW9uIG1jLWljb24ge1xuICBoZWlnaHQ6IDEwcHg7XG59XG46aG9zdCAucm93LS1jb250ZW50IHtcbiAgaGVpZ2h0OiAwcHg7XG4gIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzLCBoZWlnaHQgZWFzZS1pbi1vdXQgMC4zcztcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cbjpob3N0IC5yb3ctLWNvbnRlbnQtLWNvbnRhaW5lciB7XG4gIG92ZXJmbG93OiBhdXRvO1xufVxuOmhvc3QuaXMtc2Nyb2xsLXBhZ2UuaXMtbGFzdC1wYWdlIC5yb3c6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufVxuOmhvc3QuaXMtbG9hZGluZyB7XG4gIG9wYWNpdHk6IDAuMTtcbn0iXX0= */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgTemplateOutlet"], _icon_icon_component__WEBPACK_IMPORTED_MODULE_5__["IconComponent"]], styles: ["[_nghost-%COMP%] {\n  display: block;\n  position: relative;\n  height: 100%;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%] {\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid transparent;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%] {\n  white-space: nowrap;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell[_ngcontent-%COMP%] {\n  cursor: pointer;\n  overflow: hidden;\n  display: inline-block;\n  white-space: nowrap;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.overflow-mask[_ngcontent-%COMP%] {\n  -webkit-mask-image: linear-gradient(to right, #fff 75%, transparent 100%);\n          mask-image: linear-gradient(to right, #fff 75%, transparent 100%);\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.unselectable[_ngcontent-%COMP%] {\n  cursor: default;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.unselectable[_ngcontent-%COMP%]:hover {\n  background: none;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.align-right[_ngcontent-%COMP%] {\n  text-align: right;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell.align-right.overflow-mask[_ngcontent-%COMP%] {\n  -webkit-mask-image: linear-gradient(to left, #fff 75%, transparent 100%);\n          mask-image: linear-gradient(to left, #fff 75%, transparent 100%);\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell-accordion[_ngcontent-%COMP%] {\n  position: absolute;\n  right: 6px;\n  top: 0;\n}\n[_nghost-%COMP%]   .row[_ngcontent-%COMP%]   .cells[_ngcontent-%COMP%]   .cell-accordion[_ngcontent-%COMP%]   mc-icon[_ngcontent-%COMP%] {\n  height: 10px;\n}\n[_nghost-%COMP%]   .row--content[_ngcontent-%COMP%] {\n  height: 0px;\n  transition: transform 0.3s, height ease-in-out 0.3s;\n  overflow: hidden;\n}\n[_nghost-%COMP%]   .row--content--container[_ngcontent-%COMP%] {\n  overflow: auto;\n}\n.is-scroll-page.is-last-page[_nghost-%COMP%]   .row[_ngcontent-%COMP%]:last-child {\n  border-bottom-color: transparent;\n}\n.is-loading[_nghost-%COMP%] {\n  opacity: 0.1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy9ncmlkL2dyaWQtYm9keS5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy9ncmlkL2dyaWQtYm9keS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7QUNDRjtBRENFO0VBQ0UsaUNBQUE7RUFDQSxvQ0FBQTtBQ0NKO0FETUk7RUFDRSxtQkFBQTtBQ0pOO0FES007RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQUFBO0FDSFI7QURLUTtFQUNFLHlFQUFBO1VBQUEsaUVBQUE7QUNIVjtBRFVRO0VBQ0UsZUFBQTtBQ1JWO0FEVVU7RUFDRSxnQkFBQTtBQ1JaO0FEWVE7RUFDRSxpQkFBQTtBQ1ZWO0FEWVU7RUFDRSx3RUFBQTtVQUFBLGdFQUFBO0FDVlo7QURrQk07RUFDRSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxNQUFBO0FDaEJSO0FEaUJRO0VBQ0UsWUFBQTtBQ2ZWO0FEbUJJO0VBQ0UsV0FBQTtFQUNBLG1EQUFBO0VBQ0EsZ0JBQUE7QUNqQk47QURrQk07RUFDRSxjQUFBO0FDaEJSO0FEd0JRO0VBQ0UsZ0NBQUE7QUN0QlY7QUQ0QkU7RUFDRSxZQUFBO0FDMUJKIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy9ncmlkL2dyaWQtYm9keS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxMDAlO1xuXG4gIC5yb3cge1xuICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG5cbiAgICAmLW9kZCB7fVxuXG4gICAgJi1ldmVuIHtcbiAgICAgIC8vIGFzc2lnbiBhIGNvbG9yIGluIHRoZSBjb21wb25lbnQudGhlbWVzLnNjc3MgZmlsZS5cbiAgICB9XG4gICAgLmNlbGxzIHtcbiAgICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gICAgICAuY2VsbCB7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuXG4gICAgICAgICYub3ZlcmZsb3ctbWFzayB7XG4gICAgICAgICAgbWFzay1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIHJpZ2h0LCAjZmZmIDc1JSwgdHJhbnNwYXJlbnQgMTAwJSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAvLyB5b3UgY2FuIGFzc2lnbiBzcGVjaWZpYyBjc3MgdG8gY29tcG9uZW50LnRoZW1lcy5zY3NzLiBsaWtlIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMjVkZWcsIHJnYmEoMjU1LCAyNTUsIDI1NSwgLjE1KSwgcmdiYSgyNTUsIDI1NSwgMjU1LCAuMDUpKTtcbiAgICAgICAgfVxuXG4gICAgICAgICYudW5zZWxlY3RhYmxlIHtcbiAgICAgICAgICBjdXJzb3I6IGRlZmF1bHQ7XG5cbiAgICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgIGJhY2tncm91bmQ6IG5vbmU7XG4gICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgICAgJi5hbGlnbi1yaWdodCB7XG4gICAgICAgICAgdGV4dC1hbGlnbjogcmlnaHQ7XG5cbiAgICAgICAgICAmLm92ZXJmbG93LW1hc2sge1xuICAgICAgICAgICAgbWFzay1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIGxlZnQsICNmZmYgNzUlLCB0cmFuc3BhcmVudCAxMDAlKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICAmLnNlbGVjdGVkIHtcbiAgICAgICAgICAvLyBuZWVkIHRvIGJlIGRlZmluZWQgYnkgY29tcG9uZW50LnRoZW1lcy5zY3NzIGxpa2UgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEyNWRlZywgcmdiYSgyNTUsIDI1NSwgMjU1LCAuMTUpLCByZ2JhKDI1NSwgMjU1LCAyNTUsIC4wNSkpO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgICAuY2VsbC1hY2NvcmRpb24ge1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIHJpZ2h0OiA2cHg7XG4gICAgICAgIHRvcDogMDtcbiAgICAgICAgbWMtaWNvbiB7XG4gICAgICAgICAgaGVpZ2h0OiAxMHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICAgICYtLWNvbnRlbnQge1xuICAgICAgaGVpZ2h0OiAwcHg7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4zcywgaGVpZ2h0IGVhc2UtaW4tb3V0IDAuM3M7XG4gICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgJi0tY29udGFpbmVyIHtcbiAgICAgICAgb3ZlcmZsb3c6IGF1dG87XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgJi5pcy1zY3JvbGwtcGFnZSB7XG4gICAgJi5pcy1sYXN0LXBhZ2Uge1xuICAgICAgLnJvdyB7XG4gICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgYm9yZGVyLWJvdHRvbS1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cblxuICAmLmlzLWxvYWRpbmcge1xuICAgIG9wYWNpdHk6IDAuMTtcbiAgfVxufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG46aG9zdCAucm93IHtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG59XG46aG9zdCAucm93IC5jZWxscyB7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG59XG46aG9zdCAucm93IC5jZWxscyAuY2VsbCB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xufVxuOmhvc3QgLnJvdyAuY2VsbHMgLmNlbGwub3ZlcmZsb3ctbWFzayB7XG4gIG1hc2staW1hZ2U6IGxpbmVhci1ncmFkaWVudCh0byByaWdodCwgI2ZmZiA3NSUsIHRyYW5zcGFyZW50IDEwMCUpO1xufVxuOmhvc3QgLnJvdyAuY2VsbHMgLmNlbGwudW5zZWxlY3RhYmxlIHtcbiAgY3Vyc29yOiBkZWZhdWx0O1xufVxuOmhvc3QgLnJvdyAuY2VsbHMgLmNlbGwudW5zZWxlY3RhYmxlOmhvdmVyIHtcbiAgYmFja2dyb3VuZDogbm9uZTtcbn1cbjpob3N0IC5yb3cgLmNlbGxzIC5jZWxsLmFsaWduLXJpZ2h0IHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG59XG46aG9zdCAucm93IC5jZWxscyAuY2VsbC5hbGlnbi1yaWdodC5vdmVyZmxvdy1tYXNrIHtcbiAgbWFzay1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIGxlZnQsICNmZmYgNzUlLCB0cmFuc3BhcmVudCAxMDAlKTtcbn1cbjpob3N0IC5yb3cgLmNlbGxzIC5jZWxsLWFjY29yZGlvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgcmlnaHQ6IDZweDtcbiAgdG9wOiAwO1xufVxuOmhvc3QgLnJvdyAuY2VsbHMgLmNlbGwtYWNjb3JkaW9uIG1jLWljb24ge1xuICBoZWlnaHQ6IDEwcHg7XG59XG46aG9zdCAucm93LS1jb250ZW50IHtcbiAgaGVpZ2h0OiAwcHg7XG4gIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzLCBoZWlnaHQgZWFzZS1pbi1vdXQgMC4zcztcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cbjpob3N0IC5yb3ctLWNvbnRlbnQtLWNvbnRhaW5lciB7XG4gIG92ZXJmbG93OiBhdXRvO1xufVxuOmhvc3QuaXMtc2Nyb2xsLXBhZ2UuaXMtbGFzdC1wYWdlIC5yb3c6bGFzdC1jaGlsZCB7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xufVxuOmhvc3QuaXMtbG9hZGluZyB7XG4gIG9wYWNpdHk6IDAuMTtcbn0iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵsetClassMetadata"](GridBodyComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"],
         args: [{
@@ -1794,7 +1796,7 @@ IconComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
 /*!****************************************************!*\
   !*** ./projects/mc-ui/src/lib/components/index.ts ***!
   \****************************************************/
-/*! exports provided: IconComponent, ListComponent, ListItemComponent, MaskComponent, DrawerComponent, ScrollbarComponent, PopupComponent, GridComponent, GridBodyComponent, GridHeaderComponent, ScrollComponent, LoaderComponent, VisualizerComponent, TextComponent */
+/*! exports provided: IconComponent, ListComponent, ListItemComponent, MaskComponent, DrawerComponent, ScrollbarComponent, PopupComponent, GridComponent, GridBodyComponent, GridHeaderComponent, ScrollComponent, LoaderComponent, VisualizerComponent, TextComponent, BarComponent, LineComponent, AxisComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1840,6 +1842,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _form_fields_text_text_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./form/fields/text/text.component */ "./projects/mc-ui/src/lib/components/form/fields/text/text.component.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TextComponent", function() { return _form_fields_text_text_component__WEBPACK_IMPORTED_MODULE_13__["TextComponent"]; });
+
+/* harmony import */ var _visualizer_bar_bar_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./visualizer/bar/bar.component */ "./projects/mc-ui/src/lib/components/visualizer/bar/bar.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BarComponent", function() { return _visualizer_bar_bar_component__WEBPACK_IMPORTED_MODULE_14__["BarComponent"]; });
+
+/* harmony import */ var _visualizer_line_line_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./visualizer/line/line.component */ "./projects/mc-ui/src/lib/components/visualizer/line/line.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LineComponent", function() { return _visualizer_line_line_component__WEBPACK_IMPORTED_MODULE_15__["LineComponent"]; });
+
+/* harmony import */ var _visualizer_axis_axis_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./visualizer/axis/axis.component */ "./projects/mc-ui/src/lib/components/visualizer/axis/axis.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AxisComponent", function() { return _visualizer_axis_axis_component__WEBPACK_IMPORTED_MODULE_16__["AxisComponent"]; });
+
+
+
 
 
 
@@ -2962,6 +2976,359 @@ ScrollbarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
 
 /***/ }),
 
+/***/ "./projects/mc-ui/src/lib/components/visualizer/axis/axis.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./projects/mc-ui/src/lib/components/visualizer/axis/axis.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: AxisComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AxisComponent", function() { return AxisComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../base.component */ "./projects/mc-ui/src/lib/components/base.component.ts");
+/* harmony import */ var _shared_models__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared.models */ "./projects/mc-ui/src/lib/shared.models.ts");
+/* harmony import */ var _utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/viz-utils */ "./projects/mc-ui/src/lib/utils/viz-utils.ts");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+
+
+
+
+
+
+class AxisComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__["BaseComponent"] {
+    constructor(er) {
+        super(er);
+        this.er = er;
+        this.defaultConfig = {
+            type: _shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerType"].BAR,
+            labelField: '',
+            dataFields: null,
+            data2Fields: null,
+            hasGrid: true,
+            ticks: 8,
+            scalePadding: 1,
+            scalePaddingInner: 0.2,
+            scalePaddingOuter: 0,
+            data: null,
+            decorationMaxRate: 1.1
+        };
+        this.action = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    afterInitCmp() {
+        this.render(this._config);
+    }
+    applyConfig(config) {
+        if (!config.labelField && config.data && config.data.columns) {
+            config.labelField = config.data.columns[0].field;
+        }
+        if (!config.dataFields && config.data && config.data.columns) {
+            config.dataFields = config.data.columns.reduce((fields, column) => {
+                if (column.field !== config.labelField) {
+                    fields.push(column.field);
+                }
+                return fields;
+            }, []);
+        }
+    }
+    getLabels() {
+        const data = this._config.data;
+        if (data) {
+            const labelField = this._config.labelField || data.columns[0].field;
+            return data.data.map(d => d[labelField]);
+        }
+        return [];
+    }
+    getUnit(config, visualizerSize) {
+        const minMax = Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["getMinMax"])(config.dataFields, config.data.data, config.decorationMaxRate);
+        // y scale
+        const yScale = d3__WEBPACK_IMPORTED_MODULE_4__["scaleLinear"]()
+            .domain([minMax.min, minMax.max])
+            .rangeRound([visualizerSize.chart.height, 0]);
+        const yAxis = d3__WEBPACK_IMPORTED_MODULE_4__["axisLeft"](yScale).ticks(config.ticks);
+        let y2Scale;
+        let y2Axis;
+        let minMax2;
+        if (config.data2Fields) {
+            minMax2 = Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["getMinMax"])(config.data2Fields, config.data.data, config.decorationMaxRate);
+            y2Scale = d3__WEBPACK_IMPORTED_MODULE_4__["scaleLinear"]()
+                .domain([minMax2.min, minMax2.max])
+                .rangeRound([visualizerSize.chart.height, 0]);
+            y2Axis = d3__WEBPACK_IMPORTED_MODULE_4__["axisRight"](y2Scale).ticks(config.ticks);
+        }
+        // x scale
+        const labels = this.getLabels();
+        let xScale = d3__WEBPACK_IMPORTED_MODULE_4__["scaleBand"]()
+            .domain(labels)
+            .rangeRound([0, visualizerSize.chart.width])
+            .padding(config.scalePadding)
+            .paddingInner(config.scalePaddingInner)
+            .paddingOuter(config.scalePaddingOuter);
+        // apply barWidth if needed
+        if (this._config.barConfig && this._config.barConfig.barWidth) {
+            const barWidth = this._config.barConfig.barWidth;
+            const barGroupWidth = xScale.bandwidth();
+            const newBarGroupWidth = barWidth * config.dataFields.length;
+            if (barGroupWidth < newBarGroupWidth) {
+                const widthGap = newBarGroupWidth - barGroupWidth;
+                const extraWidth = widthGap * labels.length;
+                visualizerSize.width += extraWidth;
+                visualizerSize.chart.width += extraWidth;
+                xScale = d3__WEBPACK_IMPORTED_MODULE_4__["scaleBand"]()
+                    .domain(labels)
+                    .rangeRound([0, visualizerSize.chart.width])
+                    .padding(config.scalePadding)
+                    .paddingInner(config.scalePaddingInner)
+                    .paddingOuter(config.scalePaddingOuter);
+            }
+        }
+        const xAxis = d3__WEBPACK_IMPORTED_MODULE_4__["axisBottom"](xScale);
+        // TODO: you can have a color array instead of "schemeCategory10".
+        const colorScale = d3__WEBPACK_IMPORTED_MODULE_4__["scaleOrdinal"](d3__WEBPACK_IMPORTED_MODULE_4__["schemeCategory10"]);
+        return {
+            yScale,
+            yAxis,
+            xScale,
+            xAxis,
+            y2Scale,
+            y2Axis,
+            labels,
+            colorScale,
+            fields: config.dataFields,
+            fields2: config.data2Fields,
+            minMax,
+            minMax2
+        };
+    }
+    getSize(visualizerSize, unit) {
+        // *** render for measuring size ***
+        const svg = Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["renderChartContainer"])(this.el, visualizerSize);
+        // left / right margin
+        visualizerSize = Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["getAxisSize"])(this.el, svg, _shared_models__WEBPACK_IMPORTED_MODULE_2__["Location"].LEFT, unit.yAxis, visualizerSize, [
+            'y-axis'
+        ]);
+        if (this._config.data2Fields) {
+            visualizerSize = Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["getAxisSize"])(this.el, svg, _shared_models__WEBPACK_IMPORTED_MODULE_2__["Location"].RIGHT, unit.y2Axis, visualizerSize, [
+                'y2-axis'
+            ]);
+        }
+        visualizerSize = Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["getAxisSize"])(this.el, svg, _shared_models__WEBPACK_IMPORTED_MODULE_2__["Location"].BOTTOM, unit.xAxis, visualizerSize, [
+            'x-axis'
+        ]);
+        // save for re-use the chart drawing area
+        visualizerSize.chart.height =
+            visualizerSize.height - visualizerSize.margin.top - visualizerSize.margin.bottom;
+        visualizerSize.chart.width =
+            visualizerSize.width - visualizerSize.margin.left - visualizerSize.margin.right;
+        // *** re-render with correct size ***
+        this.el.innerHTML = '';
+        return visualizerSize;
+    }
+    render(config) {
+        let visualizerSize = Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["initVisualizerSize"])(this.el);
+        let unit = this.getUnit(config, visualizerSize);
+        visualizerSize = this.getSize(visualizerSize, unit);
+        // update unit by the correct size
+        unit = this.getUnit(config, visualizerSize);
+        // *** re-render with correct size ***
+        const svg = Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["renderChartContainer"])(this.el, visualizerSize);
+        Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["renderAxis"])(svg, _shared_models__WEBPACK_IMPORTED_MODULE_2__["Location"].LEFT, unit.yAxis, visualizerSize.chart, ['y-axis']);
+        if (config.data2Fields) {
+            Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["renderAxis"])(svg, _shared_models__WEBPACK_IMPORTED_MODULE_2__["Location"].RIGHT, unit.y2Axis, visualizerSize.chart, [
+                'y2-axis'
+            ]);
+        }
+        Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["renderAxis"])(svg, _shared_models__WEBPACK_IMPORTED_MODULE_2__["Location"].BOTTOM, unit.xAxis, visualizerSize.chart, ['x-axis']);
+        // render grid
+        if (config.hasGrid) {
+            Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["renderGrid"])(svg, 'y', unit.yAxis, visualizerSize.chart, ['y-grid']);
+        }
+        this.renderInfo = {
+            svg,
+            unit,
+            size: visualizerSize
+        };
+    }
+    emitRenderedActionEvent() {
+        const action = {
+            target: this,
+            action: _shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerAction"].RENDERED,
+            config: this._config,
+            renderInfo: this.renderInfo
+        };
+        this.action.emit(action);
+    }
+}
+AxisComponent.ɵfac = function AxisComponent_Factory(t) { return new (t || AxisComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
+AxisComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AxisComponent, selectors: [["mc-axis"]], outputs: { action: "action" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]], decls: 0, vars: 0, template: function AxisComponent_Template(rf, ctx) { }, styles: ["[_nghost-%COMP%] {\n  display: block;\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy92aXN1YWxpemVyL2F4aXMvYXhpcy5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy92aXN1YWxpemVyL2F4aXMvYXhpcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FDQ0YiLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnRzL3Zpc3VhbGl6ZXIvYXhpcy9heGlzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufSJdfQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AxisComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'mc-axis',
+                styleUrls: ['axis.component.scss'],
+                template: ''
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }]; }, { action: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }] }); })();
+
+
+/***/ }),
+
+/***/ "./projects/mc-ui/src/lib/components/visualizer/bar/bar.component.ts":
+/*!***************************************************************************!*\
+  !*** ./projects/mc-ui/src/lib/components/visualizer/bar/bar.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: BarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BarComponent", function() { return BarComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../base.component */ "./projects/mc-ui/src/lib/components/base.component.ts");
+/* harmony import */ var _shared_models__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared.models */ "./projects/mc-ui/src/lib/shared.models.ts");
+/* harmony import */ var _utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/viz-utils */ "./projects/mc-ui/src/lib/utils/viz-utils.ts");
+/* harmony import */ var _axis_axis_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../axis/axis.component */ "./projects/mc-ui/src/lib/components/visualizer/axis/axis.component.ts");
+
+
+
+
+
+
+class BarComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__["BaseComponent"] {
+    constructor(er) {
+        super(er);
+        this.er = er;
+        this.defaultState = {
+            axisConfig: null
+        };
+        this.defaultConfig = {
+            type: _shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerType"].BAR,
+            barConfig: {
+                barWidth: 20
+            },
+            labelField: '',
+            dataFields: null,
+            data2Fields: null,
+            hasGrid: true,
+            ticks: 8,
+            scalePadding: 1,
+            scalePaddingInner: 0.2,
+            scalePaddingOuter: 0,
+            data: null
+        };
+        this.action = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    applyState(config) {
+        this.setState({ axisConfig: config });
+    }
+    onAxisAction(e) {
+        switch (e.action) {
+            case _shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerAction"].RENDERED:
+                Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["renderRects"])(e.config, e.renderInfo);
+                break;
+        }
+    }
+}
+BarComponent.ɵfac = function BarComponent_Factory(t) { return new (t || BarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
+BarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BarComponent, selectors: [["mc-bar"]], outputs: { action: "action" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]], decls: 1, vars: 1, consts: [[3, "config", "action"]], template: function BarComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mc-axis", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("action", function BarComponent_Template_mc_axis_action_0_listener($event) { return ctx.onAxisAction($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", ctx.state.axisConfig);
+    } }, directives: [_axis_axis_component__WEBPACK_IMPORTED_MODULE_4__["AxisComponent"]], styles: ["[_nghost-%COMP%] {\n  display: block;\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy92aXN1YWxpemVyL2Jhci9iYXIuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudHMvdmlzdWFsaXplci9iYXIvYmFyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUNDRiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudHMvdmlzdWFsaXplci9iYXIvYmFyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufSJdfQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](BarComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'mc-bar',
+                styleUrls: ['bar.component.scss'],
+                templateUrl: 'bar.component.html'
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }]; }, { action: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }] }); })();
+
+
+/***/ }),
+
+/***/ "./projects/mc-ui/src/lib/components/visualizer/line/line.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./projects/mc-ui/src/lib/components/visualizer/line/line.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: LineComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LineComponent", function() { return LineComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../base.component */ "./projects/mc-ui/src/lib/components/base.component.ts");
+/* harmony import */ var _shared_models__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared.models */ "./projects/mc-ui/src/lib/shared.models.ts");
+/* harmony import */ var _utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/viz-utils */ "./projects/mc-ui/src/lib/utils/viz-utils.ts");
+/* harmony import */ var _axis_axis_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../axis/axis.component */ "./projects/mc-ui/src/lib/components/visualizer/axis/axis.component.ts");
+
+
+
+
+
+
+class LineComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__["BaseComponent"] {
+    constructor(er) {
+        super(er);
+        this.er = er;
+        this.defaultState = {
+            axisConfig: null
+        };
+        this.defaultConfig = {
+            type: _shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerType"].LINE,
+            labelField: '',
+            dataFields: null,
+            data2Fields: null,
+            hasGrid: true,
+            ticks: 8,
+            scalePadding: 1,
+            scalePaddingInner: 0.2,
+            scalePaddingOuter: 0,
+            data: null
+        };
+        this.action = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    applyState(config) {
+        this.setState({ axisConfig: config });
+    }
+    onAxisAction(e) {
+        switch (e.action) {
+            case _shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerAction"].RENDERED:
+                Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_3__["renderLines"])(e.config, e.renderInfo);
+                break;
+        }
+    }
+}
+LineComponent.ɵfac = function LineComponent_Factory(t) { return new (t || LineComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
+LineComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LineComponent, selectors: [["mc-line"]], outputs: { action: "action" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]], decls: 1, vars: 1, consts: [[3, "config", "action"]], template: function LineComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mc-axis", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("action", function LineComponent_Template_mc_axis_action_0_listener($event) { return ctx.onAxisAction($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", ctx.state.axisConfig);
+    } }, directives: [_axis_axis_component__WEBPACK_IMPORTED_MODULE_4__["AxisComponent"]], styles: ["[_nghost-%COMP%] {\n  display: block;\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy92aXN1YWxpemVyL2xpbmUvbGluZS5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy92aXN1YWxpemVyL2xpbmUvbGluZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FDQ0YiLCJmaWxlIjoicHJvamVjdHMvbWMtdWkvc3JjL2xpYi9jb21wb25lbnRzL3Zpc3VhbGl6ZXIvbGluZS9saW5lLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufSJdfQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LineComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'mc-line',
+                styleUrls: ['line.component.scss'],
+                templateUrl: 'line.component.html'
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }]; }, { action: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }] }); })();
+
+
+/***/ }),
+
 /***/ "./projects/mc-ui/src/lib/components/visualizer/visualizer.component.ts":
 /*!******************************************************************************!*\
   !*** ./projects/mc-ui/src/lib/components/visualizer/visualizer.component.ts ***!
@@ -2976,8 +3343,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../base.component */ "./projects/mc-ui/src/lib/components/base.component.ts");
 /* harmony import */ var _grid_grid_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../grid/grid.component */ "./projects/mc-ui/src/lib/components/grid/grid.component.ts");
-/* harmony import */ var _utils_viz_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/viz-utils */ "./projects/mc-ui/src/lib/utils/viz-utils.ts");
-/* harmony import */ var _shared_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared.service */ "./projects/mc-ui/src/lib/shared.service.ts");
+/* harmony import */ var _bar_bar_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./bar/bar.component */ "./projects/mc-ui/src/lib/components/visualizer/bar/bar.component.ts");
+/* harmony import */ var _line_line_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./line/line.component */ "./projects/mc-ui/src/lib/components/visualizer/line/line.component.ts");
+/* harmony import */ var _shared_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../shared.service */ "./projects/mc-ui/src/lib/shared.service.ts");
+
 
 
 
@@ -2992,11 +3361,18 @@ class VisualizerComponent extends _base_component__WEBPACK_IMPORTED_MODULE_2__["
         this.sharedService = sharedService;
         this.compSubs = [];
         this.defaultConfig = {
-            type: _shared_models__WEBPACK_IMPORTED_MODULE_0__["VisualizerType"].grid,
+            type: _shared_models__WEBPACK_IMPORTED_MODULE_0__["VisualizerType"].GRID,
             gridConfig: {},
+            labelField: '',
+            dataFields: null,
+            data2Fields: null,
+            hasGrid: true,
+            ticks: 8,
+            scalePadding: 1,
+            scalePaddingInner: 0.2,
+            scalePaddingOuter: 0,
             data: null
         };
-        this.defaultState = {};
         this.action = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     set data(data) {
@@ -3013,23 +3389,45 @@ class VisualizerComponent extends _base_component__WEBPACK_IMPORTED_MODULE_2__["
     render(config) {
         if (config.data) {
             switch (config.type) {
-                case _shared_models__WEBPACK_IMPORTED_MODULE_0__["VisualizerType"].grid:
+                case _shared_models__WEBPACK_IMPORTED_MODULE_0__["VisualizerType"].GRID:
                     this.rednerGrid(config);
+                    break;
+                case _shared_models__WEBPACK_IMPORTED_MODULE_0__["VisualizerType"].BAR:
+                    this.renderBar(config);
+                    break;
+                case _shared_models__WEBPACK_IMPORTED_MODULE_0__["VisualizerType"].LINE:
+                    this.renderLine(config);
                     break;
             }
         }
     }
+    renderBar(config) {
+        this.removeContent();
+        const cr = this.sharedService.addComponent(_bar_bar_component__WEBPACK_IMPORTED_MODULE_4__["BarComponent"], this.el);
+        const instance = cr.instance;
+        instance.config = config;
+        this.cr = cr;
+    }
+    renderLine(config) {
+        this.removeContent();
+        const cr = this.sharedService.addComponent(_line_line_component__WEBPACK_IMPORTED_MODULE_5__["LineComponent"], this.el);
+        const instance = cr.instance;
+        instance.config = config;
+        this.cr = cr;
+    }
     rednerGrid(config) {
         this.removeContent();
-        const gridCmp = this.sharedService.addComponent(_grid_grid_component__WEBPACK_IMPORTED_MODULE_3__["GridComponent"], this.el);
-        const instance = gridCmp.instance;
-        const data = Object(_utils_viz_utils__WEBPACK_IMPORTED_MODULE_4__["convertVizToGridData"])(config.data);
-        const columns = data.columns;
+        const cr = this.sharedService.addComponent(_grid_grid_component__WEBPACK_IMPORTED_MODULE_3__["GridComponent"], this.el);
+        const instance = cr.instance;
+        const { columns, data } = config.data;
         const cfg = Object.assign({
             themes: ['visualizer', ...config.themes],
             rowHeight: 42,
             columns,
-            data
+            data: {
+                rows: data,
+                rowCount: data.length
+            }
         }, config.gridConfig);
         instance.config = cfg;
         this.compSubs.push(instance.action.subscribe((e) => {
@@ -3045,7 +3443,7 @@ class VisualizerComponent extends _base_component__WEBPACK_IMPORTED_MODULE_2__["
                     break;
             }
         }));
-        this.cr = gridCmp;
+        this.cr = cr;
     }
     removeContent() {
         if (this.cr) {
@@ -3058,8 +3456,8 @@ class VisualizerComponent extends _base_component__WEBPACK_IMPORTED_MODULE_2__["
         this.removeContent();
     }
 }
-VisualizerComponent.ɵfac = function VisualizerComponent_Factory(t) { return new (t || VisualizerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_shared_service__WEBPACK_IMPORTED_MODULE_5__["SharedService"])); };
-VisualizerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: VisualizerComponent, selectors: [["mc-visualizer"]], inputs: { data: "data" }, outputs: { action: "action" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]], decls: 0, vars: 0, template: function VisualizerComponent_Template(rf, ctx) { }, styles: ["[_nghost-%COMP%] {\n  display: block;\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy92aXN1YWxpemVyL3Zpc3VhbGl6ZXIuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudHMvdmlzdWFsaXplci92aXN1YWxpemVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUNDRiIsImZpbGUiOiJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudHMvdmlzdWFsaXplci92aXN1YWxpemVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufSJdfQ== */"] });
+VisualizerComponent.ɵfac = function VisualizerComponent_Factory(t) { return new (t || VisualizerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_shared_service__WEBPACK_IMPORTED_MODULE_6__["SharedService"])); };
+VisualizerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: VisualizerComponent, selectors: [["mc-visualizer"]], inputs: { data: "data" }, outputs: { action: "action" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]], decls: 0, vars: 0, template: function VisualizerComponent_Template(rf, ctx) { }, styles: ["[_nghost-%COMP%] {\n  display: block;\n  position: relative;\n  width: 100%;\n  height: 100%;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3Byb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy92aXN1YWxpemVyL3Zpc3VhbGl6ZXIuY29tcG9uZW50LnNjc3MiLCJwcm9qZWN0cy9tYy11aS9zcmMvbGliL2NvbXBvbmVudHMvdmlzdWFsaXplci92aXN1YWxpemVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQ0NGIiwiZmlsZSI6InByb2plY3RzL21jLXVpL3NyYy9saWIvY29tcG9uZW50cy92aXN1YWxpemVyL3Zpc3VhbGl6ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](VisualizerComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
@@ -3067,7 +3465,7 @@ VisualizerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefi
                 styleUrls: ['visualizer.component.scss'],
                 templateUrl: 'visualizer.component.html'
             }]
-    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }, { type: _shared_service__WEBPACK_IMPORTED_MODULE_5__["SharedService"] }]; }, { data: [{
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }, { type: _shared_service__WEBPACK_IMPORTED_MODULE_6__["SharedService"] }]; }, { data: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
         }], action: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
@@ -3122,7 +3520,10 @@ McUiModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjecto
         _components__WEBPACK_IMPORTED_MODULE_4__["LoaderComponent"],
         _components__WEBPACK_IMPORTED_MODULE_4__["PopupComponent"],
         _components__WEBPACK_IMPORTED_MODULE_4__["VisualizerComponent"],
-        _components__WEBPACK_IMPORTED_MODULE_4__["TextComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_5__["PerfectScrollbarModule"]], exports: [_components__WEBPACK_IMPORTED_MODULE_4__["ListComponent"],
+        _components__WEBPACK_IMPORTED_MODULE_4__["BarComponent"],
+        _components__WEBPACK_IMPORTED_MODULE_4__["TextComponent"],
+        _components__WEBPACK_IMPORTED_MODULE_4__["AxisComponent"],
+        _components__WEBPACK_IMPORTED_MODULE_4__["LineComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_5__["PerfectScrollbarModule"]], exports: [_components__WEBPACK_IMPORTED_MODULE_4__["ListComponent"],
         _components__WEBPACK_IMPORTED_MODULE_4__["IconComponent"],
         _components__WEBPACK_IMPORTED_MODULE_4__["ListItemComponent"],
         _components__WEBPACK_IMPORTED_MODULE_4__["MaskComponent"],
@@ -3135,7 +3536,10 @@ McUiModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjecto
         _components__WEBPACK_IMPORTED_MODULE_4__["LoaderComponent"],
         _components__WEBPACK_IMPORTED_MODULE_4__["PopupComponent"],
         _components__WEBPACK_IMPORTED_MODULE_4__["VisualizerComponent"],
-        _components__WEBPACK_IMPORTED_MODULE_4__["TextComponent"]] }); })();
+        _components__WEBPACK_IMPORTED_MODULE_4__["BarComponent"],
+        _components__WEBPACK_IMPORTED_MODULE_4__["TextComponent"],
+        _components__WEBPACK_IMPORTED_MODULE_4__["AxisComponent"],
+        _components__WEBPACK_IMPORTED_MODULE_4__["LineComponent"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](McUiModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -3154,7 +3558,10 @@ McUiModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjecto
                     _components__WEBPACK_IMPORTED_MODULE_4__["LoaderComponent"],
                     _components__WEBPACK_IMPORTED_MODULE_4__["PopupComponent"],
                     _components__WEBPACK_IMPORTED_MODULE_4__["VisualizerComponent"],
-                    _components__WEBPACK_IMPORTED_MODULE_4__["TextComponent"]
+                    _components__WEBPACK_IMPORTED_MODULE_4__["BarComponent"],
+                    _components__WEBPACK_IMPORTED_MODULE_4__["TextComponent"],
+                    _components__WEBPACK_IMPORTED_MODULE_4__["AxisComponent"],
+                    _components__WEBPACK_IMPORTED_MODULE_4__["LineComponent"]
                 ],
                 exports: [
                     _components__WEBPACK_IMPORTED_MODULE_4__["ListComponent"],
@@ -3170,7 +3577,10 @@ McUiModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjecto
                     _components__WEBPACK_IMPORTED_MODULE_4__["LoaderComponent"],
                     _components__WEBPACK_IMPORTED_MODULE_4__["PopupComponent"],
                     _components__WEBPACK_IMPORTED_MODULE_4__["VisualizerComponent"],
-                    _components__WEBPACK_IMPORTED_MODULE_4__["TextComponent"]
+                    _components__WEBPACK_IMPORTED_MODULE_4__["BarComponent"],
+                    _components__WEBPACK_IMPORTED_MODULE_4__["TextComponent"],
+                    _components__WEBPACK_IMPORTED_MODULE_4__["AxisComponent"],
+                    _components__WEBPACK_IMPORTED_MODULE_4__["LineComponent"]
                 ],
                 providers: [
                     _shared_service__WEBPACK_IMPORTED_MODULE_3__["SharedService"]
@@ -3185,7 +3595,7 @@ McUiModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjecto
 /*!*************************************************!*\
   !*** ./projects/mc-ui/src/lib/shared.models.ts ***!
   \*************************************************/
-/*! exports provided: Align, SortDirection, Icon, ComponentTheme, PopupStartFrom, ChartTypes, VizScaleType, Location, VisualizerType, InputType, ListAction, ScrollDataAction, ScrollbarAction, ComponentAction, GridAction, GridAccordionAction, ScrollAction, InputAction, VisualizerAction */
+/*! exports provided: Align, SortDirection, Icon, ComponentTheme, PopupStartFrom, Location, InputType, DataType, ListAction, ScrollDataAction, ScrollbarAction, ComponentAction, GridAction, GridAccordionAction, ScrollAction, InputAction, VisualizerAction, VisualizerType, VisualizerScaleType, VisualizerMetaField */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3195,11 +3605,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Icon", function() { return Icon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComponentTheme", function() { return ComponentTheme; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopupStartFrom", function() { return PopupStartFrom; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartTypes", function() { return ChartTypes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VizScaleType", function() { return VizScaleType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Location", function() { return Location; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VisualizerType", function() { return VisualizerType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputType", function() { return InputType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataType", function() { return DataType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListAction", function() { return ListAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollDataAction", function() { return ScrollDataAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollbarAction", function() { return ScrollbarAction; });
@@ -3209,6 +3617,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollAction", function() { return ScrollAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputAction", function() { return InputAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VisualizerAction", function() { return VisualizerAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VisualizerType", function() { return VisualizerType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VisualizerScaleType", function() { return VisualizerScaleType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VisualizerMetaField", function() { return VisualizerMetaField; });
 // ************* common component enums **************
 var Align;
 (function (Align) {
@@ -3248,17 +3659,6 @@ var PopupStartFrom;
     PopupStartFrom[PopupStartFrom["TOP"] = 0] = "TOP";
     PopupStartFrom[PopupStartFrom["BOTTOM"] = 1] = "BOTTOM";
 })(PopupStartFrom || (PopupStartFrom = {}));
-var ChartTypes;
-(function (ChartTypes) {
-    ChartTypes["VERTICAL_BAR"] = "vertical-bar";
-    ChartTypes["LINE"] = "line";
-    ChartTypes["BAR_LINE"] = "bar-line";
-})(ChartTypes || (ChartTypes = {}));
-var VizScaleType;
-(function (VizScaleType) {
-    VizScaleType["LINEAR"] = "linear";
-    VizScaleType["BAND"] = "band";
-})(VizScaleType || (VizScaleType = {}));
 var Location;
 (function (Location) {
     Location["LEFT"] = "LEFT";
@@ -3267,12 +3667,6 @@ var Location;
     Location["TOP"] = "TOP";
     Location["BOTTOM"] = "BOTTOM";
 })(Location || (Location = {}));
-var VisualizerType;
-(function (VisualizerType) {
-    VisualizerType[VisualizerType["grid"] = 0] = "grid";
-    VisualizerType[VisualizerType["bar"] = 1] = "bar";
-    VisualizerType[VisualizerType["line"] = 2] = "line";
-})(VisualizerType || (VisualizerType = {}));
 var InputType;
 (function (InputType) {
     InputType["text"] = "text";
@@ -3289,6 +3683,12 @@ var InputType;
     InputType["date"] = "date";
     InputType["color"] = "color";
 })(InputType || (InputType = {}));
+var DataType;
+(function (DataType) {
+    DataType[DataType["STRING"] = 0] = "STRING";
+    DataType[DataType["NUMBER"] = 1] = "NUMBER";
+    DataType[DataType["DATE"] = 2] = "DATE";
+})(DataType || (DataType = {}));
 // ***** Component Action ****** Action need to have a string, since they can be 'data-action'.
 var ListAction;
 (function (ListAction) {
@@ -3346,7 +3746,25 @@ var InputAction;
 var VisualizerAction;
 (function (VisualizerAction) {
     VisualizerAction["SELECT_ITEM"] = "SELECT_ITEM";
+    VisualizerAction["RENDERED"] = "RENDERED";
 })(VisualizerAction || (VisualizerAction = {}));
+var VisualizerType;
+(function (VisualizerType) {
+    VisualizerType[VisualizerType["GRID"] = 0] = "GRID";
+    VisualizerType[VisualizerType["BAR"] = 1] = "BAR";
+    VisualizerType[VisualizerType["HORIZONTAL_BAR"] = 2] = "HORIZONTAL_BAR";
+    VisualizerType[VisualizerType["LINE"] = 3] = "LINE";
+    VisualizerType[VisualizerType["BAR_LINE"] = 4] = "BAR_LINE";
+})(VisualizerType || (VisualizerType = {}));
+var VisualizerScaleType;
+(function (VisualizerScaleType) {
+    VisualizerScaleType[VisualizerScaleType["LINEAR"] = 0] = "LINEAR";
+    VisualizerScaleType[VisualizerScaleType["BAND"] = 1] = "BAND";
+})(VisualizerScaleType || (VisualizerScaleType = {}));
+var VisualizerMetaField;
+(function (VisualizerMetaField) {
+    VisualizerMetaField["total"] = "__total__";
+})(VisualizerMetaField || (VisualizerMetaField = {}));
 
 
 /***/ }),
@@ -3422,7 +3840,7 @@ SharedService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInj
 /*!****************************************************!*\
   !*** ./projects/mc-ui/src/lib/utils/data-utils.ts ***!
   \****************************************************/
-/*! exports provided: sortObjectArray, setStateIf, setState */
+/*! exports provided: sortObjectArray, setStateIf, setState, convertCsvToJson, convertKeysToColumns, convertCsvToVisualizerData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3430,8 +3848,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortObjectArray", function() { return sortObjectArray; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setStateIf", function() { return setStateIf; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setState", function() { return setState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertCsvToJson", function() { return convertCsvToJson; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertKeysToColumns", function() { return convertKeysToColumns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertCsvToVisualizerData", function() { return convertCsvToVisualizerData; });
 /* harmony import */ var _shared_models__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../shared.models */ "./projects/mc-ui/src/lib/shared.models.ts");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./projects/mc-ui/src/lib/utils/utils.ts");
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(papaparse__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 function sortObjectArray(data, sort) {
@@ -3467,24 +3891,41 @@ function setState(target, source) {
     });
     return target;
 }
-
-
-/***/ }),
-
-/***/ "./projects/mc-ui/src/lib/utils/date-utils.ts":
-/*!****************************************************!*\
-  !*** ./projects/mc-ui/src/lib/utils/date-utils.ts ***!
-  \****************************************************/
-/*! exports provided: simpleFormatDate */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "simpleFormatDate", function() { return simpleFormatDate; });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-
-function simpleFormatDate(date, format = 'yyyy/MM/dd', locale = 'en-US') {
-    return Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["formatDate"])(date, format, locale);
+function convertCsvToJson(text) {
+    const result = papaparse__WEBPACK_IMPORTED_MODULE_2__["parse"](text, { header: true });
+    if (result.error) {
+        console.warn('CSV parsing Error: ' + result.error);
+    }
+    return result.data;
+}
+function convertKeysToColumns(obj) {
+    return Object.keys(obj).reduce((columns, key) => {
+        columns.push({ field: key, name: key });
+        return columns;
+    }, []);
+}
+function convertCsvToVisualizerData(text, filters = null) {
+    let data = convertCsvToJson(text);
+    const columns = convertKeysToColumns(data[0] || {});
+    if (filters) {
+        data = data.filter((item) => filters.some(filter => {
+            const value = item[filter.field];
+            const keyword = filter.keyword;
+            switch (filter.type) {
+                case _shared_models__WEBPACK_IMPORTED_MODULE_0__["DataType"].DATE:
+                case _shared_models__WEBPACK_IMPORTED_MODULE_0__["DataType"].NUMBER:
+                    // TODO: compare conditions
+                    return value === keyword;
+                default:
+                    // string
+                    return (value + '').toLowerCase().includes(keyword.toLowerCase());
+            }
+        }));
+    }
+    return {
+        columns,
+        data
+    };
 }
 
 
@@ -3668,266 +4109,258 @@ function debounce(callback, wait, context = this) {
 /*!***************************************************!*\
   !*** ./projects/mc-ui/src/lib/utils/viz-utils.ts ***!
   \***************************************************/
-/*! exports provided: getMinMax, renderChartContainer, getScale, getAxis, renderAxis, getSVGSize, renderGrid, getAxisSize, convertVizToGridData */
+/*! exports provided: getMinMax, renderChartContainer, renderAxis, getSVGSize, renderGrid, getAxisSize, initVisualizerSize, applyXAxisTextSize, getTranslateX, renderRects, renderLines */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMinMax", function() { return getMinMax; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderChartContainer", function() { return renderChartContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getScale", function() { return getScale; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAxis", function() { return getAxis; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderAxis", function() { return renderAxis; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSVGSize", function() { return getSVGSize; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderGrid", function() { return renderGrid; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAxisSize", function() { return getAxisSize; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertVizToGridData", function() { return convertVizToGridData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initVisualizerSize", function() { return initVisualizerSize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "applyXAxisTextSize", function() { return applyXAxisTextSize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTranslateX", function() { return getTranslateX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderRects", function() { return renderRects; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderLines", function() { return renderLines; });
 /* harmony import */ var _shared_models__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../shared.models */ "./projects/mc-ui/src/lib/shared.models.ts");
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./projects/mc-ui/src/lib/utils/utils.ts");
 
 
-
-function getMinMax(data) {
-    return data.reduce((res, d) => {
-        d.values.forEach(item => {
-            res.min = Math.min(res.min, item.value);
-            res.max = Math.max(res.max, item.value);
+function getMinMax(fields, data, decorationMaxRate = 1) {
+    const mm = data.reduce((minMax, d) => {
+        fields.forEach(field => {
+            const val = +d[field];
+            if (typeof val === 'number' && !isNaN(val)) {
+                minMax.min = Math.min(minMax.min, val);
+                minMax.max = Math.max(minMax.max, val);
+            }
         });
-        return res;
-    }, {
-        min: Infinity,
-        max: -Infinity
-    });
+        return minMax;
+    }, { min: Infinity, max: -Infinity });
+    mm.max = mm.max * decorationMaxRate;
+    return mm;
 }
-function renderChartContainer(el, vizSize, themeClass = []) {
+function renderChartContainer(el, visualizerSize) {
     // apply margin
     const svg = d3__WEBPACK_IMPORTED_MODULE_1__["select"](el)
         .append('svg')
-        .attr('class', themeClass.join(' '))
-        .attr('width', vizSize.width)
-        .attr('height', vizSize.height);
+        .attr('class', 'container')
+        .attr('width', visualizerSize.width)
+        .attr('height', visualizerSize.height);
     return svg
         .append('g')
-        .attr('transform', `translate(${vizSize.margin.left},${vizSize.margin.top})`);
+        .attr('transform', `translate(${visualizerSize.margin.left},${visualizerSize.margin.top})`);
 }
-function getScale(type, domain, range, padding = null, paddingInner = null, paddingOuter = null) {
-    let scale;
-    switch (type) {
-        case _shared_models__WEBPACK_IMPORTED_MODULE_0__["VizScaleType"].BAND:
-            scale = d3__WEBPACK_IMPORTED_MODULE_1__["scaleBand"]();
-            break;
-        case _shared_models__WEBPACK_IMPORTED_MODULE_0__["VizScaleType"].LINEAR:
-            scale = d3__WEBPACK_IMPORTED_MODULE_1__["scaleLinear"]();
-            break;
-    }
-    scale = scale.domain(domain).rangeRound(range);
-    if (padding) {
-        scale = scale.padding(padding);
-    }
-    if (paddingInner) {
-        scale = scale.paddingInner(paddingInner);
-    }
-    if (paddingOuter) {
-        scale = scale.paddingOuter(paddingOuter);
-    }
-    return scale;
-}
-function getAxis(location, scale, ticks = null, tickFormat = null) {
-    let axis;
-    switch (location) {
-        case _shared_models__WEBPACK_IMPORTED_MODULE_0__["Location"].LEFT:
-            axis = d3__WEBPACK_IMPORTED_MODULE_1__["axisLeft"](scale);
-            break;
-        case _shared_models__WEBPACK_IMPORTED_MODULE_0__["Location"].BOTTOM:
-            axis = d3__WEBPACK_IMPORTED_MODULE_1__["axisBottom"](scale);
-            break;
-        case _shared_models__WEBPACK_IMPORTED_MODULE_0__["Location"].RIGHT:
-            axis = d3__WEBPACK_IMPORTED_MODULE_1__["axisRight"](scale);
-            break;
-    }
-    if (ticks) {
-        axis = axis.ticks(ticks);
-    }
-    if (tickFormat) {
-        axis = axis.tickFormat(tickFormat);
-    }
-    return axis;
-}
-function renderAxis(svg, location, axis, vizSize, themeClass = []) {
+function renderAxis(svg, location, axis, size, themeClass = []) {
     svg = svg.append('g').attr('class', themeClass.join(' '));
     switch (location) {
         case _shared_models__WEBPACK_IMPORTED_MODULE_0__["Location"].BOTTOM:
-            svg = svg.attr('transform', `translate(0,${vizSize.height})`);
+            svg = svg.attr('transform', `translate(0,${size.height})`).call(axis);
+            if (size.rotateXAxisText) {
+                svg
+                    .selectAll('.tick text')
+                    .attr('style', 'transform: rotate(-45deg) translate(-4px,-6px);text-anchor:end;');
+            }
             break;
         case _shared_models__WEBPACK_IMPORTED_MODULE_0__["Location"].RIGHT:
-            svg = svg.attr('transform', `translate(${vizSize.width},0)`);
+            svg.attr('transform', `translate(${size.width},0)`).call(axis);
+            break;
+        case _shared_models__WEBPACK_IMPORTED_MODULE_0__["Location"].LEFT:
+            svg.call(axis);
             break;
     }
-    svg.call(axis);
 }
 function getSVGSize(el, selector) {
     const svg = el.querySelector(selector);
     return svg.getBBox();
 }
-function renderGrid(svg, direction, axis, vizSize, themeClass = []) {
+function renderGrid(svg, direction, axis, visualizerSize, themeClass = []) {
     svg = svg.append('g').attr('class', themeClass.join(' '));
     let tickSize;
     switch (direction) {
         case 'x':
-            svg = svg.attr('transform', `translate(0,${vizSize.height})`);
-            tickSize = -vizSize.height;
+            svg = svg.attr('transform', `translate(0,${visualizerSize.height})`);
+            tickSize = -visualizerSize.height;
             break;
         case 'y':
-            tickSize = -vizSize.width;
+            tickSize = -visualizerSize.width;
             break;
     }
     svg.call(axis.tickSize(tickSize).tickFormat(''));
 }
-function getAxisSize(el, svg, location, axis, vizSize, themeClass = []) {
-    renderAxis(svg, location, axis, vizSize, themeClass);
-    return getSVGSize(el, '.' + themeClass[0]);
-}
-function convertVizToGridData(data, seriesColumnName = '') {
-    const rows = [];
-    const columns = [];
-    if (seriesColumnName) {
-        columns.push({
-            name: seriesColumnName,
-            field: 'series'
-        });
+function getAxisSize(el, svg, location, axis, visualizerSize, themeClass = []) {
+    renderAxis(svg, location, axis, visualizerSize, themeClass);
+    const boxSize = getSVGSize(el, '.' + themeClass[0]);
+    switch (location) {
+        case _shared_models__WEBPACK_IMPORTED_MODULE_0__["Location"].BOTTOM:
+            visualizerSize = applyXAxisTextSize(el, visualizerSize, themeClass[0]);
+            break;
+        case _shared_models__WEBPACK_IMPORTED_MODULE_0__["Location"].LEFT:
+            visualizerSize.margin.left = boxSize.width;
+            break;
+        case _shared_models__WEBPACK_IMPORTED_MODULE_0__["Location"].RIGHT:
+            visualizerSize.margin.right = boxSize.width;
     }
-    data.forEach(dataItem => {
-        columns.push({
-            name: dataItem.label,
-            field: dataItem.label
-        });
-        dataItem.values.forEach((val, j) => {
-            // rows
-            if (!rows[j]) {
-                rows[j] = {
-                    series: val.series
-                };
-            }
-            rows[j][dataItem.label] = Object(_utils__WEBPACK_IMPORTED_MODULE_2__["isEmpty"])(val.value) ? '' : val.value;
-        });
-    });
+    return visualizerSize;
+}
+function initVisualizerSize(el) {
+    const width = el.offsetWidth;
+    const height = el.offsetHeight;
     return {
-        columns,
-        rows
+        width,
+        height,
+        chart: {
+            width,
+            height,
+            rotateXAxisText: false // when overlapping the x axis text
+        },
+        margin: {
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
+        }
     };
 }
-// function renderRect(data, svg, scaleX, scaleY, color, height, hasNegativeValue = false, minX = 0, scaleX1: any = {}, scaleY1: any = {}, colorBySize = false, vertical = true, stacked = false, halfShift = false, maxBarWidth = 100) {
-//   const duration = 500;
-//   const groupScale = scaleX;
-//   const bandwidth = scaleX.bandwidth();
-//   const bandwidth1 = scaleX1.bandwidth();
-//   let barWidth = bandwidth;
-//   let barWidth1 = bandwidth1;
-//   let offsetX = 0;
-//   let offsetX1 = 0;
-//   if (barWidth > maxBarWidth) {
-//     barWidth = maxBarWidth;
-//     offsetX = (bandwidth - maxBarWidth) / 2;
-//   }
-//   if (barWidth1 > maxBarWidth) {
-//     barWidth1 = maxBarWidth;
-//     offsetX1 = (bandwidth1 - maxBarWidth) / 2;
-//   }
-//   let rects = svg.append('g').selectAll('g')
-//     .data(data)
-//     .enter().append('g')
-//     .attr('data-groupid', (d, i) => i)
-//     .attr('class', 'mc-chart--group-item')
-//     .attr('transform', d => {
-//       let gs = groupScale(d.label);
-//       gs = isNaN(gs) ? 0 : gs;
-//       if (halfShift) {
-//         gs += bandwidth / 2;
-//       }
-//       return vertical ? `translate(${gs},0)` : `translate(0, ${gs})`;
-//     });
-//   rects = rects
-//     .selectAll('rect')
-//     .data(d => d.values);
-//   // for updating data
-//   rects.exit()
-//     .transition().duration(duration)
-//     .remove();
-//   rects = rects
-//     .enter().append('rect');
-//   if (vertical) {
-//     rects
-//       .attr('data-series', d => d.series)
-//       .attr('class', 'mc-chart--item')
-//       .attr('width', d => {
-//         let w = stacked ? scaleX.bandwidth() : scaleX1.bandwidth();
-//         w = w < 1 ? 1 : w;
-//         return w;
-//       })
-//       .attr('x', (d, i) => {
-//         let x = stacked ? scaleX(d.series) + offsetX : scaleX1(d.series) + offsetX1;
-//         x = isNaN(x) ? 0 : x;
-//         return x;
-//       })
-//       .attr('fill', d => d.color ? d.color : color(colorBySize ? d.value : d.series))
-//       .attr('title', d => d.title || `${d.series}: ${d.value}`)
-//       .attr('y', !hasNegativeValue ? height : scaleY(0))
-//       .attr('height', 0)
-//       .transition()
-//       .duration(duration)
-//       .ease(d3.easeSinOut)
-//       .attr('y', (d, i) => {
-//         let y;
-//         if (stacked) {
-//           y = scaleY(d.value1);
-//         } else {
-//           y = +d.value > 0 ? scaleY(d.value) : scaleY(0);
-//         }
-//         return y;
-//       })
-//       .attr('height', d => {
-//         let h = stacked ? height - scaleY(d.value1 - d.value0) : hasNegativeValue ? Math.abs(scaleY(d.value) - scaleY(0)) : height - scaleY(d.value);
-//         h = h < 1 ? 1 : h;
-//         return h;
-//       });
-//   } else {
-//     rects
-//       .attr('data-series', d => d.series)
-//       .attr('class', 'mc-chart--item')
-//       .attr('height', d => {
-//         let h = stacked ? scaleY.bandwidth() : scaleY1.bandwidth();
-//         h = h < 1 ? 1 : h;
-//         return h;
-//       })
-//       .attr('y', (d, i) => {
-//         let y = stacked ? scaleY(d.series) : scaleY1(d.series);
-//         y = isNaN(y) ? 0 : y;
-//         return y;
-//       })
-//       .attr('fill', d => d.color ? d.color : color(colorBySize ? d.value : d.series))
-//       .attr('title', d => d.title || `${d.series}: ${d.value}`)
-//       .attr('x', !hasNegativeValue ? 0 : scaleX(0))
-//       .attr('width', 0)
-//       .transition()
-//       .duration(duration)
-//       .ease(d3.easeSinOut)
-//       .attr('x', d => {
-//         let x;
-//         if (stacked) {
-//           x = scaleX(d.value1);
-//         } else {
-//           x = +d.value > 0 ? hasNegativeValue ? scaleX(0) : scaleX(minX) : scaleX(d.value);
-//         }
-//         return x;
-//       })
-//       .attr('width', d => {
-//         let w = stacked ? scaleX(d.value1 - d.value0) : hasNegativeValue ? Math.abs(scaleX(d.value) - scaleX(0)) : scaleX(d.value);
-//         w = w < 1 ? 1 : w;
-//         return w;
-//       });
-//   }
-// }
+function applyXAxisTextSize(el, size, cls) {
+    const els = el.querySelectorAll(`.${cls} .tick`);
+    const tickWidth = els.length > 1 ? getTranslateX(els[1]) - getTranslateX(els[0]) : -1;
+    let lastTextSize;
+    const maxWidth = Array.from(els).reduce((max, _el) => {
+        lastTextSize = _el.getBBox();
+        return Math.max(lastTextSize.width, max);
+    }, -Infinity);
+    let textHeight = lastTextSize.height;
+    if (tickWidth < maxWidth) {
+        size.chart.rotateXAxisText = true;
+        textHeight = maxWidth;
+    }
+    size.margin.top = lastTextSize.height / 2;
+    size.margin.right = maxWidth / 2;
+    size.margin.bottom = size.chart.rotateXAxisText
+        ? textHeight + 5
+        : lastTextSize.height;
+    return size;
+}
+function getTranslateX(el) {
+    const t = el.getAttribute('transform');
+    const val = t.split('translate(')[1].split(',')[0];
+    return +val;
+}
+function renderRects(config, renderInfo) {
+    const { svg, unit, size } = renderInfo;
+    const data = config.data.data;
+    const animDuration = 1000;
+    unit.xScaleInner = d3__WEBPACK_IMPORTED_MODULE_1__["scaleBand"]()
+        .domain(unit.fields)
+        .rangeRound([0, unit.xScale.bandwidth()])
+        .padding(0);
+    let rects = svg
+        .append('g')
+        .selectAll('g')
+        .data(unit.labels)
+        .enter()
+        .append('g')
+        .attr('class', 'group rects')
+        .attr('transform', (label) => `translate(${unit.xScale(label)},0)`);
+    rects = rects
+        .selectAll('rect')
+        .data((d, i) => unit.fields.map(field => ({ field, value: +data[i][field] })));
+    // for updating data
+    rects
+        .exit()
+        .transition()
+        .duration(animDuration)
+        .remove();
+    rects = rects.enter().append('rect');
+    rects
+        .attr('class', 'item rect')
+        .attr('width', d => unit.xScaleInner.bandwidth(d.field))
+        .attr('x', d => unit.xScaleInner(d.field))
+        .attr('fill', d => unit.colorScale(d.field))
+        .attr('title', d => `${d.field}: ${d.value}`)
+        .attr('y', unit.minMax.min < 0 ? size.height - size.margin.bottom : unit.yScale(0))
+        .attr('height', 0)
+        .transition()
+        .duration(animDuration)
+        .ease(d3__WEBPACK_IMPORTED_MODULE_1__["easeQuadIn"])
+        .attr('y', d => (d.value > 0 ? unit.yScale(d.value) : unit.yScale(0)))
+        .attr('height', d => {
+        const h = unit.minMax.min < 0
+            ? Math.abs(unit.yScale(d.value) - unit.yScale(0))
+            : size.chart.height - unit.yScale(d.value);
+        return h < 0 ? 0 : h;
+    });
+}
+function renderLines(config, renderInfo) {
+    const { svg, unit, size } = renderInfo;
+    const data = config.data.data;
+    const animDuration = 1000;
+    const fieldLabelValueMap = unit.labels.reduce((map, label, rowIndex) => {
+        unit.fields.forEach(field => {
+            const labelValues = map.get(field) || [];
+            labelValues.push({ field, label, value: data[rowIndex][field] });
+            map.set(field, labelValues);
+        });
+        return map;
+    }, new Map());
+    const lineData = [...fieldLabelValueMap.values()];
+    unit.line = d3__WEBPACK_IMPORTED_MODULE_1__["line"]()
+        .x((d) => unit.xScale(d.label))
+        .y((d) => unit.yScale(d.value));
+    const line = svg
+        .selectAll('.lines')
+        .data(lineData)
+        .enter()
+        .append('g')
+        .attr('class', 'lines')
+        .attr('transform', d => `translate(${unit.xScale.bandwidth() / 2},0)`);
+    const path = line
+        .append('path')
+        .attr('class', 'line')
+        .attr('d', d => unit.line(d))
+        .style('stroke', d => unit.colorScale(d[0].field))
+        .style('stroke-width', 1.5)
+        .style('stroke-linejoin', 'round')
+        .style('stroke-linecap', 'round')
+        .style('fill', 'none')
+        .attr('stroke-dasharray', function () {
+        const totalLength = this.getTotalLength();
+        return totalLength + ' ' + totalLength;
+    })
+        .attr('stroke-dashoffset', function () {
+        const totalLength = this.getTotalLength();
+        return totalLength;
+    })
+        .transition()
+        .duration(animDuration)
+        .ease(d3__WEBPACK_IMPORTED_MODULE_1__["easeLinear"])
+        .attr('stroke-dashoffset', 0);
+    const circle = svg
+        .selectAll('.circles')
+        .data(lineData)
+        .enter()
+        .append('g')
+        .attr('class', 'circles')
+        .attr('transform', d => `translate(${unit.xScale.bandwidth() / 2},0)`);
+    const circles = circle
+        .selectAll('circle')
+        .data(d => d)
+        .enter()
+        .append('circle');
+    circles
+        .attr('class', 'circle')
+        .attr('cx', d => unit.xScale(d.label))
+        .attr('cy', d => unit.yScale(d.value))
+        .attr('r', '2')
+        .attr('onmouseover', 'this.setAttribute("r", 4)')
+        .attr('onmouseout', 'this.setAttribute("r", 2)')
+        .style('stroke', d => unit.colorScale(d.field))
+        .style('fill', '#fff');
+}
 
 
 /***/ }),
@@ -3936,7 +4369,7 @@ function convertVizToGridData(data, seriesColumnName = '') {
 /*!******************************************!*\
   !*** ./projects/mc-ui/src/public-api.ts ***!
   \******************************************/
-/*! exports provided: SharedService, McUiModule, Align, SortDirection, Icon, ComponentTheme, PopupStartFrom, ChartTypes, VizScaleType, Location, VisualizerType, InputType, ListAction, ScrollDataAction, ScrollbarAction, ComponentAction, GridAction, GridAccordionAction, ScrollAction, InputAction, VisualizerAction, IconComponent, ListComponent, ListItemComponent, MaskComponent, DrawerComponent, ScrollbarComponent, PopupComponent, GridComponent, GridBodyComponent, GridHeaderComponent, ScrollComponent, LoaderComponent, VisualizerComponent, TextComponent */
+/*! exports provided: SharedService, McUiModule, Align, SortDirection, Icon, ComponentTheme, PopupStartFrom, Location, InputType, DataType, ListAction, ScrollDataAction, ScrollbarAction, ComponentAction, GridAction, GridAccordionAction, ScrollAction, InputAction, VisualizerAction, VisualizerType, VisualizerScaleType, VisualizerMetaField, IconComponent, ListComponent, ListItemComponent, MaskComponent, DrawerComponent, ScrollbarComponent, PopupComponent, GridComponent, GridBodyComponent, GridHeaderComponent, ScrollComponent, LoaderComponent, VisualizerComponent, TextComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3958,15 +4391,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PopupStartFrom", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["PopupStartFrom"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartTypes", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["ChartTypes"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VizScaleType", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["VizScaleType"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Location", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["Location"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisualizerType", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerType"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InputType", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["InputType"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataType", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["DataType"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListAction", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["ListAction"]; });
 
@@ -3985,6 +4414,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InputAction", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["InputAction"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisualizerAction", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerAction"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisualizerType", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerType"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisualizerScaleType", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerScaleType"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisualizerMetaField", function() { return _lib_shared_models__WEBPACK_IMPORTED_MODULE_2__["VisualizerMetaField"]; });
 
 /* harmony import */ var _lib_components_icon_icon_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/components/icon/icon.component */ "./projects/mc-ui/src/lib/components/icon/icon.component.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IconComponent", function() { return _lib_components_icon_icon_component__WEBPACK_IMPORTED_MODULE_3__["IconComponent"]; });
@@ -4162,29 +4597,43 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const _c0 = function () { return { name: "company", value: "a" }; };
+const _c0 = function () { return { name: "company", value: "ASTC" }; };
 const _c1 = function () { return ["companies"]; };
 const _c2 = function () { return { idField: "symbol" }; };
 const _c3 = function (a0, a1) { return { themes: a0, gridConfig: a1 }; };
 const _c4 = function () { return ["daily"]; };
-const _c5 = function () { return { idField: "date" }; };
+const _c5 = function () { return { idField: "Date" }; };
+const _c6 = function () { return ["Open", "High", "Low", "Close", "Adj Close", "Volume"]; };
+const _c7 = function (a0, a1, a3) { return { themes: a0, type: a1, labelField: "Date", dataFields: a3 }; };
 class AppComponent extends _app_base_component__WEBPACK_IMPORTED_MODULE_2__["AppBaseComponent"] {
     constructor(vcr, appService) {
         super(vcr);
         this.vcr = vcr;
         this.appService = appService;
+        this.VisualizerType = projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_1__["VisualizerType"];
     }
     loadCompanies(keyword) {
         if (keyword) {
             this.appService
-                .getCompanies(keyword)
+                .getNasdaqCompanies(keyword)
                 .subscribe(data => (this.data = data));
         }
     }
-    loadTimeSeries(symbol) {
+    loadDailyDataBySymbol(symbol) {
         this.appService
-            .getTimeSeries(symbol)
-            .subscribe(data => (this.dailyData = data));
+            .getDailyDataBySymbol(symbol)
+            .subscribe(data => {
+            this.dailyData = data;
+            // Test data
+            this.barData = {
+                columns: data.columns,
+                data: data.data.slice(0, 10)
+            };
+            this.lineData = {
+                columns: data.columns,
+                data: data.data.slice(0, 10)
+            };
+        });
     }
     onTextAction(e) {
         switch (e.action) {
@@ -4197,29 +4646,43 @@ class AppComponent extends _app_base_component__WEBPACK_IMPORTED_MODULE_2__["App
         switch (e.action) {
             case projects_mc_ui_src_public_api__WEBPACK_IMPORTED_MODULE_1__["VisualizerAction"].SELECT_ITEM:
                 const data = e.data;
-                this.loadTimeSeries(data.symbol);
+                this.loadDailyDataBySymbol(data.Symbol);
                 break;
         }
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewContainerRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_app_service__WEBPACK_IMPORTED_MODULE_3__["AppService"])); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]], decls: 3, vars: 20, consts: [[3, "config", "action"], [3, "config", "data", "action"], [3, "config", "data"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]], decls: 8, vars: 40, consts: [[3, "config", "action"], [1, "body"], [1, "left"], [3, "config", "data", "action"], [3, "config", "data"], [1, "right"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mc-text", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("action", function AppComponent_Template_mc_text_action_0_listener($event) { return ctx.onTextAction($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mc-visualizer", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("action", function AppComponent_Template_mc_visualizer_action_1_listener($event) { return ctx.onCompanyVizAction($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mc-visualizer", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("action", function AppComponent_Template_mc_visualizer_action_3_listener($event) { return ctx.onCompanyVizAction($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "mc-visualizer", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "mc-visualizer", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "mc-visualizer", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "mc-visualizer", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](9, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](17, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("height", 350, "px");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](20, _c3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](18, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](19, _c2)))("data", ctx.data);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("height", 350, "px");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](12, _c3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](11, _c2)))("data", ctx.data);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](25, _c3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](23, _c4), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](24, _c5)))("data", ctx.dailyData);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("height", 350, "px");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction3"](30, _c7, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](28, _c4), ctx.VisualizerType.BAR, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](29, _c6)))("data", ctx.barData);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("height", 350, "px");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](17, _c3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](15, _c4), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](16, _c5)))("data", ctx.dailyData);
-    } }, directives: [_projects_mc_ui_src_lib_components_form_fields_text_text_component__WEBPACK_IMPORTED_MODULE_4__["TextComponent"], _projects_mc_ui_src_lib_components_visualizer_visualizer_component__WEBPACK_IMPORTED_MODULE_5__["VisualizerComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("config", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction3"](36, _c7, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](34, _c4), ctx.VisualizerType.LINE, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](35, _c6)))("data", ctx.lineData);
+    } }, directives: [_projects_mc_ui_src_lib_components_form_fields_text_text_component__WEBPACK_IMPORTED_MODULE_4__["TextComponent"], _projects_mc_ui_src_lib_components_visualizer_visualizer_component__WEBPACK_IMPORTED_MODULE_5__["VisualizerComponent"]], styles: ["[_nghost-%COMP%] {\n  display: block;\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n[_nghost-%COMP%]   .body[_ngcontent-%COMP%]   .left[_ngcontent-%COMP%] {\n  float: left;\n  width: 50%;\n}\n[_nghost-%COMP%]   .body[_ngcontent-%COMP%]   .right[_ngcontent-%COMP%] {\n  float: left;\n  width: 50%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYy9tYy11aS1hbmd1bGFyL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwiL1VzZXJzL21jL21jLXVpLWFuZ3VsYXIvc3JjL2Nzcy9fdmFycy5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUN3QkUsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUN4QkY7QUZBSTtFQUNFLFdBQUE7RUFDQSxVQUFBO0FFRU47QUZBSTtFQUNFLFdBQUE7RUFDQSxVQUFBO0FFRU4iLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLy4uL2Nzcy92YXJzJztcblxuOmhvc3Qge1xuICBAaW5jbHVkZSBjb250YWluZXI7XG4gIC5ib2R5IHtcbiAgICAubGVmdCB7XG4gICAgICBmbG9hdDogbGVmdDtcbiAgICAgIHdpZHRoOiA1MCU7XG4gICAgfVxuICAgIC5yaWdodCB7XG4gICAgICBmbG9hdDogbGVmdDtcbiAgICAgIHdpZHRoOiA1MCU7XG4gICAgfVxuICB9XG59XG4iLCIvLyAqKioqKiogY29sb3JzICoqKioqKioqXG5cbiRjLWdyYXk6ICNmOGY5ZmE7XG4kYy1ncmF5LTEwOiAjZGVlMmU2O1xuJGMtZ3JheS0yMDogI2Q5ZDlkOTtcblxuJGMtYmxhY2s6ICMzNDNhNDA7XG4kYy1ibGFjay0xMDogIzQ5NTA1NztcblxuJGMtYmx1ZTogIzU1YTZmODtcblxuLy8gZWxlbWVudCBjb2xvcnNcblxuJGMtYm9yZGVyOiAkYy1ncmF5LTEwO1xuJGMtYm9yZGVyLTI6ICRjLWdyYXktMjA7XG5cbiRjLXRleHQ6ICRjLWJsYWNrO1xuJGMtdGV4dC0yOiAkYy1ibGFjay0xMDtcblxuJGMtYmc6ICRjLWdyYXk7XG5cbi8vIHNlbWFudGljXG5cbiRjLWFjdGl2ZTogJGMtYmx1ZTtcblxuQG1peGluIGNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG46aG9zdCAuYm9keSAubGVmdCB7XG4gIGZsb2F0OiBsZWZ0O1xuICB3aWR0aDogNTAlO1xufVxuOmhvc3QgLmJvZHkgLnJpZ2h0IHtcbiAgZmxvYXQ6IGxlZnQ7XG4gIHdpZHRoOiA1MCU7XG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -4300,12 +4763,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppService", function() { return AppService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-/* harmony import */ var _models_manual__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./models-manual */ "./src/app/models-manual.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var projects_mc_ui_src_lib_utils_date_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/mc-ui/src/lib/utils/date-utils */ "./projects/mc-ui/src/lib/utils/date-utils.ts");
-
-
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var projects_mc_ui_src_lib_utils_data_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/mc-ui/src/lib/utils/data-utils */ "./projects/mc-ui/src/lib/utils/data-utils.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
 
 
@@ -4315,107 +4775,24 @@ class AppService {
     constructor(http) {
         this.http = http;
     }
-    getCompanies(keyword = '') {
-        const params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]()
-            .set(_models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIParamKey"].function, _models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIFunction"].SYMBOL_SEARCH)
-            .set(_models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIParamKey"].keywords, keyword)
-            .set(_models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIParamKey"].apikey, _models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPI"].key);
+    getNasdaqCompanies(symbol = '') {
         return this.http
-            .get(_models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPI"].url, { params })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((data) => this.normalizeComponies(data)));
+            .get('../test/data/nasdaqlisted.txt', { responseType: 'text' })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(data => Object(projects_mc_ui_src_lib_utils_data_utils__WEBPACK_IMPORTED_MODULE_2__["convertCsvToVisualizerData"])(data, [
+            { field: 'Symbol', keyword: symbol }
+        ])));
     }
-    normalizeComponies(data) {
-        const vizDataMap = new Map();
-        data.bestMatches.forEach(row => {
-            Object.keys(row).forEach(key => this.addVizDataValues(key, row[key], vizDataMap));
-        });
-        return [...vizDataMap.values()];
-    }
-    getTimeSeries(symbol, fn = _models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIFunction"].TIME_SERIES_DAILY, outputsize = _models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIOutputSize"].compact) {
-        const params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]()
-            .set(_models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIParamKey"].function, fn)
-            .set(_models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIParamKey"].symbol, symbol)
-            .set(_models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIParamKey"].outputsize, outputsize)
-            .set(_models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIParamKey"].apikey, _models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPI"].key);
+    getDailyDataBySymbol(symbol) {
         return this.http
-            .get(_models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPI"].url, { params })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((data) => this.normalizeTimeseries(data, fn)));
-    }
-    normalizeTimeseries(data, fn) {
-        const vizDataMap = new Map();
-        switch (fn) {
-            case _models_manual__WEBPACK_IMPORTED_MODULE_2__["AlphaVantageAPIFunction"].TIME_SERIES_DAILY:
-                const d = data[_models_manual__WEBPACK_IMPORTED_MODULE_2__["TimeSeriesType"].TIME_SERIES_DAILY];
-                Object.keys(d).forEach(date => {
-                    this.addVizDataValues('date', Object(projects_mc_ui_src_lib_utils_date_utils__WEBPACK_IMPORTED_MODULE_4__["simpleFormatDate"])(date), vizDataMap);
-                    const keyVal = d[date];
-                    Object.keys(keyVal).forEach(key => this.addVizDataValues(key, keyVal[key], vizDataMap));
-                });
-                return [...vizDataMap.values()];
-        }
-        return [];
-    }
-    addVizDataValues(key, value, vizDataMap) {
-        key = key.includes('. ') ? key.split('. ')[1] : key;
-        if (!vizDataMap.has(key)) {
-            vizDataMap.set(key, { label: key, values: [] });
-        }
-        const vizData = vizDataMap.get(key);
-        vizData.values.push({ value });
-        vizDataMap.set(key, vizData);
-        return vizDataMap;
+            .get(`../test/data/${symbol}.csv`, { responseType: 'text' })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(data => Object(projects_mc_ui_src_lib_utils_data_utils__WEBPACK_IMPORTED_MODULE_2__["convertCsvToVisualizerData"])(data)));
     }
 }
-AppService.ɵfac = function AppService_Factory(t) { return new (t || AppService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
+AppService.ɵfac = function AppService_Factory(t) { return new (t || AppService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
 AppService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: AppService, factory: AppService.ɵfac });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
-
-
-/***/ }),
-
-/***/ "./src/app/models-manual.ts":
-/*!**********************************!*\
-  !*** ./src/app/models-manual.ts ***!
-  \**********************************/
-/*! exports provided: AlphaVantageAPI, AlphaVantageAPIParamKey, AlphaVantageAPIOutputSize, AlphaVantageAPIFunction, TimeSeriesType */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlphaVantageAPI", function() { return AlphaVantageAPI; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlphaVantageAPIParamKey", function() { return AlphaVantageAPIParamKey; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlphaVantageAPIOutputSize", function() { return AlphaVantageAPIOutputSize; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlphaVantageAPIFunction", function() { return AlphaVantageAPIFunction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeSeriesType", function() { return TimeSeriesType; });
-var AlphaVantageAPI;
-(function (AlphaVantageAPI) {
-    AlphaVantageAPI["key"] = "L771LKUP5DIHHSKR";
-    AlphaVantageAPI["url"] = "https://www.alphavantage.co/query";
-})(AlphaVantageAPI || (AlphaVantageAPI = {}));
-var AlphaVantageAPIParamKey;
-(function (AlphaVantageAPIParamKey) {
-    AlphaVantageAPIParamKey["function"] = "function";
-    AlphaVantageAPIParamKey["keywords"] = "keywords";
-    AlphaVantageAPIParamKey["apikey"] = "apikey";
-    AlphaVantageAPIParamKey["symbol"] = "symbol";
-    AlphaVantageAPIParamKey["outputsize"] = "outputsize";
-})(AlphaVantageAPIParamKey || (AlphaVantageAPIParamKey = {}));
-var AlphaVantageAPIOutputSize;
-(function (AlphaVantageAPIOutputSize) {
-    AlphaVantageAPIOutputSize["compact"] = "compact";
-    AlphaVantageAPIOutputSize["full"] = "full";
-})(AlphaVantageAPIOutputSize || (AlphaVantageAPIOutputSize = {}));
-var AlphaVantageAPIFunction;
-(function (AlphaVantageAPIFunction) {
-    AlphaVantageAPIFunction["SYMBOL_SEARCH"] = "SYMBOL_SEARCH";
-    AlphaVantageAPIFunction["TIME_SERIES_DAILY"] = "TIME_SERIES_DAILY";
-})(AlphaVantageAPIFunction || (AlphaVantageAPIFunction = {}));
-var TimeSeriesType;
-(function (TimeSeriesType) {
-    TimeSeriesType["TIME_SERIES_DAILY"] = "Time Series (Daily)";
-})(TimeSeriesType || (TimeSeriesType = {}));
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),
